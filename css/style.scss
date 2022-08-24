@@ -1,0 +1,103 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+a {
+    text-decoration: none;
+}
+
+.navbar {
+    background-color: #929898;
+    padding: 10px;
+    a {
+        font-weight: 400;
+        color: #fff;
+    }
+    .navbar-header{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .menu {
+        display: none;
+        ul {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+            li {
+                padding: 0;
+                padding: 0 10px;
+            }
+        }
+    }
+    .search-nav {
+        background-color: #ffffff41;
+        border-radius: 4px;
+        width: 220px;
+        font-size: 14px;
+        width: 220px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        input {
+            padding: 10px 1rem;
+            background-color: transparent;
+            border: none;
+            color: #fff;
+            &::placeholder {
+                color: #fff;
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+        img {
+            margin-right: 10px;
+        }
+    }
+    .rigth-section {
+        display: flex;
+        align-items: center;
+    }
+
+    .user-icon {
+        margin-right: 5px;
+    }
+
+    .login {
+        text-transform: uppercase;
+        font-size: 14px;
+        margin-right: 15px;
+        display: none;
+    }
+
+    .menu-mobile-btn {
+        button {
+            background-color: transparent;
+            border: none;
+        }
+    }
+
+    @media only screen and (min-width: 1080px) {
+        .menu {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .login {
+            display: block;
+        }
+    }
+}
+
+
+
+@media only screen and (min-width: 481px) {
+
+}
+
+@media only screen and (min-width: 720px) {
+}
+@media only screen and (min-width: 1201px) {
+
+}
