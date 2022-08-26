@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,10 +9,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="css/style.css">
     <title>ViajeTip</title>
 </head>
+
 <body id="homepage">
     <nav class="navbar">
         <div class="elastic-container">
@@ -24,17 +26,30 @@
 
                 <div class="menu">
                     <ul>
-                        <li><a href="index.html">Planifica</a></li>
-                        <li><a href="nosotros.html">Destinos</a></li>
-                    </ul>
-                    <div class="search-nav">
-                        <input type="text" placeholder="Search">
-                        <img src="assets/img/search-icon.svg" alt="Search">
-                    </div>
-                    <ul>
-                        <li><a href="index.html">Consejos</a></li>
-                        <li><a href="nosotros.html">Recursos</a></li>
-                    </ul>
+                        <a href="index.html">
+                            <li>Planifica</li>
+                        </a>
+                        <a href="nosotros.html">
+                            <li>Destinos</li>
+                        </a>
+                        <a href="nosotros.html">
+                            <li>¿Cuánto vale?</li>
+                        </a>
+                        <div class="search-nav">
+                            <input type="text" placeholder="Search">
+                            <img src="assets/img/search-icon.svg" alt="Search">
+                        </div>
+                        <ul>
+                            <a href="index.html">
+                                <li>Consejos</li>
+                            </a>
+                            <a href="nosotros.html">
+                                <li>Recursos</li>
+                            </a>
+                            <a href="nosotros.html">
+                                <li>Videos</li>
+                            </a>
+                        </ul>
                 </div>
                 <div class="rigth-section">
                     <picture class="user-icon">
@@ -42,6 +57,11 @@
                     </picture>
                     <div class="login">
                         <a href="login.html">Iniciar sesión</a>
+                    </div>
+                    <div class="search-menu-btn">
+                        <button>
+                            <img src="assets/img/search-icon.svg" alt="search">
+                        </button>
                     </div>
                     <div class="menu-mobile-btn">
                         <button>
@@ -52,5 +72,39 @@
             </div>
         </div>
     </nav>
+
+    <section class="hero">
+        <picture>
+            <source media="(min-width: 768px)" srcset="assets/img/hero-img.jpg">
+            <source media="(max-width: 767px)" srcset="assets/img/hero-img.jpg">
+            <img src="assets/img/hero-img.jpg" alt="hero">
+        </picture>
+        <div class="gradient"></div>
+
+        <div class="container-flex hero-container">
+            <div class="column_50">
+                <div class="content">
+                    <h2>Recursos, guías, consejos y mucho más</h2>
+                    <p>Sitio se viajes para el viajero inteligente</p>
+                </div>
+            </div>
+            <div class="column_50">
+                <div class="carrousel">
+                    <div class="card">
+                        <img src="assets/img/hero/thailand.jpg" alt="">
+                    </div>
+                    <div class="card">
+                        <img src="assets/img/hero/japan.jpg" alt="">
+                    </div>
+                    <div class="card">
+                        <img src="assets/img/hero/maldives.jpg" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
 </body>
+
 </html>
