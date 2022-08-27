@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
     <link rel="stylesheet" href="css/style.css">
     <title>ViajeTip</title>
 </head>
@@ -81,30 +81,72 @@
         </picture>
         <div class="gradient"></div>
 
-        <div class="container-flex hero-container">
+        <div class="container-flex container hero-container">
             <div class="column_50">
                 <div class="content">
-                    <h2>Recursos, guías, consejos y mucho más</h2>
-                    <p>Sitio se viajes para el viajero inteligente</p>
+                    <h2>Lugar para el <span class="outline_letter">viajero</span> inteligente</h2>
+                    <p>Recursos, guías, consejos y mucho más</p>
                 </div>
             </div>
             <div class="column_50">
-                <div class="carrousel">
-                    <div class="card">
+                <div class="carrousel main-carousel ">
+                    <div class="card carousel-cell">
                         <img src="assets/img/hero/thailand.jpg" alt="">
                     </div>
-                    <div class="card">
+                    <div class="card carousel-cell">
                         <img src="assets/img/hero/japan.jpg" alt="">
                     </div>
-                    <div class="card">
+                    <div class="card carousel-cell">
                         <img src="assets/img/hero/maldives.jpg" alt="">
                     </div>
                 </div>
             </div>
         </div>
-        
+    </section>
+    <section class="homepage-section">
+        <div class="container">
+            <div class="h-subtitle">
+                Acerca de
+            </div>
+            <h2>Todo lo que necesitas para planificar tu próximo viaje</h2>
+            <p>ViajeTip es un sitio web enfocado para viajeros de todo tipo: desde lo más novatos hasta los más experimentados.</p>
+            <p>Nuestro objetivo es que viajes más, más barato y por más tiempo. Por esa razón hemos recopilado la información y desarrollado las herramientas para ti.</p>
+            <p>Contamos con un blog de consejos, guías de viajes y aplicaciones de apoyo totalmente gratuitas. Todo esto creado por profesionales</p>
+        </div>
     </section>
 
-</body>
+    <section class="homepage-section">
+        <div class="container">
+            <div class="h-subtitle">
+                Por destinto
+            </div>
+            <h2>Conoce el mundo</h2>
+            <p>Con más de 500 artículos, te contamos los secretos, tips e información de gran utilidad para tus futuros viajes.</p>
+       
+            <h2>¿A dónde quieres ir?</h2>
+            <div class="destination-card">
 
+            </div>
+        </div>
+    </section>
+
+    <section class="homepage-section">
+        <div class="container">
+            <h2>Consejos y recursos</h2>
+            <p> ¿Quieres conseguir boletos de avión baratos?, ¿Buscas consejos para la próxima ciudad que visitarás?, ¿No sabes cómo planear tu próximo viaje? Si es así, estás en el lugar adecuado</p>
+            <p>Lista de guías, artículos y recomendaciones creados por expertos en viajes.</p>
+        </div>
+    </section>
+
+    <section class="homepage-section">
+        <div class="container">
+            <h2>Herramientas y aplicaciones</h2>
+            <p>Aplicaciones gratuiras que te servirán durante tus próximos viajes. Por cierto, constantemente estamos agregando nuevas aplicaciones, por lo que te recomendamos estar al pendiente.</p>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.2/min/tiny-slider.js"></script>
+    <script src="js/homepage.js"></script>
+    </script>
+</body>
 </html>

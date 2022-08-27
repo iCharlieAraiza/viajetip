@@ -7,6 +7,46 @@ a {
   text-decoration: none;
 }
 
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+p {
+  font-size: 20px;
+  color: #585858;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    width: 1120px;
+  }
+}
+
+@media (min-width: 1300px) {
+  .container {
+    width: 1220px;
+  }
+}
+
+.outline_letter {
+  color: transparent;
+  -webkit-text-stroke: 1px #fff;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.outline_letter:hover {
+  color: #6edcff;
+  -webkit-text-stroke: initial;
+}
+
 .navbar {
   z-index: 10;
   background-color: transparent;
@@ -82,6 +122,7 @@ a {
   background-color: transparent;
   border: none;
   color: #fff;
+  width: 160px;
 }
 
 .navbar .search-nav input::-webkit-input-placeholder {
@@ -295,8 +336,8 @@ a {
   height: 100%;
   top: 0;
   background: #264463;
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.688113)), color-stop(70%, rgba(0, 0, 0, 0)));
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0.688113) 0%, rgba(0, 0, 0, 0) 70%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#000000a6), color-stop(21%, rgba(10, 10, 10, 0.38)), color-stop(73%, rgba(12, 12, 12, 0.56)), to(white));
+  background: linear-gradient(180deg, #000000a6 0%, rgba(10, 10, 10, 0.38) 21%, rgba(12, 12, 12, 0.56) 73%, white 100%);
 }
 
 @media only screen and (min-width: 1201px) {
@@ -320,40 +361,58 @@ a {
   top: 3.5rem;
   position: absolute;
   z-index: 11;
-  width: 100%;
   min-height: 80vh;
 }
 
 .hero-container .content {
   padding: 1rem;
-  margin: 0 auto;
 }
 
 .hero-container .content h2 {
+  font-family: 'Poppins', sans-serif;
   color: #fff;
   font-size: 2.5rem;
   margin-bottom: 0;
-  letter-spacing: -1px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 .hero-container .content p {
   font-weight: 100;
-  font-size: 1.6rem;
   color: #fff;
+  margin-top: 0;
+  font-size: 28px;
 }
 
 .hero-container .carrousel {
   height: 18rem;
-  width: 100%;
-  overflow: hidden;
-  background-color: #575a67;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  width: 80% !important;
+  padding-left: 9rem;
+  /* cell number */
 }
 
-.hero-container .carrousel .card {
+.hero-container .carrousel img {
+  height: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
   width: 200px;
+}
+
+.hero-container .carrousel .carousel-cell {
+  width: 200px;
+  height: 200px;
+  margin-right: 1rem;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.hero-container .carrousel .carousel-cell:before {
+  display: block;
+  text-align: center;
+  line-height: 200px;
+  font-size: 80px;
+  color: white;
 }
 
 @media only screen and (min-width: 1201px) {
@@ -368,15 +427,28 @@ a {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    overflow: hidden !important;
   }
   .hero-container .content {
     max-width: 400px;
     padding-top: 4rem;
   }
   .hero-container .content h2 {
-    font-size: 3.5rem !important;
+    font-size: 3.6rem !important;
     margin-top: -2rem;
   }
+}
+
+.h-subtitle {
+  text-transform: uppercase;
+}
+
+.homepage-section {
+  margin: 4rem 0;
+}
+
+.homepage-section h2 {
+  font-size: 2.5rem;
 }
 
 @-webkit-keyframes slide {
