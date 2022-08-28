@@ -12,8 +12,27 @@ h1, h2, h3 {
 }
 
 p {
-  font-size: 20px;
-  color: #585858;
+  font-size: 18px;
+  color: rgba(44, 63, 88, 0.8);
+  margin: 17px 0;
+  line-height: 160%;
+}
+
+.d-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+@media (min-width: 1200px) {
+  .column-2_3 {
+    width: 66%;
+  }
 }
 
 .container {
@@ -386,14 +405,20 @@ p {
 }
 
 .hero-container .carrousel {
-  height: 18rem;
-  width: 80% !important;
+  height: 20rem;
+  width: 700px !important;
   padding-left: 9rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   /* cell number */
 }
 
 .hero-container .carrousel img {
-  height: 200px;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
   width: 200px;
@@ -401,10 +426,20 @@ p {
 
 .hero-container .carrousel .carousel-cell {
   width: 200px;
-  height: 200px;
+  height: 90%;
   margin-right: 1rem;
   border-radius: 5px;
   overflow: hidden;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+  -webkit-box-shadow: 1px 1px 1px #6a6a6a;
+          box-shadow: 1px 1px 1px #6a6a6a;
+}
+
+.hero-container .carrousel .carousel-cell:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
 }
 
 .hero-container .carrousel .carousel-cell:before {
@@ -441,6 +476,8 @@ p {
 
 .h-subtitle {
   text-transform: uppercase;
+  color: #a0a0a0;
+  letter-spacing: 4px;
 }
 
 .homepage-section {
@@ -449,6 +486,32 @@ p {
 
 .homepage-section h2 {
   font-size: 2.5rem;
+  margin-top: 1rem;
+}
+
+.serif-title {
+  font-family: "Roboto", "serif" !important;
+  text-align: center !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 1.8rem !important;
+  color: #2a2a2a !important;
+}
+
+.world-map-img {
+  margin-top: 3rem;
+  display: block;
+}
+
+.world-map-img img {
+  display: block;
+  width: 100%;
+  max-width: 750px;
+  margin: 1rem auto;
 }
 
 @-webkit-keyframes slide {

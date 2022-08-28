@@ -12,8 +12,22 @@ h1, h2, h3{
 }
 
 p {
-    font-size: 20px;
-    color: #585858;
+    font-size: 18px;
+    color: rgba(44, 63, 88, 0.8);
+    margin: 17px 0;
+    line-height: 160%;
+}
+
+.d-flex {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.column-2_3 {
+    @media (min-width: 1200px){
+        width: 66%;
+    }
 }
 
 .container {
@@ -305,25 +319,32 @@ p {
         }
     }
     .carrousel{
-        height: 18rem;
-        width: 80%!important;
+        height: 20rem;
+        width: 700px!important;
         padding-left: 9rem;
         //background-color: #575a67;
-        //display: flex;
+        display: flex;
+        align-items: center;
         //justify-content: space-between;
 
         img {
-            height: 200px;
+            height: 100%;
             object-fit: cover;
             width: 200px;
         }
 
         .carousel-cell {
             width: 200px;
-            height: 200px;
+            height: 90%;
             margin-right: 1rem;
             border-radius: 5px;
             overflow: hidden;
+            transition: 0.3s;
+            cursor: pointer;
+            box-shadow: 1px 1px 1px rgb(106, 106, 106);
+            &:hover {
+                transform: scale(1.2);
+            }
           }
           
           /* cell number */
@@ -352,24 +373,45 @@ p {
                 font-size: 3.6rem!important;
                 margin-top: -2rem;
             }
-            p {
-                //font-size: 1.5rem;
-            }
         }
     }
 }
 
 .h-subtitle {
     text-transform: uppercase;
+    color: #a0a0a0;
+    letter-spacing: 4px;
 }
 
 .homepage-section {
     margin: 4rem 0;
     h2 {
         font-size: 2.5rem;
+        margin-top: 1rem;
     }
 }
 
+.serif-title {
+    font-family: 'Roboto', 'serif'!important;
+    text-align: center!important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: fit-content;
+    margin: 0 auto;
+    font-size: 1.8rem!important;
+    color: #2a2a2a!important;
+}
+
+.world-map-img{
+    margin-top: 3rem;
+    display: block;
+    img {
+        display: block;
+        width: 100%;
+        max-width: 750px;
+        margin: 1rem auto;
+    }
+}
 
 
 @media only screen and (min-width: 481px) {
