@@ -380,11 +380,14 @@ p {
   top: 3.5rem;
   position: absolute;
   z-index: 11;
+  left: 0;
+  right: 0;
   min-height: 80vh;
 }
 
 .hero-container .content {
   padding: 1rem;
+  margin-right: auto;
 }
 
 .hero-container .content h2 {
@@ -498,7 +501,7 @@ p {
   width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
-  font-size: 1.8rem !important;
+  font-size: 1.5rem !important;
   color: #2a2a2a !important;
 }
 
