@@ -1,0 +1,918 @@
+[
+    {
+        "name": "Afghanistan",
+        "required": "required"
+    },
+    {
+        "name": "Albania",
+        "required": "free"
+    },
+    {
+        "name": "Algeria",
+        "required": "required"
+    },
+    {
+        "name": "American Samoa",
+        "required": "required"
+    },
+    {
+        "name": "Andorra",
+        "required": "free"
+    },
+    {
+        "name": "Angola",
+        "required": "required"
+    },
+    {
+        "name": "Anguilla",
+        "required": "free"
+    },
+    {
+        "name": "Antigua and Barbuda",
+        "required": "free"
+    },
+    {
+        "name": "Argentina",
+        "required": "free"
+    },
+    {
+        "name": "Armenia",
+        "required": "on arrival"
+    },
+    {
+        "name": "Aruba",
+        "required": "free"
+    },
+    {
+        "name": "Australia",
+        "required": "visa online"
+    },
+    {
+        "name": "Austria",
+        "required": "free"
+    },
+    {
+        "name": "Azerbaijan",
+        "required": "visa online"
+    },
+    {
+        "name": "Bahamas",
+        "required": "free"
+    },
+    {
+        "name": "Bahrain",
+        "required": "on arrival"
+    },
+    {
+        "name": "Bangladesh",
+        "required": "on arrival"
+    },
+    {
+        "name": "Barbados",
+        "required": "free"
+    },
+    {
+        "name": "Belarus",
+        "required": "free"
+    },
+    {
+        "name": "Belgium",
+        "required": "free"
+    },
+    {
+        "name": "Belize",
+        "required": "free"
+    },
+    {
+        "name": "Benin",
+        "required": "visa online"
+    },
+    {
+        "name": "Bermuda",
+        "required": "free"
+    },
+    {
+        "name": "Bhutan",
+        "required": "required"
+    },
+    {
+        "name": "Bolivia",
+        "required": "free"
+    },
+    {
+        "name": "Bonaire, St. Eustatius and Saba",
+        "required": "free"
+    },
+    {
+        "name": "Bosnia and Herzegovina",
+        "required": "free"
+    },
+    {
+        "name": "Botswana",
+        "required": "free"
+    },
+    {
+        "name": "Brazil",
+        "required": "free"
+    },
+    {
+        "name": "British Virgin Islands",
+        "required": "free"
+    },
+    {
+        "name": "Brunei",
+        "required": "required"
+    },
+    {
+        "name": "Bulgaria",
+        "required": "free"
+    },
+    {
+        "name": "Burkina Faso",
+        "required": "required"
+    },
+    {
+        "name": "Burundi",
+        "required": "required"
+    },
+    {
+        "name": "Cambodia",
+        "required": "on arrival"
+    },
+    {
+        "name": "Cameroon",
+        "required": "required"
+    },
+    {
+        "name": "Canada",
+        "required": "eta"
+    },
+    {
+        "name": "Cape Verde",
+        "required": "on arrival"
+    },
+    {
+        "name": "Cayman Islands",
+        "required": "free"
+    },
+    {
+        "name": "Central African Republic",
+        "required": "required"
+    },
+    {
+        "name": "Chad",
+        "required": "required"
+    },
+    {
+        "name": "Chile",
+        "required": "free"
+    },
+    {
+        "name": "China",
+        "required": "required"
+    },
+    {
+        "name": "Colombia",
+        "required": "free"
+    },
+    {
+        "name": "Comoros",
+        "required": "on arrival"
+    },
+    {
+        "name": "Congo",
+        "required": "required"
+    },
+    {
+        "name": "Congo (Dem. Rep.)",
+        "required": "required"
+    },
+    {
+        "name": "Cook Islands",
+        "required": "free"
+    },
+    {
+        "name": "Costa Rica",
+        "required": "free"
+    },
+    {
+        "name": "Cote d'Ivoire (Ivory Coast)",
+        "required": "visa online"
+    },
+    {
+        "name": "Croatia",
+        "required": "free"
+    },
+    {
+        "name": "Cuba",
+        "required": "required"
+    },
+    {
+        "name": "Curacao",
+        "required": "free"
+    },
+    {
+        "name": "Cyprus",
+        "required": "free"
+    },
+    {
+        "name": "Czech Republic",
+        "required": "free"
+    },
+    {
+        "name": "Denmark",
+        "required": "free"
+    },
+    {
+        "name": "Djibouti",
+        "required": "visa online"
+    },
+    {
+        "name": "Dominica",
+        "required": "free"
+    },
+    {
+        "name": "Dominican Republic",
+        "required": "free"
+    },
+    {
+        "name": "Ecuador",
+        "required": "free"
+    },
+    {
+        "name": "Egypt",
+        "required": "on arrival"
+    },
+    {
+        "name": "El Salvador",
+        "required": "free"
+    },
+    {
+        "name": "Equatorial Guinea",
+        "required": "required"
+    },
+    {
+        "name": "Eritrea",
+        "required": "required"
+    },
+    {
+        "name": "Estonia",
+        "required": "free"
+    },
+    {
+        "name": "Eswatini",
+        "required": "required"
+    },
+    {
+        "name": "Ethiopia",
+        "required": "on arrival"
+    },
+    {
+        "name": "Falkland Islands",
+        "required": "required"
+    },
+    {
+        "name": "Faroe Islands",
+        "required": "free"
+    },
+    {
+        "name": "Fiji",
+        "required": "free"
+    },
+    {
+        "name": "Finland",
+        "required": "free"
+    },
+    {
+        "name": "France",
+        "required": "free"
+    },
+    {
+        "name": "French Guiana",
+        "required": "free"
+    },
+    {
+        "name": "French Polynesia",
+        "required": "free"
+    },
+    {
+        "name": "French West Indies",
+        "required": "free"
+    },
+    {
+        "name": "Gabon",
+        "required": "on arrival"
+    },
+    {
+        "name": "Gambia",
+        "required": "required"
+    },
+    {
+        "name": "Georgia",
+        "required": "free"
+    },
+    {
+        "name": "Germany",
+        "required": "free"
+    },
+    {
+        "name": "Ghana",
+        "required": "required"
+    },
+    {
+        "name": "Gibraltar",
+        "required": "free"
+    },
+    {
+        "name": "Greece",
+        "required": "free"
+    },
+    {
+        "name": "Greenland",
+        "required": "free"
+    },
+    {
+        "name": "Grenada",
+        "required": "free"
+    },
+    {
+        "name": "Guam",
+        "required": "required"
+    },
+    {
+        "name": "Guatemala",
+        "required": "free"
+    },
+    {
+        "name": "Guinea",
+        "required": "required"
+    },
+    {
+        "name": "Guinea-Bissau",
+        "required": "on arrival"
+    },
+    {
+        "name": "Guyana",
+        "required": "required"
+    },
+    {
+        "name": "Haiti",
+        "required": "free"
+    },
+    {
+        "name": "Honduras",
+        "required": "free"
+    },
+    {
+        "name": "Hong Kong",
+        "required": "free"
+    },
+    {
+        "name": "Hungary",
+        "required": "free"
+    },
+    {
+        "name": "Iceland",
+        "required": "free"
+    },
+    {
+        "name": "India",
+        "required": "visa online"
+    },
+    {
+        "name": "Indonesia",
+        "required": "free"
+    },
+    {
+        "name": "Iran",
+        "required": "on arrival"
+    },
+    {
+        "name": "Iraq",
+        "required": "required"
+    },
+    {
+        "name": "Ireland",
+        "required": "free"
+    },
+    {
+        "name": "Israel",
+        "required": "free"
+    },
+    {
+        "name": "Italy",
+        "required": "free"
+    },
+    {
+        "name": "Jamaica",
+        "required": "free"
+    },
+    {
+        "name": "Jordan",
+        "required": "on arrival"
+    },
+    {
+        "name": "Kazakhstan",
+        "required": "free"
+    },
+    {
+        "name": "Kenya",
+        "required": "on arrival"
+    },
+    {
+        "name": "Kiribati",
+        "required": "required"
+    },
+    {
+        "name": "Kosovo",
+        "required": "free"
+    },
+    {
+        "name": "Kuwait",
+        "required": "required"
+    },
+    {
+        "name": "Kyrgyzstan",
+        "required": "on arrival"
+    },
+    {
+        "name": "Laos",
+        "required": "on arrival"
+    },
+    {
+        "name": "Latvia",
+        "required": "free"
+    },
+    {
+        "name": "Lebanon",
+        "required": "on arrival"
+    },
+    {
+        "name": "Lesotho",
+        "required": "visa online"
+    },
+    {
+        "name": "Liberia",
+        "required": "required"
+    },
+    {
+        "name": "Libya",
+        "required": "required"
+    },
+    {
+        "name": "Liechtenstein",
+        "required": "free"
+    },
+    {
+        "name": "Lithuania",
+        "required": "free"
+    },
+    {
+        "name": "Luxembourg",
+        "required": "free"
+    },
+    {
+        "name": "Macao",
+        "required": "free"
+    },
+    {
+        "name": "Madagascar",
+        "required": "on arrival"
+    },
+    {
+        "name": "Malawi",
+        "required": "on arrival"
+    },
+    {
+        "name": "Malaysia",
+        "required": "free"
+    },
+    {
+        "name": "Maldives",
+        "required": "on arrival"
+    },
+    {
+        "name": "Mali",
+        "required": "required"
+    },
+    {
+        "name": "Malta",
+        "required": "free"
+    },
+    {
+        "name": "Marshall Islands",
+        "required": "on arrival"
+    },
+    {
+        "name": "Mauritania",
+        "required": "on arrival"
+    },
+    {
+        "name": "Mauritius",
+        "required": "free"
+    },
+    {
+        "name": "Mayotte",
+        "required": "free"
+    },
+    {
+        "name": "Mexico",
+        "required": ""
+    },
+    {
+        "name": "Micronesia",
+        "required": "free"
+    },
+    {
+        "name": "Moldova",
+        "required": "free"
+    },
+    {
+        "name": "Monaco",
+        "required": "free"
+    },
+    {
+        "name": "Mongolia",
+        "required": "required"
+    },
+    {
+        "name": "Montenegro",
+        "required": "free"
+    },
+    {
+        "name": "Montserrat",
+        "required": "free"
+    },
+    {
+        "name": "Morocco",
+        "required": "free"
+    },
+    {
+        "name": "Mozambique",
+        "required": "on arrival"
+    },
+    {
+        "name": "Myanmar",
+        "required": "visa online"
+    },
+    {
+        "name": "Namibia",
+        "required": "on arrival"
+    },
+    {
+        "name": "Nauru",
+        "required": "required"
+    },
+    {
+        "name": "Nepal",
+        "required": "on arrival"
+    },
+    {
+        "name": "Netherlands",
+        "required": "free"
+    },
+    {
+        "name": "New Caledonia",
+        "required": "free"
+    },
+    {
+        "name": "New Zealand",
+        "required": "eta"
+    },
+    {
+        "name": "Nicaragua",
+        "required": "free"
+    },
+    {
+        "name": "Niger",
+        "required": "required"
+    },
+    {
+        "name": "Nigeria",
+        "required": "visa online"
+    },
+    {
+        "name": "Niue",
+        "required": "free"
+    },
+    {
+        "name": "Norfolk Island",
+        "required": "visa online"
+    },
+    {
+        "name": "North Korea",
+        "required": "required"
+    },
+    {
+        "name": "North Macedonia",
+        "required": "free"
+    },
+    {
+        "name": "Northern Mariana Islands",
+        "required": "required"
+    },
+    {
+        "name": "Norway",
+        "required": "free"
+    },
+    {
+        "name": "Oman",
+        "required": "required"
+    },
+    {
+        "name": "Pakistan",
+        "required": "visa online"
+    },
+    {
+        "name": "Palau",
+        "required": "on arrival"
+    },
+    {
+        "name": "Palestinian Territories",
+        "required": "free"
+    },
+    {
+        "name": "Panama",
+        "required": "free"
+    },
+    {
+        "name": "Papua New Guinea",
+        "required": "on arrival"
+    },
+    {
+        "name": "Paraguay",
+        "required": "free"
+    },
+    {
+        "name": "Peru",
+        "required": "free"
+    },
+    {
+        "name": "Philippines",
+        "required": "free"
+    },
+    {
+        "name": "Poland",
+        "required": "free"
+    },
+    {
+        "name": "Portugal",
+        "required": "free"
+    },
+    {
+        "name": "Puerto Rico",
+        "required": "required"
+    },
+    {
+        "name": "Qatar",
+        "required": "free"
+    },
+    {
+        "name": "Reunion",
+        "required": "free"
+    },
+    {
+        "name": "Romania",
+        "required": "free"
+    },
+    {
+        "name": "Russia",
+        "required": "visa online"
+    },
+    {
+        "name": "Rwanda",
+        "required": "on arrival"
+    },
+    {
+        "name": "Saint Kitts and Nevis",
+        "required": "free"
+    },
+    {
+        "name": "Saint Lucia",
+        "required": "free"
+    },
+    {
+        "name": "Samoa",
+        "required": "on arrival"
+    },
+    {
+        "name": "San Marino",
+        "required": "free"
+    },
+    {
+        "name": "Sao Tome and Principe",
+        "required": "visa online"
+    },
+    {
+        "name": "Saudi Arabia",
+        "required": "required"
+    },
+    {
+        "name": "Senegal",
+        "required": "on arrival"
+    },
+    {
+        "name": "Serbia",
+        "required": "free"
+    },
+    {
+        "name": "Seychelles",
+        "required": "on arrival"
+    },
+    {
+        "name": "Sierra Leone",
+        "required": "required"
+    },
+    {
+        "name": "Singapore",
+        "required": "free"
+    },
+    {
+        "name": "Slovakia",
+        "required": "free"
+    },
+    {
+        "name": "Slovenia",
+        "required": "free"
+    },
+    {
+        "name": "Solomon Islands",
+        "required": "required"
+    },
+    {
+        "name": "Somalia",
+        "required": "on arrival"
+    },
+    {
+        "name": "South Africa",
+        "required": "required"
+    },
+    {
+        "name": "South Korea",
+        "required": "free"
+    },
+    {
+        "name": "South Sudan",
+        "required": "visa online"
+    },
+    {
+        "name": "Spain",
+        "required": "free"
+    },
+    {
+        "name": "Sri Lanka",
+        "required": "eta"
+    },
+    {
+        "name": "St. Helena",
+        "required": "free"
+    },
+    {
+        "name": "St. Maarten",
+        "required": "free"
+    },
+    {
+        "name": "St. Pierre and Miquelon",
+        "required": "free"
+    },
+    {
+        "name": "St. Vincent and the Grenadines",
+        "required": "free"
+    },
+    {
+        "name": "Sudan",
+        "required": "required"
+    },
+    {
+        "name": "Suriname",
+        "required": "visa online"
+    },
+    {
+        "name": "Sweden",
+        "required": "free"
+    },
+    {
+        "name": "Switzerland",
+        "required": "free"
+    },
+    {
+        "name": "Syria",
+        "required": "required"
+    },
+    {
+        "name": "Taiwan",
+        "required": "required"
+    },
+    {
+        "name": "Tajikistan",
+        "required": "on arrival"
+    },
+    {
+        "name": "Tanzania",
+        "required": "on arrival"
+    },
+    {
+        "name": "Thailand",
+        "required": "on arrival"
+    },
+    {
+        "name": "Timor-Leste",
+        "required": "on arrival"
+    },
+    {
+        "name": "Togo",
+        "required": "on arrival"
+    },
+    {
+        "name": "Tonga",
+        "required": "required"
+    },
+    {
+        "name": "Trinidad and Tobago",
+        "required": "free"
+    },
+    {
+        "name": "Tunisia",
+        "required": "free"
+    },
+    {
+        "name": "Turkey",
+        "required": "visa online"
+    },
+    {
+        "name": "Turkmenistan",
+        "required": "required"
+    },
+    {
+        "name": "Turks and Caicos Islands",
+        "required": "free"
+    },
+    {
+        "name": "Tuvalu",
+        "required": "on arrival"
+    },
+    {
+        "name": "Uganda",
+        "required": "on arrival"
+    },
+    {
+        "name": "Ukraine",
+        "required": "visa online"
+    },
+    {
+        "name": "United Arab Emirates",
+        "required": "free"
+    },
+    {
+        "name": "United Kingdom",
+        "required": "free"
+    },
+    {
+        "name": "United States of America",
+        "required": "required"
+    },
+    {
+        "name": "Uruguay",
+        "required": "free"
+    },
+    {
+        "name": "US Virgin Islands",
+        "required": "required"
+    },
+    {
+        "name": "Uzbekistan",
+        "required": "free"
+    },
+    {
+        "name": "Vanuatu",
+        "required": "free"
+    },
+    {
+        "name": "Vatican City",
+        "required": "free"
+    },
+    {
+        "name": "Venezuela",
+        "required": "free"
+    },
+    {
+        "name": "Vietnam",
+        "required": "visa online"
+    },
+    {
+        "name": "Wallis and Futuna",
+        "required": "free"
+    },
+    {
+        "name": "Yemen",
+        "required": "required"
+    },
+    {
+        "name": "Zambia",
+        "required": "on arrival"
+    },
+    {
+        "name": "Zimbabwe",
+        "required": "on arrival"
+    }
+]
