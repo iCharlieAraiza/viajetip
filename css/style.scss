@@ -392,7 +392,7 @@ p {
         font-size: 2.5rem;
         margin-top: 1rem;
     }
-    &.center,{
+    &.center {
         h2, p,  .h-subtitle {
             text-align: center;
             max-width: 900px;
@@ -425,11 +425,59 @@ p {
 }
 
 .separator {
-    margin-bottom: 1remñm;
+    margin-bottom: 1rem;
     img{
         width: 100%;
     }
 }   
+
+.card-list {
+    display: flex;
+    picture {
+        width: 100px;
+        border-radius: 50%;
+        border: 2px solid grey;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    img {
+        width: 70%;
+    }
+
+    h4 {
+        text-transform: uppercase;
+        color: black;
+    }
+
+    
+    .item{
+        //border: 1px solid #e3e3e3;
+        display: block;
+        box-shadow: 0 1px 1px 0 rgba(66, 66, 66, 0.08), 0 1px 3px 1px rgba(66, 66, 66, 0.16);
+        &:hover{
+            picture {
+                background-color: #e3e3e3;
+            }
+        }
+    }
+    
+    .short {
+        padding: 1rem;
+        border-radius: 9px;
+        cursor: pointer;
+        max-width: 105px;
+        &:hover {
+            background-color: #f7f7f7;
+        }
+        h4{
+            margin: 10px 0;
+            text-align: center;
+        }
+    }
+}
+
 
 
 @media only screen and (min-width: 481px) {

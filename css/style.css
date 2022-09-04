@@ -532,6 +532,63 @@ p {
   width: 100%;
 }
 
+.card-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.card-list picture {
+  width: 100px;
+  border-radius: 50%;
+  border: 2px solid grey;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card-list img {
+  width: 70%;
+}
+
+.card-list h4 {
+  text-transform: uppercase;
+  color: black;
+}
+
+.card-list .item {
+  display: block;
+  -webkit-box-shadow: 0 1px 1px 0 rgba(66, 66, 66, 0.08), 0 1px 3px 1px rgba(66, 66, 66, 0.16);
+          box-shadow: 0 1px 1px 0 rgba(66, 66, 66, 0.08), 0 1px 3px 1px rgba(66, 66, 66, 0.16);
+}
+
+.card-list .item:hover picture {
+  background-color: #e3e3e3;
+}
+
+.card-list .short {
+  padding: 1rem;
+  border-radius: 9px;
+  cursor: pointer;
+  max-width: 105px;
+}
+
+.card-list .short:hover {
+  background-color: #f7f7f7;
+}
+
+.card-list .short h4 {
+  margin: 10px 0;
+  text-align: center;
+}
+
 @-webkit-keyframes slide {
   0% {
     background-position: 50% 50%;
