@@ -431,8 +431,18 @@ p {
     }
 }   
 
+.arrow-separator {
+    width: 150px;
+    margin: 0 auto;
+    img {
+        width: 100%;
+    }
+}
+
 .card-list {
     display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
     picture {
         width: 100px;
         border-radius: 50%;
@@ -451,12 +461,17 @@ p {
         color: black;
     }
 
+    &.narrow {
+        max-width: 1080px;
+        margin: 0 auto;
+    }
+
     
     .item{
         //border: 1px solid #e3e3e3;
         display: block;
-        box-shadow: 0 1px 1px 0 rgba(66, 66, 66, 0.08), 0 1px 3px 1px rgba(66, 66, 66, 0.16);
         &:hover{
+            box-shadow: 0 1px 1px 0 rgba(66, 66, 66, 0.08), 0 1px 3px 1px rgba(66, 66, 66, 0.16);
             picture {
                 background-color: #e3e3e3;
             }
@@ -476,7 +491,20 @@ p {
             text-align: center;
         }
     }
+
+    .app-item {
+        display: flex;
+        padding: 18px;
+    }
 }
+
+.img-aux-block {
+    margin: 0 auto;
+    img {
+        width: 100%;
+    }
+}
+
 
 
 

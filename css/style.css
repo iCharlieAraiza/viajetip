@@ -532,10 +532,23 @@ p {
   width: 100%;
 }
 
+.arrow-separator {
+  width: 150px;
+  margin: 0 auto;
+}
+
+.arrow-separator img {
+  width: 100%;
+}
+
 .card-list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .card-list picture {
@@ -563,8 +576,16 @@ p {
   color: black;
 }
 
+.card-list.narrow {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
 .card-list .item {
   display: block;
+}
+
+.card-list .item:hover {
   -webkit-box-shadow: 0 1px 1px 0 rgba(66, 66, 66, 0.08), 0 1px 3px 1px rgba(66, 66, 66, 0.16);
           box-shadow: 0 1px 1px 0 rgba(66, 66, 66, 0.08), 0 1px 3px 1px rgba(66, 66, 66, 0.16);
 }
@@ -587,6 +608,21 @@ p {
 .card-list .short h4 {
   margin: 10px 0;
   text-align: center;
+}
+
+.card-list .app-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 18px;
+}
+
+.img-aux-block {
+  margin: 0 auto;
+}
+
+.img-aux-block img {
+  width: 100%;
 }
 
 @-webkit-keyframes slide {
