@@ -610,11 +610,58 @@ p {
   text-align: center;
 }
 
-.card-list .app-item {
+.app-item {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  padding: 18px;
+  background-color: #fcfcfc;
+  border-radius: 8px;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.app-item mjjq
+h4 {
+  margin: 10px 0;
+}
+
+.app-item p {
+  margin-top: 0;
+  text-align: initial !important;
+  margin-bottom: 0;
+  font-size: 15px;
+}
+
+.app-item .logo {
+  margin-right: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 18px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.app-item .logo img {
+  width: 75px;
+}
+
+.app-item:hover {
+  background-color: #f4f4f4;
+}
+
+@media only screen and (min-width: 720px) {
+  .app-item {
+    width: 40%;
+    margin-right: auto;
+  }
+}
+
+@media only screen and (min-width: 980px) {
+  .app-item {
+    width: 28%;
+  }
 }
 
 .img-aux-block {
@@ -623,6 +670,11 @@ p {
 
 .img-aux-block img {
   width: 100%;
+}
+
+.grey-background {
+  padding: 4rem 0;
+  background-color: #f9f9f9;
 }
 
 @-webkit-keyframes slide {
