@@ -162,6 +162,8 @@ p {
 
 
 .navbar-fluid {
+    position: fixed;
+    z-index: 15;
     background-color: #474a55;
     .logo {
         img {
@@ -324,7 +326,6 @@ p {
     .carrousel{
         height: 20rem;
         width: 700px!important;
-        padding-left: 9rem;
         //background-color: #575a67;
         display: flex;
         align-items: center;
@@ -358,6 +359,9 @@ p {
             font-size: 80px;
             color: white;
           }
+        @media only screen and (min-width: 1201px){
+            padding-left: 9rem;
+        }
           
     }
 
@@ -368,6 +372,7 @@ p {
             justify-content: center;
             align-items: center;
             overflow: hidden!important;
+            margin: 0 auto;
         }
         .content{
             max-width: 400px;
@@ -406,10 +411,10 @@ p {
     font-family: 'Roboto', 'serif'!important;
     text-align: center!important;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     width: fit-content;
     margin: 0 auto;
-    font-size: 1.5rem!important;
+    font-size: 1.3rem!important;
     color: #2a2a2a!important;
 }
 
@@ -427,6 +432,7 @@ p {
 .separator {
     margin-bottom: 1rem;
     img{
+        padding-bottom: 1rem;
         width: 100%;
     }
 }   
@@ -445,10 +451,10 @@ p {
     flex-wrap: wrap;
 
     picture {
-        width: 100px;
+        width: 95px;
         border-radius: 50%;
         border: 2px solid grey;
-        height: 100px;
+        height: 92px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -487,14 +493,14 @@ p {
             background-color: #f7f7f7;
         }
         h4{
-            margin: 10px 0;
+            margin: 10px 0!important;
             text-align: center;
         }
     }
 }
 
 
-.app-item {
+.app-item.item {
     display: flex!important;
     padding: 18px;
     //border: 1px solid rgb(224, 224, 224);
@@ -503,7 +509,7 @@ p {
     width: 100%;
     margin-bottom: 1rem;mjjq
     h4 {
-        margin: 10px 0;        
+        margin: 10px 0!important;      
     }
     p {
         margin-top: 0;
@@ -533,6 +539,11 @@ p {
     }
 }
 
+.item.app-item h4 {
+    margin: 10px 0!important;
+}
+
+
 .img-aux-block {
     margin: 0 auto;
     img {
@@ -546,6 +557,39 @@ p {
     background-color: #f9f9f9;
 }
 
+.destination-card{
+    padding-top: 2rem;
+}
+
+.destination.item {
+    padding: 10px;
+    max-width: 110px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    &:hover{
+        background-color: #fcfcfc;
+    }
+    h4 {
+        font-size: 14px;
+    }
+    .icon-block{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            height: 90px;
+            width: 80%;
+        }
+        &.plus-icon{
+            img{
+                height: 60px;
+            }
+        }
+    }
+}
 
 
 

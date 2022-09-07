@@ -218,6 +218,8 @@ p {
 }
 
 .navbar-fluid {
+  position: fixed;
+  z-index: 15;
   background-color: #474a55;
 }
 
@@ -410,7 +412,6 @@ p {
 .hero-container .carrousel {
   height: 20rem;
   width: 700px !important;
-  padding-left: 9rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -454,6 +455,12 @@ p {
 }
 
 @media only screen and (min-width: 1201px) {
+  .hero-container .carrousel {
+    padding-left: 9rem;
+  }
+}
+
+@media only screen and (min-width: 1201px) {
   .hero-container .column_50 {
     width: 50%;
     display: -webkit-box;
@@ -466,6 +473,7 @@ p {
         -ms-flex-align: center;
             align-items: center;
     overflow: hidden !important;
+    margin: 0 auto;
   }
   .hero-container .content {
     max-width: 400px;
@@ -503,12 +511,12 @@ p {
   font-family: "Roboto", "serif" !important;
   text-align: center !important;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 3px;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
-  font-size: 1.5rem !important;
+  font-size: 1.3rem !important;
   color: #2a2a2a !important;
 }
 
@@ -529,6 +537,7 @@ p {
 }
 
 .separator img {
+  padding-bottom: 1rem;
   width: 100%;
 }
 
@@ -552,10 +561,10 @@ p {
 }
 
 .card-list picture {
-  width: 100px;
+  width: 95px;
   border-radius: 50%;
   border: 2px solid grey;
-  height: 100px;
+  height: 92px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -606,11 +615,11 @@ p {
 }
 
 .card-list .short h4 {
-  margin: 10px 0;
+  margin: 10px 0 !important;
   text-align: center;
 }
 
-.app-item {
+.app-item.item {
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
@@ -621,19 +630,19 @@ p {
   margin-bottom: 1rem;
 }
 
-.app-item mjjq
+.app-item.item mjjq
 h4 {
-  margin: 10px 0;
+  margin: 10px 0 !important;
 }
 
-.app-item p {
+.app-item.item p {
   margin-top: 0;
   text-align: initial !important;
   margin-bottom: 0;
   font-size: 15px;
 }
 
-.app-item .logo {
+.app-item.item .logo {
   margin-right: 1rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -643,25 +652,29 @@ h4 {
           align-items: center;
 }
 
-.app-item .logo img {
+.app-item.item .logo img {
   width: 75px;
 }
 
-.app-item:hover {
+.app-item.item:hover {
   background-color: #f4f4f4;
 }
 
 @media only screen and (min-width: 720px) {
-  .app-item {
+  .app-item.item {
     width: 40%;
     margin-right: auto;
   }
 }
 
 @media only screen and (min-width: 980px) {
-  .app-item {
+  .app-item.item {
     width: 28%;
   }
+}
+
+.item.app-item h4 {
+  margin: 10px 0 !important;
 }
 
 .img-aux-block {
@@ -675,6 +688,58 @@ h4 {
 .grey-background {
   padding: 4rem 0;
   background-color: #f9f9f9;
+}
+
+.destination-card {
+  padding-top: 2rem;
+}
+
+.destination.item {
+  padding: 10px;
+  max-width: 110px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.destination.item:hover {
+  background-color: #fcfcfc;
+}
+
+.destination.item h4 {
+  font-size: 14px;
+}
+
+.destination.item .icon-block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.destination.item .icon-block img {
+  height: 90px;
+  width: 80%;
+}
+
+.destination.item .icon-block.plus-icon img {
+  height: 60px;
 }
 
 @-webkit-keyframes slide {
