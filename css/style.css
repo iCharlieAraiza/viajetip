@@ -29,6 +29,16 @@ p {
           align-items: center;
 }
 
+.j-center {
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
+}
+
+.center-margin {
+  margin: 0 auto;
+}
+
 @media (min-width: 1200px) {
   .column-2_3 {
     width: 66%;
@@ -473,7 +483,6 @@ p {
         -ms-flex-align: center;
             align-items: center;
     overflow: hidden !important;
-    margin: 0 auto;
   }
   .hero-container .content {
     max-width: 400px;
@@ -558,6 +567,7 @@ p {
       justify-content: space-around;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  gap: 10px;
 }
 
 .card-list picture {
@@ -620,6 +630,7 @@ p {
 }
 
 .app-item.item {
+  margin: 0 8px;
   display: -webkit-box !important;
   display: -ms-flexbox !important;
   display: flex !important;
@@ -630,8 +641,7 @@ p {
   margin-bottom: 1rem;
 }
 
-.app-item.item mjjq
-h4 {
+.app-item.item h4 {
   margin: 10px 0 !important;
 }
 
@@ -694,6 +704,10 @@ h4 {
   padding-top: 2rem;
 }
 
+.desintation {
+  gap: 10px;
+}
+
 .destination.item {
   padding: 10px;
   max-width: 110px;
@@ -740,6 +754,40 @@ h4 {
 
 .destination.item .icon-block.plus-icon img {
   height: 60px;
+}
+
+.description-place {
+  border-left: 3px solid white;
+  padding-left: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.description-place .place-name {
+  color: white !important;
+  font-family: "Playfair Display" !important;
+}
+
+.description-place picture {
+  padding-top: 4px;
+}
+
+.description-place picture img {
+  margin-right: 10px;
+  width: 2rem;
+  height: auto;
+}
+
+@media only screen and (min-width: 1201px) {
+  .description-place {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
 }
 
 @-webkit-keyframes slide {

@@ -24,6 +24,14 @@ p {
     align-items: center;
 }
 
+.j-center {
+    justify-content: center!important;
+}
+
+.center-margin {
+    margin: 0 auto;
+}
+
 .column-2_3 {
     @media (min-width: 1200px){
         width: 66%;
@@ -288,6 +296,7 @@ p {
     }
 }}
 
+
 .container-flex {
     display: flex;
     justify-content: space-between;
@@ -372,7 +381,6 @@ p {
             justify-content: center;
             align-items: center;
             overflow: hidden!important;
-            margin: 0 auto;
         }
         .content{
             max-width: 400px;
@@ -449,6 +457,7 @@ p {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    gap: 10px;
 
     picture {
         width: 95px;
@@ -501,13 +510,14 @@ p {
 
 
 .app-item.item {
+    margin: 0 8px;
     display: flex!important;
     padding: 18px;
     //border: 1px solid rgb(224, 224, 224);
     background-color: #fcfcfc;
     border-radius: 8px; 
     width: 100%;
-    margin-bottom: 1rem;mjjq
+    margin-bottom: 1rem;
     h4 {
         margin: 10px 0!important;      
     }
@@ -561,6 +571,10 @@ p {
     padding-top: 2rem;
 }
 
+.desintation{
+    gap: 10px;
+}
+
 .destination.item {
     padding: 10px;
     max-width: 110px;
@@ -591,7 +605,32 @@ p {
     }
 }
 
+.description-place {
+    border-left: 3px solid white;
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+    .place-name {
+        color: white !important;
+        //background-color: red;
+        font-family: "Playfair Display" !important;
+    }
+    picture {
+        padding-top: 4px;
+        img {
+            margin-right: 10px;
+            width: 2rem;
+            height: auto
+        }
+    }
+    @media only screen and (min-width: 1201px)  {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+}
 
+  
 
 @media only screen and (min-width: 481px) {
 
