@@ -769,7 +769,7 @@ p {
 
 .description-place .place-name {
   color: white !important;
-  font-family: "Playfair Display" !important;
+  letter-spacing: 2px;
 }
 
 .description-place picture {
