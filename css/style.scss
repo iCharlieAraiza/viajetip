@@ -286,7 +286,7 @@ p {
         height: 100%;
         top: 0;
         background: rgb(38,68,99);
-        background: linear-gradient(180deg, #000000a6 0%, rgba(10, 10, 10, 0.38) 21%, rgba(12, 12, 12, 0.56) 73%, white 100%);
+        background: linear-gradient(180deg, #000000a6 0%, rgba(10, 10, 10, 0.38) 21%, rgba(12, 12, 12, 0.56) 78%, white 100%);
         @media only screen and (min-width: 1201px) {
         picture {
             img {
@@ -558,6 +558,9 @@ p {
     margin: 0 auto;
     img {
         width: 100%;
+    }
+    @media only screen and (min-width: 1201px)  {
+        margin-right: -2rem;
     }
 }
 

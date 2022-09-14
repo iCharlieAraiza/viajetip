@@ -17,32 +17,33 @@ const places = {
   "hills":{
     "title":"Zona montañosa, Mianmar",
     "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nisl nisl aliquet nisl, eget aliquam nisl lorem quis nisl. Sed euismod, nunc ut aliquam aliquam, nisl nisl aliquet nisl, eget aliquam nisl lorem quis nisl.",
-    "image":"https://images.unsplash.com/photo-1519680772-3b7b1b1b5f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+    "image":"assets/img/hero/hills.png"
   },
   "japan":{
-    "title":"Japan",
+    "title":"Kioto, Japón",
     "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nisl nisl aliquet nisl, eget aliquam nisl lorem quis nisl. Sed euismod, nunc ut aliquam aliquam, nisl nisl aliquet nisl, eget aliquam nisl lorem quis nisl.",
-    "image":"https://images.unsplash.com/photo-1519680772-3b7b1b1b5f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+    "image":"assets/img/hero/kyoto.jpg"
   },
   "maldives":{
-    "title":"Maldives",
+    "title":"Maldivas",
     "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nisl nisl aliquet nisl, eget aliquam nisl lorem quis nisl. Sed euismod, nunc ut aliquam aliquam, nisl nisl aliquet nisl, eget aliquam nisl lorem quis nisl.",
-    "image":"https://images.unsplash.com/photo-1519680772-3b7b1b1b5f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+    "image":"assets/img/hero/maldives-bg.jpg"
   },
   "venice":{
-    "title":"Venice",
+    "title":"Venecia, Italia",
     "description":"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam aliquam, nisl nisl aliquet nisl, eget aliquam nisl lorem quis nisl. Sed euismod, nunc ut aliquam aliquam, nisl nisl aliquet nisl, eget aliquam nisl lorem quis nisl.",
-    "image":"https://images.unsplash.com/photo-1519680772-3b7b1b1b5f1d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80"
+    "image":"assets/img/hero-img.jpg"
   },
 }
 
 const placeDescription = document.querySelector('.place-name');
-
+const heroBackground = document.querySelector('.hero-background-img');
 
 cards.forEach((card) => {
   card.addEventListener('click', () => {
     const value = card.getAttribute('data-value');
     placeDescription.innerHTML = places[value].title;
+    heroBackground.src = places[value].image;
   });
 })
 

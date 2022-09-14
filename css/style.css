@@ -367,8 +367,8 @@ p {
   height: 100%;
   top: 0;
   background: #264463;
-  background: -webkit-gradient(linear, left top, left bottom, from(#000000a6), color-stop(21%, rgba(10, 10, 10, 0.38)), color-stop(73%, rgba(12, 12, 12, 0.56)), to(white));
-  background: linear-gradient(180deg, #000000a6 0%, rgba(10, 10, 10, 0.38) 21%, rgba(12, 12, 12, 0.56) 73%, white 100%);
+  background: -webkit-gradient(linear, left top, left bottom, from(#000000a6), color-stop(21%, rgba(10, 10, 10, 0.38)), color-stop(78%, rgba(12, 12, 12, 0.56)), to(white));
+  background: linear-gradient(180deg, #000000a6 0%, rgba(10, 10, 10, 0.38) 21%, rgba(12, 12, 12, 0.56) 78%, white 100%);
 }
 
 @media only screen and (min-width: 1201px) {
@@ -693,6 +693,12 @@ p {
 
 .img-aux-block img {
   width: 100%;
+}
+
+@media only screen and (min-width: 1201px) {
+  .img-aux-block {
+    margin-right: -2rem;
+  }
 }
 
 .grey-background {
