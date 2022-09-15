@@ -271,12 +271,12 @@ p {
 
 .hero{
     position: relative;
-    height: 100vh;
+    height: 115vh;
     overflow: hidden;
     picture {
         img {
             width: 100%;
-            height: 100vh;
+            height: 115vh;
             object-fit: cover;
         }
     }
@@ -286,7 +286,7 @@ p {
         height: 100%;
         top: 0;
         background: rgb(38,68,99);
-        background: linear-gradient(180deg, #000000a6 0%, rgba(10, 10, 10, 0.38) 21%, rgba(12, 12, 12, 0.56) 78%, white 100%);
+        background: linear-gradient(180deg, #000000a6 0%, rgba(10, 10, 10, 0.38) 21%, rgba(12, 12, 12, 0.56) 87%, white 100%);
         @media only screen and (min-width: 1201px) {
         picture {
             img {
@@ -296,6 +296,16 @@ p {
     }
 }}
 
+.fadein {
+    width: 100vw;
+    height: 110vh;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    0% {opacity:0;}
+    100% {opacity:1;}
+}
 
 .container-flex {
     display: flex;
@@ -332,11 +342,11 @@ p {
             font-size: 28px;
         }
     }
-    .carrousel{
+    .carrousel {
+        display: none;
         height: 20rem;
         width: 700px!important;
         //background-color: #575a67;
-        display: flex;
         align-items: center;
         //justify-content: space-between;
 
@@ -368,6 +378,9 @@ p {
             font-size: 80px;
             color: white;
           }
+        @media only screen and (min-width: 340px){
+            display: flex;
+        }
         @media only screen and (min-width: 1201px){
             padding-left: 9rem;
         }
