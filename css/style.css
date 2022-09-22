@@ -77,8 +77,8 @@ p {
 }
 
 .navbar {
+  background-color: #474a55;
   z-index: 10;
-  background-color: transparent;
   position: absolute;
   top: 0;
   width: 100%;
@@ -230,11 +230,12 @@ p {
 .navbar-fluid {
   position: fixed;
   z-index: 15;
-  background-color: #474a55;
+  text-transform: uppercase;
+  font-size: 14px;
 }
 
 .navbar-fluid .logo img {
-  height: 28px;
+  height: 26px;
 }
 
 .navbar-fluid .search-nav {
@@ -529,6 +530,10 @@ p {
   text-transform: uppercase;
   color: #a0a0a0;
   letter-spacing: 4px;
+}
+
+#homepage .navbar {
+  background-color: transparent;
 }
 
 .homepage-section {

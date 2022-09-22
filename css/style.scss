@@ -62,14 +62,14 @@ p {
 }
 
 .navbar {
-    //background-color: #929898;
+    background-color: #474a55;
     z-index: 10;
-    background-color: transparent;
     position: absolute;
     top: 0;
     width: 100%;
     padding: 10px;
     box-sizing: border-box;
+
     a {
         font-weight: 400;
         color: #fff;
@@ -172,10 +172,11 @@ p {
 .navbar-fluid {
     position: fixed;
     z-index: 15;
-    background-color: #474a55;
+    text-transform: uppercase;
+    font-size: 14px;
     .logo {
         img {
-            height: 28px;
+            height: 26px;
         }
     }
     .search-nav {
@@ -410,6 +411,12 @@ p {
     text-transform: uppercase;
     color: #a0a0a0;
     letter-spacing: 4px;
+}
+
+#homepage {
+    .navbar {
+        background-color: transparent;
+    }
 }
 
 .homepage-section {
