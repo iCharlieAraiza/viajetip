@@ -1,0 +1,41 @@
+//Define a new Article
+
+article {
+    margin:  0 auto;
+    margin-top: 4rem;
+    max-width: 750px;
+    .feacture-img{
+        img {
+            width: 100%;
+        }
+    }
+
+    p,ul,ol,a{
+        font-size: 16px;
+        line-height: 1.5;
+        color: #24262a;
+    }
+
+    li::before {
+        content: "\2022";  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+        color: red; /* Change the color */
+        font-weight: bold; /* If you want it to be bold */
+        display: inline-block; /* Needed to add space between the bullet and the text */
+        width: 1em; /* Also needed for space (tweak if needed) */
+        margin-left: -1em; /* Also needed for space (tweak if needed) */
+    }
+
+    @media only screen and (min-width: 481px) {
+        p,ul,ol,a{
+            font-size: 18px;
+            line-height: 1.5;
+        }
+    }
+    
+    @media only screen and (min-width: 720px) {
+        h1{
+            font-size: 3rem;
+            color: #4c4c4c;
+        }
+    }
+}

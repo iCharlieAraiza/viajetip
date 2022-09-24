@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test of sincronia</title>
+
+</head>
+<body>
+    <h1>Sincronia</h1>
+    <input type="submit" value="Login" id="start">
+    <div class="audio">
+        <audio  id="myAudio">
+            <source src="https://coderadio-relay-nyc.freecodecamp.org/radio/8010/radio.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    <script>
+        const button = document.getElementById('start');
+        const audio = document.getElementById("myAudio");
+        button.onclick = () =>{
+            setTimeout(function(){ audio.play(); }, 3000);
+        }
+    </script>
+</body>
+</html>
