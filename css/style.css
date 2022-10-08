@@ -5,7 +5,9 @@ article {
   max-width: 750px;
 }
 
-article h1, article h3, article h4 {
+article h1,
+article h3,
+article h4 {
   color: #4c4c4c;
 }
 
@@ -38,7 +40,10 @@ article .feacture-img img {
   width: 100%;
 }
 
-article p, article ul, article ol, article a {
+article p,
+article ul,
+article ol,
+article a {
   font-size: 16px;
   line-height: 1.75;
   color: #24262a;
@@ -90,6 +95,18 @@ article li::before {
   margin-right: 5px;
 }
 
+article ol li {
+  counter-increment: listCounter;
+}
+
+article ol > li::before {
+  content: counter(listCounter, decimal-leading-zero);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #d33a2c;
+  margin-right: 1rem;
+}
+
 @media only screen and (min-width: 481px) {
   article p,
   article ul,
@@ -102,6 +119,11 @@ article li::before {
 @media only screen and (min-width: 720px) {
   article {
     margin-top: 6rem;
+  }
+  article h2, article h3, article h4 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   article h1 {
     font-size: 3.2rem;
@@ -169,6 +191,20 @@ hr::after {
     margin-right: calc(-50vw + 140px);
     margin-left: calc(-50vw + 140px);
   }
+}
+
+.lista-h3 {
+  background-color: #4180a5;
+  border-radius: 5px;
+  padding: 3px 12px;
+  min-width: 40px;
+  color: white;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  font-size: 80%;
+  text-align: center;
+  margin-right: 10px;
 }
 
 * {
