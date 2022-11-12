@@ -96,7 +96,7 @@ article {
     }
   }
 
-  ol>li::before {
+  ol > li::before {
     content: counter(listCounter, decimal-leading-zero);
     font-size: 0.9rem;
     font-weight: 700;
@@ -115,7 +115,9 @@ article {
 
   @media only screen and (min-width: 720px) {
     margin-top: 6rem;
-    h2,h3, h4 {
+    h2,
+    h3,
+    h4 {
       display: flex;
     }
     h1 {
@@ -196,4 +198,48 @@ hr {
   font-size: 80%;
   text-align: center;
   margin-right: 10px;
+}
+
+.item-container {
+  display: flex;
+  gap: 13px;
+}
+.item {
+  width: calc(50vw - 1rem);
+  overflow: hidden;
+  position: relative;
+  min-height: 240px;
+  box-sizing: border-box;
+
+  img {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+
+  a {
+    display: flex;
+    height: 100%;
+    padding: 1rem;
+    box-sizing: border-box;
+  }
+
+  .card {
+    align-self: flex-end;
+  }
+
+  .title {
+    background-color: #ffffffb5;
+    color: #4d4d5d;
+    padding: 5px;
+    h3 {
+      margin: 0;
+      padding: 0;
+    }
+  }
 }
