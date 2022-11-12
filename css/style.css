@@ -216,7 +216,7 @@ hr::after {
   gap: 13px;
 }
 
-.item {
+.item-container .item {
   width: calc(50vw - 1rem);
   overflow: hidden;
   position: relative;
@@ -225,7 +225,7 @@ hr::after {
           box-sizing: border-box;
 }
 
-.item img {
+.item-container .item img {
   position: absolute;
   z-index: -1;
   top: 0;
@@ -236,7 +236,7 @@ hr::after {
   object-fit: cover;
 }
 
-.item a {
+.item-container .item a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -246,18 +246,18 @@ hr::after {
           box-sizing: border-box;
 }
 
-.item .card {
+.item-container .item .card {
   -ms-flex-item-align: end;
       align-self: flex-end;
 }
 
-.item .title {
+.item-container .item .title {
   background-color: #ffffffb5;
   color: #4d4d5d;
   padding: 5px;
 }
 
-.item .title h3 {
+.item-container .item .title h3 {
   margin: 0;
   padding: 0;
 }
