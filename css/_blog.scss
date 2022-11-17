@@ -200,15 +200,26 @@ hr {
   margin-right: 10px;
 }
 
+.related-posts {
+  padding-bottom: 1rem;
+}
+
+.title-related {
+  font-size: 1.6rem;
+  color: #4c4c4c;
+  border-bottom: 5px solid #cacaca;
+  padding-bottom: 8px;
+}
+
 .item-container {
   display: flex;
   gap: 13px;
+  overflow: hidden;
   .item {
-    width: calc(50vw - 1rem);
     overflow: hidden;
     position: relative;
-    min-height: 240px;
     box-sizing: border-box;
+    height: 200px;
     
     img {
       position: absolute;
@@ -219,6 +230,7 @@ hr {
       height: 100%;
       -o-object-fit: cover;
       object-fit: cover;
+      border-radius: 5px;
     }
     
     a {
@@ -226,6 +238,10 @@ hr {
       height: 100%;
       padding: 1rem;
       box-sizing: border-box;
+      transition: 0.2s;
+      &:hover {
+        background-color: #64b5ce9e;
+      }
     }
     
     .card {
@@ -233,13 +249,45 @@ hr {
     }
     
     .title {
-      background-color: #ffffffb5;
-      color: #4d4d5d;
+      background-color: #ffffffc9;
+      color: #4c4c4c;
       padding: 5px;
+      backdrop-filter: blur(2px);
       h3 {
         margin: 0;
         padding: 0;
       }
+    }
+  }
+
+  @media (max-width: 720px) {
+    flex-wrap: wrap;;
+    .item {
+      width: calc(50vw - 3rem);
+      min-height: 230px!important;
+      max-width: 100%;
+    }
+  }
+
+  @media (min-width: 720px) { 
+    .item {
+      min-height: 260px;
+      width: 300px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .item {
+      min-width: 200px;
+      min-height: 330px;
+      border-radius: 20px;
+    }
+  }
+
+  @media (min-width: 1080px){
+    gap: 1.5rem;
+    .item {
+      width: calc((25vw - 1rem));
     }
   }
 }
