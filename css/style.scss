@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&subset=devanagari,latin-ext');
 @import 'blog';
+@import 'footer';
 
 * {
     font-family: 'Roboto', sans-serif;
@@ -47,7 +48,7 @@ p {
     @media (min-width: 1200px){
         width: 1120px;
     }
-    @media (min-width: 1300px) {
+    @media (min-width: 1450px) {
         width: 1220px;
     }
 }
@@ -325,7 +326,7 @@ p {
     //width: 100%;
     min-height: 80vh;
     .content {
-        padding: 1rem;
+        padding: 1rem 0;
         margin-right: auto;
         //margin: 0 auto;
         h2 {
