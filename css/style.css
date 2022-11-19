@@ -342,6 +342,45 @@ hr::after {
   }
 }
 
+.list__2-columns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 10px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-left: 1rem;
+}
+
+.list__2-columns li {
+  width: 100%;
+}
+
+@media (min-width: 720px) {
+  .list__2-columns li {
+    width: calc(50% - 1rem);
+  }
+}
+
+.checklist {
+  padding-left: 1rem;
+}
+
+.checklist li {
+  list-style: none;
+}
+
+.checklist li::before {
+  content: "\2713";
+  color: #3287ba;
+  font-family: system-ui;
+  font-size: 21px;
+  padding-right: 6px;
+}
+
 footer {
   background-color: #f6f6f6;
   padding: 3rem 0;
