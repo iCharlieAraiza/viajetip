@@ -22,6 +22,9 @@ article h2 {
 
 article h3 {
   font-size: 24px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 article h4 {
@@ -55,6 +58,17 @@ article p {
 
 article li {
   list-style: none;
+  margin-bottom: 0.5rem;
+  line-height: 25px;
+}
+
+article blockquote {
+  border-left: 5px solid #7eabc7;
+  margin: 0;
+  padding-left: 2rem;
+  font-size: 20px;
+  font-weight: 600;
+  color: #3b3b3b;
 }
 
 article p a {
@@ -326,6 +340,98 @@ hr::after {
   .item-container .item {
     width: calc((25vw - 1rem));
   }
+}
+
+footer {
+  background-color: #f6f6f6;
+  padding: 3rem 0;
+  margin-top: 2rem;
+  border-bottom: 16px solid #b7b7b7;
+  padding-bottom: 2.1rem;
+}
+
+footer .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.footer__menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.footer__menu-block {
+  padding-right: 1rem;
+}
+
+.footer__menu-block h4 {
+  text-transform: uppercase;
+  font-size: 16px;
+}
+
+.footer__menu-block ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
+}
+
+.footer__menu-block li {
+  padding-bottom: 16px;
+}
+
+.footer__menu-block li a {
+  color: #688d93;
+}
+
+.footer__logo {
+  max-width: 360px;
+}
+
+.footer__logo p {
+  font-size: 16px;
+}
+
+.footer__logo img {
+  margin-top: 1rem;
+}
+
+.footer__socialmedia {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 4px;
+  padding-bottom: 1rem;
+}
+
+.socialmedia__icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 50%;
+  border: 3px solid #a8a8a8;
+  background-color: #fff;
+}
+
+.socialmedia__icon:hover {
+  background-color: #d5d5d5;
+  border-color: #585858;
 }
 
 * {
