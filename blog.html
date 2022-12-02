@@ -16,8 +16,6 @@
     <title>ViajeTip</title>
 
     <style>
-
-
         @font-face {
             font-family: 'icomoon';
             src: url(https://entryadvice.com/wp-content/themes/ead/assets/icons/fonts/icomoon.woff) format('woff');
@@ -36,7 +34,7 @@
         }
 
         .icon-type-c:before {
-            content:"\e966";
+            content: "\e966";
         }
     </style>
 
@@ -117,6 +115,9 @@
             <picture class="feacture-img">
                 <img src="/assets/img/hero-img.jpg" alt="" srcset="">
             </picture>
+
+            <div class="list__content"></div>
+
             <p>Lorem ipsum dolor <a href="/">sit amet consectetur adipisicing</a> elit. Inventore quasi minima facere
                 eligendi odit assumenda ratione exercitationem sunt quam unde minus, debitis natus magnam quae iste
                 cupiditate aut, sequi dolorum!</p>
@@ -135,7 +136,7 @@
                 <li>Lorem ipsum magni aperiam aliquid?</li>
             </ul>
             <hr />
-            <h3> <span class="lista-h3">1</span> This is anothe tilte</h3>
+            <h3> <span class="lista-h3">1.</span> This is anothe tilte</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed accusamus ratione totam velit nobis ab
                 repudiandae dicta ipsa eligendi excepturi distinctio obcaecati optio soluta qui illo laudantium tenetur,
                 perspiciatis sit.</p>
@@ -195,9 +196,10 @@
 
 
             <h3>Sockets</h3>
-            <i class="icon-type-c">
+            <p>En SADASD se utiliza el tipo de enchife:</p>
+            <i class="icon-type-c"></i>
 
-            </i>
+            <h3>Cosas que tines que saber</h3>
 
 
             <h3>This is an H3 tag</h3>
@@ -332,6 +334,41 @@
         </div>
     </footer>
 
+    <script>
+        const article = document.querySelector('article')
+
+        const listContent = []
+
+        article.childNodes.forEach(element => {
+            if (element.nodeName === 'H2' || element.nodeName === 'H3') {
+                element.id = element.innerText.toLowerCase().replace(/ /g, '-')
+
+                if (element.textContent.charAt(0) === ' ') {
+                    element.textContent = element.textContent.slice(1)
+                }
+
+                listContent.push({
+                    title: element.textContent,
+                    type: element.nodeName,
+                    id: element.id
+                })
+            }
+        });
+
+        listContent.forEach(element => {
+            const li = document.createElement('li')
+            const a = document.createElement('a')
+            
+            a.innerText = element.title
+            a.href = `#${element.id}`
+            
+            li.appendChild(a)
+            document.querySelector('.list__content').appendChild(li)
+        });
+        
+
+
+    </script>
 </body>
 
 </html>
