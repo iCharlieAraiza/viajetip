@@ -348,3 +348,37 @@ hr {
     }
   }
 }
+
+
+
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.table-styled {
+  border-collapse: collapse;
+  td {
+    min-width: 120px;
+    padding: 1rem;
+    vertical-align: initial;
+  }
+  tr {
+    min-width: 120px;
+    //font-family: Roboto;
+    font-size: 17px;
+    line-height: 160%;
+    &:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+  }
+}
+
+.title_td {
+  font-weight: 700;
+  padding-left: 1rem;
+}
+
+.price_td {
+  font-weight: 700;
+}

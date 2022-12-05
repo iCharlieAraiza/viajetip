@@ -381,6 +381,39 @@ hr::after {
   padding-right: 6px;
 }
 
+.table-wrap {
+  overflow-x: auto;
+}
+
+.table-styled {
+  border-collapse: collapse;
+}
+
+.table-styled td {
+  min-width: 120px;
+  padding: 1rem;
+  vertical-align: initial;
+}
+
+.table-styled tr {
+  min-width: 120px;
+  font-size: 17px;
+  line-height: 160%;
+}
+
+.table-styled tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.title_td {
+  font-weight: 700;
+  padding-left: 1rem;
+}
+
+.price_td {
+  font-weight: 700;
+}
+
 footer {
   background-color: #f6f6f6;
   padding: 3rem 0;

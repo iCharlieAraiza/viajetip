@@ -220,10 +220,40 @@
                 <li>It covers you if you need to be sent home.</li>
             </ul>
 
+            <h3>Precios aproximados de alimentos</h3>
+            <p>Precio promedio de comida y bebidas, actualizados al 2022.</p>
+
+            <div class="table-wrap">
+                <table class="table-styled">
+                    <tbody>
+                        <tr>
+                            <td class="title_td">Desayuno</td>
+                            <td>Great and cheap meals can be found at the many hawker centers around the clock.</td>
+                            <td class="price_td">$30</td>
+                        </tr>
+                        <tr>
+                            <td class="title_td">Comida</td>
+                            <td>Great and cheap meals centers can be found at the many cheap hawker centers around the
+                                clock.</td>
+                            <td class="price_td">$30</td>
+                        </tr>
+                        <tr>
+                            <td class="title_td">Cena</td>
+                            <td>Code at the many hawker centers around the clock.</td>
+                            <td class="price_td">$30</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+
+
             <div class="tag-container">
                 <a href="#">Cuanto cuesta</a>
                 <a href="#">Guías</a>
             </div>
+
         </article>
         <div class="related-posts">
             <div class="container">
@@ -358,10 +388,10 @@
         listContent.forEach(element => {
             const li = document.createElement('li')
             const a = document.createElement('a')
-            
+
             a.innerText = element.title
             a.href = `#${element.id}`
-            
+
             li.appendChild(a)
             document.querySelector('.list__content').appendChild(li)
         });
