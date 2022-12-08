@@ -2,7 +2,7 @@
 article {
   margin: 0 auto;
   margin-top: 4rem;
-  max-width: 800px;
+  max-width: 820px;
 }
 
 article h1,
@@ -13,6 +13,10 @@ article h4 {
 
 article h1 {
   margin-top: 10px;
+}
+
+article h2, article h3 {
+  margin-top: 3rem;
 }
 
 article h2 {
@@ -412,6 +416,66 @@ hr::after {
 
 .price_td {
   font-weight: 700;
+}
+
+.tip-box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #f4f4f4;
+  margin: 2rem 0;
+  padding: 1rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  font-size: 17px;
+}
+
+.tip-box__logo {
+  width: 100%;
+  padding: 1rem;
+  padding-right: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-bottom: 1rem;
+}
+
+.tip-box__logo img {
+  max-width: 50px;
+}
+
+.tip_box__title {
+  font-weight: 700;
+  font-size: 17px;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.tip-box__description p {
+  margin: 0;
+  padding: 0;
+  line-height: 25px;
+  font-size: 17px;
+}
+
+@media (min-width: 430px) {
+  .tip-box {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  .tip-box__logo {
+    width: auto;
+  }
 }
 
 footer {

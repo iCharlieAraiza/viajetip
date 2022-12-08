@@ -3,7 +3,7 @@
 article {
   margin: 0 auto;
   margin-top: 4rem;
-  max-width: 800px;
+  max-width: 820px;
 
   h1,
   h3,
@@ -13,6 +13,10 @@ article {
 
   h1 {
     margin-top: 10px;
+  }
+
+  h2, h3 {
+    margin-top: 3rem;
   }
 
   h2 {
@@ -349,9 +353,6 @@ hr {
   }
 }
 
-
-
-
 .table-wrap {
   overflow-x: auto;
 }
@@ -381,4 +382,54 @@ hr {
 
 .price_td {
   font-weight: 700;
+}
+
+.tip-box {
+  display: flex;
+  align-items: center;
+  background-color: #f4f4f4;
+  margin: 2rem 0;
+  padding: 1rem;
+  flex-wrap: wrap;
+  font-size: 17px;
+}
+
+.tip-box__logo {
+  width: 100%;
+  padding: 1rem;
+  padding-right: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 1rem;
+  img {
+    max-width: 50px;
+  }
+}
+
+.tip_box__title {
+  font-weight: 700;
+  font-size: 17px;
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.tip-box__description {
+  p {
+    margin: 0;
+    padding: 0;
+    line-height: 25px;
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 430px) {
+  .tip-box{
+    flex-wrap: nowrap;
+  }
+
+  .tip-box__logo {
+    width: auto;
+  }
 }

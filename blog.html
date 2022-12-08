@@ -200,7 +200,7 @@
             <i class="icon-type-c"></i>
 
             <h3>Cosas que tines que saber</h3>
-
+            <p>New York City is a vibrant and exciting place with a rich history and a lot of interesting things to learn about. Here are a few fun facts about the city that you might not know:</p>
 
             <h3>This is an H3 tag</h3>
 
@@ -242,11 +242,24 @@
                             <td>Code at the many hawker centers around the clock.</td>
                             <td class="price_td">$30</td>
                         </tr>
+                        <tr>
+                            <td class="title_td">Final</td>
+                            <td>Code at the many hawker centers around the clock.</td>
+                            <td class="price_td">$30</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
 
-
+            <div class="tip-box">
+                <div class="tip-box__logo">
+                    <img src="./assets/img/icons/idea.svg" alt="" srcset="">
+                </div>
+                <div class="tip-box__description">
+                    <h3 class="tip_box__title">Consejos para ahorrar en comida:  Ir al supermercado</h3>
+                    <p>En Ciudad de México, una excelente opción es comprar en los supermercados. En estos lugares encontrarás los mejors precios y más opciones.</p>
+                </div>
+            </div>
 
 
             <div class="tag-container">
@@ -368,10 +381,10 @@
         const article = document.querySelector('article')
 
         const listContent = []
-
+        /*
         article.childNodes.forEach(element => {
             if (element.nodeName === 'H2' || element.nodeName === 'H3') {
-                element.id = element.innerText.toLowerCase().replace(/ /g, '-')
+                //element.id = element.innerText.toLowerCase().replace(/ /g, '-')
 
                 if (element.textContent.charAt(0) === ' ') {
                     element.textContent = element.textContent.slice(1)
@@ -385,6 +398,13 @@
             }
         });
 
+        const contentList = document.querySelector('.list__content')
+    
+        const title = document.createElement('h4')
+        title.textContent = 'Contenido'
+    
+        contentList.appendChild(title)
+
         listContent.forEach(element => {
             const li = document.createElement('li')
             const a = document.createElement('a')
@@ -395,7 +415,7 @@
             li.appendChild(a)
             document.querySelector('.list__content').appendChild(li)
         });
-
+        */
     </script>
 </body>
 
