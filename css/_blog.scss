@@ -15,7 +15,8 @@ article {
     margin-top: 10px;
   }
 
-  h2, h3 {
+  h2,
+  h3 {
     margin-top: 3rem;
   }
 
@@ -106,6 +107,11 @@ article {
     margin-right: 5px;
   }
 
+  ol, ul {
+    padding-left: 1rem;
+  }
+
+
   ol {
     li {
       counter-increment: listCounter;
@@ -121,6 +127,11 @@ article {
   }
 
   @media only screen and (min-width: 481px) {
+
+    ol, ul {
+      padding-left: 2rem;
+    }
+
     p,
     ul,
     ol,
@@ -340,7 +351,6 @@ hr {
 }
 
 .checklist {
-  padding-left: 1rem;
   li {
     list-style: none;
     &::before {
@@ -425,11 +435,58 @@ hr {
 }
 
 @media (min-width: 430px) {
-  .tip-box{
+  .tip-box {
     flex-wrap: nowrap;
   }
 
   .tip-box__logo {
     width: auto;
   }
+}
+
+.price-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.price-content__item {
+  box-shadow: 1px 1px 7px #f0f0f0;
+  background-color: #f5f5f5;
+  width: 48%;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  box-sizing: border-box;
+  flex-wrap: wrap;
+  p {
+    line-height: 20px;
+    font-size: 16px;
+    margin: 0;
+  }
+  @media (min-width: 720px) {
+    width: 32%;
+  }
+}
+
+.price-content__title {
+  font-weight: 100;
+}
+
+.price-content__price {
+  font-weight: 700;
+  color: #986b35;
+}
+
+.price-content__icon-wrapper {
+  width: 100%;
+  @media screen and (min-width: 420px) {
+    width: initial;
+  }
+}
+
+.price-content__icon {
+  width: 50px;
+  margin: 0 auto;
+  display: block;
 }

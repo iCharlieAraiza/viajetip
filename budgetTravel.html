@@ -76,6 +76,7 @@
                         <input type="text" class="form-control" id="countryTourists" placeholder="Tourist" required>
                     </div>    
                 </div>
+                <button class="btn btn-primary" id="submit" type="submit">Submit form</button>
             </form>
             <pre class="json"></pre>
         </div>
@@ -94,6 +95,8 @@
 
         const options = []
         const jsonContainer = document.querySelector('.json')
+        const submit = document.querySelector('#submit')
+        let currentCountry = {}
 
 
         getCountriesList = async () => {
@@ -116,7 +119,6 @@
                 newCountry.currencies = (!country.currencies ? '' : Object.values(country.currencies))
                 newCountry.timezones = country.timezones
                 options.push(newCountry)
-                jsonContainer.innerHTML = JSON.stringify(newCountry, null, 2)
             })
 
             const countriesInput = document.getElementById('countries')
@@ -135,7 +137,6 @@
                 e.preventDefault()
                 const country = document.getElementById('validationDefault01')
                 const countryData = options.find( el => el.name.en === country?.value)
-                
                 updateData(countryData)
             }
         }
@@ -169,7 +170,9 @@
         getCountriesList()
         generateData()
 
-
+        submit.onclick = () => {
+            jsonContainer.innerHTML = JSON.stringify(currentCountry, null, 2)
+        }
     
 
     </script>   
