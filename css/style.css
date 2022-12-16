@@ -114,7 +114,8 @@ article li::before {
   margin-right: 5px;
 }
 
-article ol, article ul {
+article ol,
+article ul {
   padding-left: 1rem;
 }
 
@@ -131,7 +132,8 @@ article ol > li::before {
 }
 
 @media only screen and (min-width: 481px) {
-  article ol, article ul {
+  article ol,
+  article ul {
     padding-left: 2rem;
   }
   article p,
@@ -546,6 +548,64 @@ hr::after {
   display: block;
 }
 
+.hotel-info__container {
+  margin-bottom: 2rem;
+}
+
+.hotel-info__left-container {
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+.circle-img {
+  width: 100%;
+  height: 100%;
+  max-width: 250px;
+  max-height: 250px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.circle-img img {
+  margin-right: 4rem;
+  width: 100%;
+}
+
+@media screen and (min-width: 720px) {
+  .circle-img {
+    float: left;
+    margin-right: 2rem;
+  }
+}
+
+.price-hotels__title {
+  margin-top: 0;
+  font-size: 20px;
+}
+
+@media screen and (min-width: 420px) {
+  .price-hotels__title {
+    font-size: 24px;
+  }
+}
+
+.relative-content {
+  position: relative;
+}
+
+@media screen and (min-width: 880px) {
+  .relative-content {
+    width: 100vw;
+    left: calc((-100vw + 820px) / 2);
+    background-color: beige;
+  }
+}
+
 footer {
   background-color: #f6f6f6;
   padding: 3rem 0;
@@ -686,6 +746,10 @@ p {
   .column-2_3 {
     width: 66%;
   }
+}
+
+.bold {
+  font-weight: 700;
 }
 
 .container {
