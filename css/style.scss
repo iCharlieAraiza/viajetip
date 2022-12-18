@@ -371,7 +371,7 @@ p {
             overflow: hidden;
             transition: 0.3s;
             cursor: pointer;
-            box-shadow: 1px 1px 1px rgb(106, 106, 106);
+            box-shadow: 1px 1px 10px #6f6f6f;
             &:hover {
                 transform: scale(1.2);
             }
