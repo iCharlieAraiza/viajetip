@@ -1676,4 +1676,8 @@ p {
     background-position: 60% 100%;
   }
 }
+
+.d-inline-block {
+  display: inline-block;
+}
 /*# sourceMappingURL=style.css.map */
