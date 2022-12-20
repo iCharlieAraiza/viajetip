@@ -1,0 +1,98 @@
+[
+    {
+        "city":"Berlin",
+        "country":"Germany",
+        "regular_meal": "12.70 $",
+        "mcdonalds": "9.53 $",
+        "domestic_beer": "1.13 $",
+        "cappuccino": "3.43 $",
+        "coke_pepsi": "2.54 $",
+        "water": "2.03 $",
+        "milk": "1.21 $",
+        "eggs": "2.98 $",
+        "apples": "2.74 $",
+        "wine": "5.93 $",
+        "cigarettes": "8.47 $",
+        "taxi_1km": "2.28 $",
+        "internet_domestic": "40.00 $",
+        "gym": "43.19 $",
+        "cinema": "12.70 $",
+        "aparment_sm_center": "1,331.85 $",
+        "transport": [
+            {
+                "title": "Short Trip Metro Ticket",
+                "price": "$1.48"
+            },
+            {
+                "title": "Bahn Ticket",
+                "price": "$3.18"
+            },
+            {
+                "title": "Short Taxi Ride",
+                "price": "$21"
+            }
+        ],
+        "food":[
+            {
+                "title": "Sandwich and Coffee To Go",
+                "price": "$5.30"
+            },
+            {
+                "title": "Turkish Sandwich",
+                "price": "$2.12"
+            },
+            {
+                "title": "Currywurst",
+                "price": "$2.12"
+            },
+            {
+                "title": "2 Pho Noodles",
+                "price": "$9.54"
+            },
+            {
+                "title": "Restaurant Dinner and Beers (for 2)",
+                "price": "$64"
+            },
+            {
+                "title": "Mauer Park (2)",
+                "price": "$12"
+            },
+            {
+                "title": "Coffees at Impala",
+                "price": "$8.27"
+            }
+        ],
+        "price":{
+            "general":{
+                "main": "$117",
+                "all": [
+                    {
+                        "title": "One Week\nPer person",
+                        "price": "$814"
+                    },
+                    {
+                        "title": "2 Weeks\nPer person",
+                        "price": "$1,628"
+                    },
+                    {
+                        "title": "One Month\nPer person",
+                        "price": "$3,489"
+                    },
+                    {
+                        "title": "One Week\nFor a couple",
+                        "price": "$1,628"
+                    },
+                    {
+                        "title": "2 Weeks\nFor a couple",
+                        "price": "$3,256"
+                    },
+                    {
+                        "title": "One Month\nFor a couple",
+                        "price": "$6,978"
+                    }
+                ]
+            }
+        }
+
+    }
+]

@@ -22,10 +22,44 @@ function getObject(el, val) {
     else if(text.includes("Cappuccino")) {
         return ['cappuccino', val.innerText]
     } 
+    else if(text.includes("Water (0.33 liter bottle)")) {
+        return ['water', val.innerText]
+    } 
+    else if(text.includes("Cigarettes 20")) {
+        return ['cigarettes', val.innerText]
+    } 
+    else if(text.includes("of Wine")) {
+        return ['wine', val.innerText]
+    } 
+    else if(text.includes("Milk")) {
+        return ['milk', val.innerText]
+    } 
+    else if(text.includes("Eggs")) {
+        return ['eggs', val.innerText]
+    } 
+    else if(text.includes("Apples")) {
+        return ['apples', val.innerText]
+    } 
+    else if(text.includes("Internet")) {
+        return ['internet_domestic', val.innerText]
+    } 
+    else if(text.includes("Apartment (1 bedroom) in City")) {
+        return ['aparment_sm_center', val.innerText]
+    } 
+    else if(text.includes("Fitness Club")) {
+        return ['gym', val.innerText]
+    } 
+    else if(text.includes("Cinema")) {
+        return ['cinema', val.innerText]
+    } 
+    else if(text.includes("Taxi 1km")) {
+        return ['taxi_1km', val.innerText]
+    } 
     else {
         return null;
     }
 }
+
 
 tr.forEach((tr) => {
     const td = tr.querySelectorAll('td')
@@ -34,3 +68,89 @@ tr.forEach((tr) => {
         object[response[0]] = response[1]
     }
 })
+
+
+/*
+    Add temperature of city
+    IMPORTANT:
+    - Add '.temperature_table' class to table
+*/ 
+
+const month = []
+const temperatureTable = document.querySelectorAll('.temperature_table tr')
+
+temperatureTable.forEach((tr) => {
+    const td = tr.querySelectorAll('td')
+    const monthName = td[0].innerText
+    const weatherData = {}
+    weatherData['month'] = td[0].innerText
+    weatherData['max'] = Math.round((td[1].innerText - 32)/1.8)
+    weatherData['min'] = Math.round((td[2].innerText - 32)/1.8)
+    weatherData['rain'] = Math.round(td[3].innerText * 2.54)
+    month.push(weatherData)
+})
+
+
+/*
+    Add spcific information about city
+    IMPORTANT:
+    - Add '.specific_[name]' class to div
+*/ 
+
+const transport = document.querySelector('.specific_transport')
+const li = transport.querySelectorAll('li')  
+const transportData = []
+
+li.forEach((li) => {
+    const title = li.querySelector('.cost-tile-label').innerText
+    const price = li.querySelector('.cost-tile-value').innerText
+    const data = {}
+    data['title'] = title
+    data['price'] = price
+    transportData.push(data)
+})
+
+/*
+    Add spcific information about city
+    IMPORTANT:
+    - Add '.specific_[name]' class to div
+*/ 
+
+const food = document.querySelector('.traditional_food')
+const li_food = food.querySelectorAll('li')  
+const foodData = []
+
+li_food.forEach((li) => {
+    const title = li.querySelector('.cost-tile-label').innerText
+    const price = li.querySelector('.cost-tile-value').innerText
+    const data = {}
+    data['title'] = title
+    data['price'] = price
+    foodData.push(data)
+})
+
+/*
+    Daily price of city
+*/
+const main = document.querySelector('.main')
+const type ={}
+const daily = {}
+daily.main = main.querySelector('.cost-tile-value').innerText
+type['general'] = daily
+
+
+/*
+    Other price of city
+*/
+
+const other = document.querySelectorAll('.other li')
+const type =[]
+other.forEach((other) => {
+    const title = other.querySelector('.cost-tile-label').innerText
+    const price = other.querySelector('.cost-tile-value').innerText
+    const data = {}
+    data['title'] = title
+    data['price'] = price
+    type.push(data)
+})  
+
