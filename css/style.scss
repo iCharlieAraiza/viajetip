@@ -20,6 +20,18 @@ p {
     line-height: 160%;
 }
 
+.flex {
+    display: flex;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
 .d-flex {
     display: flex;
     flex-wrap: wrap;

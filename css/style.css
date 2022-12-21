@@ -2,7 +2,7 @@
 article {
   margin: 0 auto;
   margin-top: 4rem;
-  max-width: 820px;
+  max-width: 880px;
 }
 
 article h1,
@@ -610,7 +610,7 @@ hr::after {
 @media screen and (min-width: 880px) {
   .relative-content {
     width: 100vw;
-    left: calc((-100vw + 820px) / 2);
+    left: calc((-100vw + 880px) / 2);
   }
 }
 
@@ -726,6 +726,47 @@ hr::after {
   background-color: #06c4ff9e;
 }
 
+.comment__p {
+  margin: 0;
+  padding: 1rem;
+  background-color: white;
+  border: 3px solid #ececec;
+  border-radius: 16px;
+  font-size: 15px;
+  width: 100%;
+  max-width: 650px;
+}
+
+.comment__date {
+  padding: 1rem;
+  display: block;
+  -webkit-box-ordinal-group: 3;
+      -ms-flex-order: 2;
+          order: 2;
+  width: 100%;
+  font-weight: bold;
+  font-size: 14px;
+  color: #5c5c5c;
+}
+
+.comm__content {
+  margin-bottom: 1.5rem;
+}
+
+@media screen and (min-width: 840px) {
+  .comment__date {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    -webkit-box-ordinal-group: 1;
+        -ms-flex-order: 0;
+            order: 0;
+    padding: 0;
+    padding-top: 1.5rem;
+    padding-left: 1rem;
+  }
+}
+
 footer {
   background-color: #f6f6f6;
   padding: 3rem 0;
@@ -839,6 +880,23 @@ p {
   color: rgba(44, 63, 88, 0.8);
   margin: 17px 0;
   line-height: 160%;
+}
+
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.wrap {
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.space-between {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 .d-flex {
