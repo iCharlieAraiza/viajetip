@@ -18,24 +18,44 @@
                 <div class="row">
 
                     <div class="col">
-                        <input list="cities" type="text" id="city" class="form-control" placeholder="City" aria-label="First name">
+                        <input list="cities" type="text" id="city" class="form-control" placeholder="City"
+                            aria-label="First name">
                         <datalist id="cities">
                         </datalist>
                         <button id="generateCity" type="submit" class=" btn btn-primary">Generate</button>
                     </div>
                     <div class="col">
-                        <input type="text" id="country" class="form-control" placeholder="Country" aria-label="Last name">
+                        <input type="text" id="country" class="form-control" placeholder="Country"
+                            aria-label="Country">
                     </div>
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+                        <input type="text" id="currency" class="form-control" placeholder="Last name"
+                            aria-label="Currency">
                     </div>
                     <div class="col">
-                        <input type="text" class="form-control" placeholder="Last name" aria-label="Last name">
+                        <input id="currencyKey" type="text" class="form-control" placeholder="Last name"
+                            aria-label="Currency Key">
                     </div>
-                    
+                    <div class="col">
+                        <input id="currencySign" type="text" class="form-control" placeholder="Last name"
+                            aria-label="Currency Sign">
+                    </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <div class="row">
+                    <div class="col">
+                        <input id="languagues" type="text" class="form-control" placeholder="Languagues"
+                        aria-label="Currency Key">
+                    </div>
+                    <div class="col">
+                        <input id="timezone" type="text" class="form-control" placeholder="Time zone"
+                        aria-label="Currency Key">
+                    </div>
+                </div>
+                <button id="generate" type="submit" class="btn btn-primary">Submit</button>
             </form>
+            <pre id="code">
+
+            </pre>
         </div>
     </div>
 
@@ -46,13 +66,27 @@
         const articleNode = []
         const generateCity = document.getElementById('generateCity');
         const citiesList = document.getElementById('cities');
-        const cities = ['Berlin', 'Paris', 'New York']
+        let countries = []
+        const cities = []
+        let currentCity = {}
+
+        const generate = document.getElementById('generate');
+        const code = document.getElementById('code')
+        const cityInput = document.getElementById('city');
+        const countryInput = document.getElementById('country');
+        const currencyInput = document.getElementById('currency');
+        const currencyKeyInput = document.getElementById('currencyKey');
+        const currenciesSignInput = document.getElementById('currencySign');
+        const languagesInput = document.getElementById('languagues')
+        const timezoneInput = document.getElementById('timezone')
+
 
         const getAllCities = async () => {
-            const response = await fetch('http://localhost:5500/data/price-city.json')   
+            const response = await fetch('http://localhost:5500/data/price-city.json')
             const data = await response.json();
-    
+
             data.forEach(city => {
+                cities.push(city)
                 const cityOption = document.createElement('option');
                 cityOption.value = city.city;
                 citiesList.appendChild(cityOption);
@@ -60,19 +94,83 @@
         }
 
         getAllCities()
+        getCountryInfo()
 
 
         generateCity.onclick = (e) => {
             e.preventDefault();
-            alert('hello');
-            const city = document.getElementById('city');
-            const country = document.getElementById('country');
+            cities.forEach(city => {
+                if (city.city === cityInput.value) {
+                    currentCity = city;
+                    const country = countries.find(country => country.name.en === currentCity.country)
+                    setContryInfo(country)  
+                    updateCityInfo()
+                }
+            })
+        }
 
-            const cityOption = document.createElement('option');
-            cityOption.value = "Paris";
-            citiesList.appendChild(cityOption);
-            cities.push(cityValue);
-            console.log(cities)
+        function updateCityInfo() {
+            cityInput.value = currentCity.city;
+            countryInput.value = currentCity.country;
+
+            currencyKeyInput.value = currentCity.currencies.key
+            currencyInput.value = currentCity.currencies.name
+            currenciesSignInput.value = currentCity.currencies.sign
+            languagesInput.value = currentCity.languages
+            timezoneInput.value = currentCity.timezones
+
+            console.log(currentCity)
+        }
+
+        async function getCountryInfo() {
+            const response = await fetch('http://localhost:5500/data/counrties.json')
+            const data = await response.json();
+            countries = data;
+        }
+
+        function setContryInfo(country) {
+            const currencies = {
+                sign: country.currencies[0].symbol,
+                key: country.currenciesKeys,
+                name: country.currencies[0].name
+            }
+            currentCity.currencies = currencies;
+            currentCity.languages = country.languages.join(' ');
+            currentCity.timezones = country.timezones.join(' ');
+        }
+
+
+        generate.onclick = (e) => {
+            e.preventDefault();
+            console.log('click')
+            const city = cityInput.value;
+            const country = countryInput.value;
+            const currency = currencyInput.value;
+            const currencyKey = currencyKeyInput.value;
+            const currencySign = currenciesSignInput.value;
+            const languages = languagesInput.value;
+            const timezone = timezoneInput.value;
+            code.innerText = "<h2>Code</h2>"
+            const codeContent = `
+                <div class="row">
+                    <div class="col">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title
+                                ">${city}</h5>
+                                <p class="card-text">${country}</p>
+                                <p class="card-text">${currency}</p>
+                                <p class="card-text">${currencyKey}</p>
+                                <p class="card-text">${currencySign}</p>
+                                <p class="card-text">${languages}</p>
+                                <p class="card-text">${timezone}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `
+            code.textContent = codeContent 
+
         }
 
     </script>
