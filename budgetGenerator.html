@@ -63,7 +63,7 @@
                         aria-label="Currency Key">
                     </div>
                     <div class="col">
-                        <input id="tourist" type="text" class="form-control" placeholder="Tourist last year"
+                        <input id="tourist" type="text" class="form-control" placeholder="Turist number"
                         aria-label="Currency Key">
                     </div>
                 </div>
@@ -71,6 +71,67 @@
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">General description on the city</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">___ es un centro urabno localizado en ____. Entre sus características principales está____, por lo que es un sitio ideal para aquellos que___</textarea>
+                      </div>                      
+                </div>
+                <h3>Prices</h3>
+                <h4>General prices</h4>
+                <div class="row">
+                    <div class="col">
+                        <input id="generalMain" type="text" class="form-control" placeholder="General daily main price by person"
+                        aria-label="General daily main price">
+                    </div>
+                    <div class="col">
+                        <input id="generalMain" type="text" class="form-control" placeholder="General daily main price by person"
+                        aria-label="General daily main price">
+                    </div>
+                </div>
+                <h4>Cheap food prices</h4>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" name=""  class="form-control" id="regularMeal" placeholder="Regular meal price">
+                    </div>
+                    <div class="col">
+                        <input type="text" name=""  class="form-control" id="mcdonalds" placeholder="McDonalds">
+                    </div>
+                    <div class="col">
+                        <input type="text" name=""  class="form-control" id="domesticBeer" placeholder="Domestic Beer">
+                    </div>
+                    <div class="col">
+                        <input type="text" name=""  class="form-control" id="cappuccino" placeholder="Cappuccino">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" name=""  class="form-control" id="cokePepsi" placeholder="Coke">
+                    </div>
+                    <div class="col">
+                        <input type="text" name=""  class="form-control" id="water" placeholder="Water">
+                    </div>
+                    <div class="col">
+                        <input type="text" name=""  class="form-control" id="milk" placeholder="Milk">
+                    </div>
+                    <div class="col">
+                        <input type="text" name=""  class="form-control" id="eggs" placeholder="Eggs">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <input type="text" name=""  class="form-control" id="apples" placeholder="Apples">
+                    </div>
+                    <div class="col">
+                        <input type="text" name=""  class="form-control" id="wine" placeholder="Wine">
+                    </div>
+                    <div class="col">
+                        <input type="text" name=""  class="form-control" id="cigarettes" placeholder="Cigarettes">
+                    </div>
+                    <div class="col">
+                        <input type="text" name=""  class="form-control" id="americano" placeholder="Americano Coffee">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="mb-3">
+                        <label for="exampleFormControlTextarea1" class="form-label">Tips to save in food</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">Si viajas a ____ una forma útil de ahorrar dinero en comido es ____ Con esto / Al hacerlo / Teniéndolo en cuenta, te permitir / tendrás / lograr la entrega </textarea>
                       </div>                      
                 </div>
                 <button id="generate" type="submit" class="btn btn-primary">Submit</button>
@@ -104,6 +165,11 @@
         const continentInput = document.getElementById('continent')
         const touristInput = document.getElementById('tourist')
 
+        const generalMainInput = document.getElementById('generalMain')
+
+        const regularMealInput = document.getElementById('regularMeal')
+        const mcdonaldsInput = document.getElementById('mcdonalds')
+
 
         const getAllCities = async () => {
             const response = await fetch('http://localhost:5500/data/price-city.json')
@@ -134,6 +200,7 @@
         }
 
         function updateCityInfo() {
+            console.log(currentCity.regular_meal)
             cityInput.value = currentCity.city;
             countryInput.value = currentCity.country;
 
@@ -143,6 +210,10 @@
             languagesInput.value = currentCity.languages
             timezoneInput.value = currentCity.timezones
             continentInput.value = currentCity.continent
+            mcdonaldsInput.value = currentCity.mcdonalds
+            generalMainInput.value = currentCity.prices.general.main
+            mcdonaldsInput.value = currentCity.mcdonalds
+            regularMealInput.value = currentCity.regular_meal
 
             console.log(currentCity)
         }
@@ -179,6 +250,11 @@
             const timezone = timezoneInput.value;
             const continent = continentInput.value;
             const tourist = touristInput.value;
+            const generalMain = generalMainInput.value;
+            const generalAllPrices = currentCity.prices.general.all;
+            const regularMeal = regularMealInput.value;
+            const mcdonalds = mcdonaldsInput.value;
+        
             code.innerText = "<h2>Code</h2>"
             const codeContent = `
                 <div class="row">
@@ -195,6 +271,16 @@
                                 <p class="card-text">${timezone}</p>
                                 <p class="card-text">${continent}</p>
                                 <p class="card-text">${tourist}</p>
+                                <p class="card-text">${generalMain}</p>
+
+                                ${
+                                   generalAllPrices.map(card => {
+                                       return `<p class="card-text">${card.title} -  ${card.price}</p>`
+                                   }) 
+                                }
+
+                                <p class="card-text">${regularMeal}</p>
+                                <p class="card-text">${mcdonalds}</p>
                             </div>
                         </div>
                     </div>
