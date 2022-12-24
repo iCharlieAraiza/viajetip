@@ -144,8 +144,15 @@
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">Si viajas a ____ una forma útil de ahorrar dinero en comido es ____ Con esto / Al hacerlo / Teniéndolo en cuenta, te permitir / tendrás / lograr la entrega </textarea>
                       </div>                      
                 </div>
+
+                <div id="generalInput">
+
+                </div>
+
+
                 <button id="generate" type="submit" class="btn btn-primary">Submit</button>
             </form>
+
             <pre id="code">
 
             </pre>
@@ -243,6 +250,8 @@
             applesInput.value = currentCity.apples
             wineInput.value = currentCity.wine
             cigarettesInput.value = currentCity.cigarettes
+
+            generateInput(currentCity.transportation, 'transport-input')
         }
 
         async function getCountryInfo() {
@@ -264,6 +273,35 @@
         }
 
 
+        function createInput(name, value) {
+            const input = document.createElement('input');
+            input.type = 'text';
+            input.name = name;
+            input.value = value;
+            input.className = 'form-control' + ' ' + name;
+            input.id = name;
+            return input;
+        }
+
+        function generateInput(array, name = "") {
+            const generalInput = document.getElementById('generalInput');
+            const title = document.createElement('h3');
+            title.innerText = name;
+            generalInput.appendChild(title);
+            const row = document.createElement('div');
+            row.className = 'row';
+            array.forEach(item => {
+                const input = createInput(name, item.price);
+                const inputTitle = createInput(name+"-title", item.title);
+                const div = document.createElement('div');
+                div.className = 'form-group col'+ ' ' + name + '-group'
+                div.appendChild(inputTitle);
+                div.appendChild(input);
+                row.appendChild(div);
+            })
+            generalInput.appendChild(row);
+        }
+
 
         generate.onclick = (e) => {
             e.preventDefault();
@@ -281,7 +319,18 @@
             const generalAllPrices = currentCity.prices.general.all;
             const regularMeal = regularMealInput.value;
             const mcdonalds = mcdonaldsInput.value;
+
+            const transport = document.querySelectorAll('.transport-input-group')
         
+                                
+            const transportArray = [];
+            transport.forEach(item => {
+                const input = item.querySelector('.transport-input');
+                const inputTitle = item.querySelector('.transport-input-title');
+                const el = `<p class="card-text">${inputTitle.value} - ${input.value}</p>`
+                transportArray.push(el)
+            })
+
             code.innerText = "<h2>Code</h2>"
             const codeContent = `
                 <div class="row">
@@ -304,6 +353,12 @@
                                    generalAllPrices.map(card => {
                                        return `<p class="card-text">${card.title} -  ${card.price}</p>`
                                    }) 
+                                }
+
+                                ${
+                                    transportArray.map(card => {
+                                        return card
+                                    })
                                 }
 
                                 <p class="card-text">${regularMeal}</p>
