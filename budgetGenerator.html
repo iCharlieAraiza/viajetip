@@ -11,6 +11,7 @@
         .row {
             margin-bottom: 10px;
         }
+
         .btn {
             margin-top: 10px;
         }
@@ -18,6 +19,14 @@
         h3 {
             margin-bottom: 1rem;
         }
+
+        .form-group-input {
+            width: 300px;
+            min-width: 300px;
+            max-width: 300px;
+            margin-bottom: 2rem;
+        }
+
     </style>
 </head>
 
@@ -37,8 +46,7 @@
                         <button id="generateCity" type="submit" class=" btn btn-primary">Generate</button>
                     </div>
                     <div class="col">
-                        <input type="text" id="country" class="form-control" placeholder="Country"
-                            aria-label="Country">
+                        <input type="text" id="country" class="form-control" placeholder="Country" aria-label="Country">
                     </div>
                     <div class="col">
                         <input type="text" id="currency" class="form-control" placeholder="Last name"
@@ -55,94 +63,143 @@
                 </div>
                 <div class="row">
                     <div class="col">
+                        <label for="languages">Languagues</label>
                         <input id="languagues" type="text" class="form-control" placeholder="Languagues"
-                        aria-label="Currency Key">
+                            aria-label="Currency Key">
                     </div>
                     <div class="col">
+                        <label for="timezone">timezone</label>
                         <input id="timezone" type="text" class="form-control" placeholder="Time zone"
-                        aria-label="Currency Key">
+                            aria-label="Currency Key">
                     </div>
                     <div class="col">
+                        <label for="continent">Continent</label>
                         <input id="continent" type="text" class="form-control" placeholder="Continent"
-                        aria-label="Currency Key">
+                            aria-label="Currency Key">
                     </div>
                     <div class="col">
+                        <label for="tourist">Tourist number</label>
                         <input id="tourist" type="text" class="form-control" placeholder="Turist number"
-                        aria-label="Currency Key">
+                            aria-label="Currency Key">
                     </div>
                 </div>
                 <div class="row">
                     <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">General description on the city</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">___ es un centro urabno localizado en ____. Entre sus características principales está____</textarea>
-                      </div>                      
+                        <label for="exampleFormControlTextarea1" class="form-label">General description on the
+                            city</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                            rows="3">___ es un centro urabno localizado en ____. Entre sus características principales está____</textarea>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Why you should visit (100 - 150 words)</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">___ ofrece gran cantidad de atractivos tanto para </textarea>
-                      </div>                      
+                        <label for="exampleFormControlTextarea1" class="form-label">Why you should visit (100 - 150
+                            words)</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                            rows="3">___ ofrece gran cantidad de atractivos tanto para </textarea>
+                    </div>
                 </div>
                 <h3>Prices</h3>
                 <h4>General prices</h4>
                 <div class="row">
                     <div class="col">
-                        <input id="generalMain" type="text" class="form-control" placeholder="General daily main price by person"
-                        aria-label="General daily main price">
+                        <label for="generalDaily">General daily price by person</label>
+                        <input id="generalMain" type="text" class="form-control"
+                            placeholder="General daily main price by person" aria-label="General daily main price">
                     </div>
                     <div class="col">
-                        <input id="generalMainWeek" type="text" class="form-control" placeholder="General week price by person"
-                        aria-label="General daily main price">
+                        <label for="generalDaily">Weekly</label>
+                        <input id="generalMainWeek" type="text" class="form-control"
+                            placeholder="General week price by person" aria-label="General daily main price">
                     </div>
                 </div>
+
+                <h4>Other expences</h4>
+                <div class="row">
+                    <div class="col">
+                        <label for="gym">Gym</label>
+                        <input id="gym" type="text" class="form-control"
+                        placeholder="Gym">
+                    </div>
+                    <div class="col">
+                        <label for="cinema">Cinema</label>
+                        <input id="cinema" type="text" class="form-control"
+                        placeholder="Movies">
+                    </div>
+                    <div class="col">
+                        <label for="internet">Internet</label>
+                        <input id="internet" type="text" class="form-control"
+                        placeholder="Internet">
+                    </div>
+                    <div class="col">
+                        <label for="mobile">Mobile</label>
+                        <input id="mobile" type="text" class="form-control"
+                        placeholder="Mobile 2GB" ">
+                    </div>
+                </div>
+
                 <h4>Food prices</h4>
                 <div class="row">
                     <div class="col">
-                        <input type="text" name=""  class="form-control" id="regularMeal" placeholder="Regular meal price">
+                        <label for="regularMeal">Regular Meal</label>
+                        <input type="text" name="" class="form-control" id="regularMeal"
+                            placeholder="Regular meal price">
                     </div>
                     <div class="col">
-                        <input type="text" name=""  class="form-control" id="mcdonalds" placeholder="McDonalds">
+                        <label for="McDonalds">McDonalds</label>
+                        <input type="text" name="" class="form-control" id="mcdonalds" placeholder="McDonalds">
                     </div>
                     <div class="col">
-                        <input type="text" name=""  class="form-control" id="domesticBeer" placeholder="Domestic Beer">
+                        <label for="domesticBeer">Domestic Beer</label>
+                        <input type="text" name="" class="form-control" id="domesticBeer" placeholder="Domestic Beer">
                     </div>
                     <div class="col">
-                        <input type="text" name=""  class="form-control" id="cappuccino" placeholder="Cappuccino">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col">
-                        <input type="text" name=""  class="form-control" id="cokePepsi" placeholder="Coke">
-                    </div>
-                    <div class="col">
-                        <input type="text" name=""  class="form-control" id="water" placeholder="Water">
-                    </div>
-                    <div class="col">
-                        <input type="text" name=""  class="form-control" id="milk" placeholder="Milk">
-                    </div>
-                    <div class="col">
-                        <input type="text" name=""  class="form-control" id="eggs" placeholder="Eggs">
+                        <label for="cappuccino">Cappuccino</label>
+                        <input type="text" name="" class="form-control" id="cappuccino" placeholder="Cappuccino">
                     </div>
                 </div>
                 <div class="row">
                     <div class="col">
-                        <input type="text" name=""  class="form-control" id="apples" placeholder="Apples">
+                        <label for="cokePepsi">Coke</label>
+                        <input type="text" name="" class="form-control" id="cokePepsi" placeholder="Coke">
                     </div>
                     <div class="col">
-                        <input type="text" name=""  class="form-control" id="wine" placeholder="Wine">
+                        <label for="water">Water</label>
+                        <input type="text" name="" class="form-control" id="water" placeholder="Water">
                     </div>
                     <div class="col">
-                        <input type="text" name=""  class="form-control" id="cigarettes" placeholder="Cigarettes">
+                        <label for="milk">Milk</label>
+                        <input type="text" name="" class="form-control" id="milk" placeholder="Milk">
                     </div>
                     <div class="col">
-                        <input type="text" name=""  class="form-control" id="americano" placeholder="Americano Coffee">
+                        <label for="eggs">Eggs</label>
+                        <input type="text" name="" class="form-control" id="eggs" placeholder="Eggs">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <label for="apples">Apples</label>
+                        <input type="text" name="" class="form-control" id="apples" placeholder="Apples">
+                    </div>
+                    <div class="col">
+                        <label for="wine">Wine bottle</label>
+                        <input type="text" name="" class="form-control" id="wine" placeholder="Wine">
+                    </div>
+                    <div class="col">
+                        <label for="cigarettes">Cigarettes</label>
+                        <input type="text" name="" class="form-control" id="cigarettes" placeholder="Cigarettes">
+                    </div>
+                    <div class="col">
+                        <label for="americano">Americano Coffee</label>
+                        <input type="text" name="" class="form-control" id="americano" placeholder="Americano Coffee">
                     </div>
                 </div>
                 <div class="row">
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Tips to save in food</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3">Si viajas a ____ una forma útil de ahorrar dinero en comido es ____ Con esto / Al hacerlo / Teniéndolo en cuenta, te permitir / tendrás / lograr la entrega </textarea>
-                      </div>                      
+                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                            rows="3">Si viajas a ____ una forma útil de ahorrar dinero en comido es ____ Con esto / Al hacerlo / Teniéndolo en cuenta, te permitir / tendrás / lograr la entrega </textarea>
+                    </div>
                 </div>
 
                 <div id="generalInput">
@@ -196,6 +253,10 @@
         const wineInput = document.getElementById('wine')
         const cigarettesInput = document.getElementById('cigarettes')
         const americanoInput = document.getElementById('americano')
+        const gymInput = document.getElementById('gym')
+        const cinemaInput = document.getElementById('cinema')
+        const internetInput = document.getElementById('internet')
+        const mobileInput = document.getElementById('mobile')
 
 
         const getAllCities = async () => {
@@ -220,7 +281,7 @@
                 if (city.city === cityInput.value) {
                     currentCity = city;
                     const country = countries.find(country => country.name.en === currentCity.country)
-                    setContryInfo(country)  
+                    setContryInfo(country)
                     updateCityInfo()
                 }
             })
@@ -250,8 +311,17 @@
             applesInput.value = currentCity.apples
             wineInput.value = currentCity.wine
             cigarettesInput.value = currentCity.cigarettes
+            gymInput.value = currentCity.gym
+            cinemaInput.value = currentCity.cinema
+            internetInput.value = currentCity.internet_domestic
+
+
+            const generalInput = document.getElementById('generalInput');
+            generalInput.innerHTML = '';
 
             generateInput(currentCity.transportation, 'transport-input')
+            generateInput(currentCity.food, 'food-input')
+
         }
 
         async function getCountryInfo() {
@@ -292,9 +362,9 @@
             row.className = 'row';
             array.forEach(item => {
                 const input = createInput(name, item.price);
-                const inputTitle = createInput(name+"-title", item.title);
+                const inputTitle = createInput(name + "-title", item.title);
                 const div = document.createElement('div');
-                div.className = 'form-group col'+ ' ' + name + '-group'
+                div.className = 'form-group-input col' + ' ' + name + '-group'
                 div.appendChild(inputTitle);
                 div.appendChild(input);
                 row.appendChild(div);
@@ -321,8 +391,8 @@
             const mcdonalds = mcdonaldsInput.value;
 
             const transport = document.querySelectorAll('.transport-input-group')
-        
-                                
+            const food = document.querySelectorAll('.food-input-group')
+
             const transportArray = [];
             transport.forEach(item => {
                 const input = item.querySelector('.transport-input');
@@ -349,17 +419,15 @@
                                 <p class="card-text">${tourist}</p>
                                 <p class="card-text">${generalMain}</p>
 
-                                ${
-                                   generalAllPrices.map(card => {
-                                       return `<p class="card-text">${card.title} -  ${card.price}</p>`
-                                   }) 
-                                }
+                                ${generalAllPrices.map(card => {
+                return `<p class="card-text">${card.title} -  ${card.price}</p>`
+            })
+                }
 
-                                ${
-                                    transportArray.map(card => {
-                                        return card
-                                    })
-                                }
+                                ${transportArray.map(card => {
+                    return card
+                })
+                }
 
                                 <p class="card-text">${regularMeal}</p>
                                 <p class="card-text">${mcdonalds}</p>
@@ -368,7 +436,7 @@
                     </div>
                 </div>
             `
-            code.textContent = codeContent 
+            code.textContent = codeContent
 
         }
 

@@ -62,6 +62,32 @@
                 "price": "$8.27"
             }
         ],
+        "hotel":[
+            {
+                "title": "star-0",
+                "price": "RATING\tPRICE(USD)"
+            },
+            {
+                "title": "star-1",
+                "price": "29.79 - 53.19"
+            },
+            {
+                "title": "star-2",
+                "price": "48.94 - 170.21"
+            },
+            {
+                "title": "star-3",
+                "price": "53.19 - 137.23"
+            },
+            {
+                "title": "star-4",
+                "price": "75.53 - 204.26"
+            },
+            {
+                "title": "star-5",
+                "price": "140.43 - 393.62"
+            }
+        ],
         "prices":{
             "general":{
                 "main": "$117",

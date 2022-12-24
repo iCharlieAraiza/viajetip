@@ -140,6 +140,25 @@ type['general'] = daily
 
 
 /*
+    Price of hotels
+    priceoftravel.com
+*/
+
+const hotels = document.querySelectorAll('.hotels tr')
+const hotelPrices = []
+
+hotels.forEach( (hotel, index) => {
+    const el = {}
+    el.title = 'star-' + index
+    el.price = hotel.innerText
+    el.price = el.price.trim()
+    
+    hotelPrices.push(el)
+})
+
+
+
+/*
     Other price of city
 */
 
@@ -153,4 +172,5 @@ other.forEach((other) => {
     data['price'] = price
     type.push(data)
 })  
+
 
