@@ -532,7 +532,7 @@ hr::after {
 }
 
 .price-content__title {
-  font-weight: 100;
+  font-weight: 800;
 }
 
 .price-content__price {
@@ -805,7 +805,7 @@ hr::after {
 }
 
 .price-list__card-title {
-  font-size: 15px;
+  font-size: 14px;
   font-weight: bold;
   color: #95a2b6;
 }
@@ -827,6 +827,26 @@ hr::after {
 
 .price-list__img-container {
   margin-right: 6px;
+}
+
+.price-list__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.price-list {
+  width: 100%;
+  min-width: 250px;
+}
+
+@media screen and (min-width: 600px) {
+  .price-list {
+    width: 32%;
+  }
 }
 
 footer {
