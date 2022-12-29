@@ -52,15 +52,15 @@
                         <input type="text" id="country" class="form-control" placeholder="Country" aria-label="Country">
                     </div>
                     <div class="col">
-                        <input type="text" id="currency" class="form-control" placeholder="Last name"
+                        <input type="text" id="currency" class="form-control" placeholder="Currency"
                             aria-label="Currency">
                     </div>
                     <div class="col">
-                        <input id="currencyKey" type="text" class="form-control" placeholder="Last name"
+                        <input id="currencyKey" type="text" class="form-control" placeholder="Currency key"
                             aria-label="Currency Key">
                     </div>
                     <div class="col">
-                        <input id="currencySign" type="text" class="form-control" placeholder="Last name"
+                        <input id="currencySign" type="text" class="form-control" placeholder="Currency sign"
                             aria-label="Currency Sign">
                     </div>
                 </div>
@@ -107,7 +107,7 @@
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">General description on the
                             city</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                        <textarea class="form-control" id="generalDescription"
                             rows="3">___ es un centro urabno localizado en ____. Entre sus características principales está____</textarea>
                     </div>
                 </div>
@@ -115,7 +115,7 @@
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Why you should visit (100 - 150
                             words)</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1"
+                        <textarea class="form-control" id="reasonsToVisit"
                             rows="3">___ ofrece gran cantidad de atractivos tanto para </textarea>
                     </div>
                 </div>
@@ -160,7 +160,7 @@
                     </div>
                     <div class="col">
                         <label for="BudgetMainWeek">Weekly</label>
-                        <input id="BudgetMainWeek" type="text" class="form-control"
+                        <input id="budgetMainWeek" type="text" class="form-control"
                             placeholder="Budget week price by person" aria-label="General daily main price">
                     </div>
                 </div>
@@ -168,12 +168,12 @@
                 <div class="row">
                     <div class="col">
                         <label for="expensivelDaily">General daily price by person</label>
-                        <input id="expensivelDaily" type="text" class="form-control"
+                        <input id="luxuryMain" type="text" class="form-control"
                             placeholder="Expensive daily main price by person" aria-label="General daily main price">
                     </div>
                     <div class="col">
                         <label for="expensiveDaily">Weekly</label>
-                        <input id="expensiveDaily" type="text" class="form-control"
+                        <input id="luxuryMainWeek" type="text" class="form-control"
                             placeholder="Expensive week price by person" aria-label="General daily main price">
                     </div>
                 </div>
@@ -280,7 +280,7 @@
                             <label for="exampleFormControlTextarea1" class="form-label">Tips to save money on
                                 acommodation (100)
                                 words)</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1"
+                            <textarea class="form-control" id="acommodationTips"
                                 rows="3">___ ofrece gran cantidad de atractivos tanto para </textarea>
                         </div>
                     </div>
@@ -290,7 +290,7 @@
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">General description of transport
                                 (100)</label>
-                            <textarea class="form-control" id="hotelsDescription"
+                            <textarea class="form-control" id="transportDescription"
                                 rows="3">Al ser ___ un destino ____, los locales suelen moverse  </textarea>
                         </div>
                     </div>
@@ -393,8 +393,20 @@
         const timezoneInput = document.getElementById('timezone')
         const continentInput = document.getElementById('continent')
         const touristInput = document.getElementById('tourist')
+        const populationInput = document.getElementById('population')
+        const airportsInput = document.getElementById('airports')
+        const highSeasonInput = document.getElementById('highSeason')
+        const generalDescriptionInput = document.getElementById('generalDescription')
+        const reasonsToVisitInput = document.getElementById('reasonsToVisit')
+        const wheatherInput = document.getElementById('wheather')
+        const wheateherTipsInput = document.getElementById('wheateherTips')
 
         const generalMainInput = document.getElementById('generalMain')
+        const generalMainWeekInput = document.getElementById('generalMainWeek')
+        const budgetMainInput = document.getElementById('budgetMain')
+        const budgetMainWeekInput = document.getElementById('budgetMainWeek')
+        const luxuryMainInput = document.getElementById('luxuryMain')
+        const luxuryMainWeekInput = document.getElementById('luxuryMainWeek')
 
         const regularMealInput = document.getElementById('regularMeal')
         const mcdonaldsInput = document.getElementById('mcdonalds')
@@ -413,6 +425,11 @@
         const internetInput = document.getElementById('internet')
         const mobileInput = document.getElementById('mobile')
         const hotelsDescriptionInput = document.getElementById('hotelsDescription')
+
+        const transportDescriptionInput = document.getElementById('transportDescription')
+        const foodTipsInput = document.getElementById('foodTips')
+        const acommodationTipsInput = document.getElementById('acommodationTips')
+        const transportAirportsInput = document.getElementById('transportAirports')
 
 
 
