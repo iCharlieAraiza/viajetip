@@ -476,7 +476,7 @@ hr {
 }
 
 .price-content__title {
-  font-weight: 800;
+  //font-weight: 800;
 }
 
 .price-content__price {
@@ -691,8 +691,8 @@ hr {
 
 .price-list__card-title {
   font-size: 13px;
-  font-weight: bold;
-  color: #505050;
+  font-weight: 400;
+  color: #777474;
 }
 
 .price-list__card-price {
@@ -768,11 +768,17 @@ hr {
   }
 
   @media screen and (min-width: 880px) {
+    padding: 0 3rem;
+    h1 {
+      padding: 0;
+    }
     .category-header__title {
       padding-top: 3.5rem;
-      padding-left: 3rem;
-      padding-right: 3rem;
+      //padding-left: 3rem;
+      //padding-right: 3rem;
       font-size: 16px;
+      padding-left: 0;
+      padding-right: 0;
     }
     .subtitle {
       padding-left: 0rem;
@@ -780,6 +786,9 @@ hr {
     }
   }
 }
+
+
+//media queries
 
 .header__gradient {
   background: rgb(38, 68, 99);
@@ -808,14 +817,22 @@ hr {
     a {
       color: #33597a;
       letter-spacing: 2px;
-      font-size: 14px;
+      font-size: 12px;
       padding: 7px 1rem;
       border: 1px solid #d5d5d5;
       display: block;
       width: fit-content;
+      box-sizing: border-box;
     }
     &::before {
       display: none;
+    }
+  }
+  @media screen and (min-width: 600px) {
+    li {
+      a {
+        font-size: 14px;
+      }
     }
   }
 }

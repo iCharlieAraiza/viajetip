@@ -531,10 +531,6 @@ hr::after {
   }
 }
 
-.price-content__title {
-  font-weight: 800;
-}
-
 .price-content__price {
   font-weight: 700;
   color: #986b35;
@@ -806,8 +802,8 @@ hr::after {
 
 .price-list__card-title {
   font-size: 13px;
-  font-weight: bold;
-  color: #505050;
+  font-weight: 400;
+  color: #777474;
 }
 
 .price-list__card-price {
@@ -891,11 +887,17 @@ hr::after {
 }
 
 @media screen and (min-width: 880px) {
+  .featured-article {
+    padding: 0 3rem;
+  }
+  .featured-article h1 {
+    padding: 0;
+  }
   .featured-article .category-header__title {
     padding-top: 3.5rem;
-    padding-left: 3rem;
-    padding-right: 3rem;
     font-size: 16px;
+    padding-left: 0;
+    padding-right: 0;
   }
   .featured-article .subtitle {
     padding-left: 0rem;
@@ -932,17 +934,25 @@ hr::after {
 .tabs-content li a {
   color: #33597a;
   letter-spacing: 2px;
-  font-size: 14px;
+  font-size: 12px;
   padding: 7px 1rem;
   border: 1px solid #d5d5d5;
   display: block;
   width: -webkit-fit-content;
   width: -moz-fit-content;
   width: fit-content;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .tabs-content li::before {
   display: none;
+}
+
+@media screen and (min-width: 600px) {
+  .tabs-content li a {
+    font-size: 14px;
+  }
 }
 
 footer {
