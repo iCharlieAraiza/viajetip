@@ -68,13 +68,13 @@
                     <div class="col">
                         <label for="exampleFormControlTextarea1" class="form-label">Population</label>
                         <input id="population" type="text" class="form-control" placeholder="Last name"
-                        aria-label="Currency Sign">       
-                    </div>        
+                            aria-label="Currency Sign">
+                    </div>
                     <div class="col">
                         <label for="exampleFormControlTextarea1" class="form-label">Arports</label>
                         <input id="airports" type="text" class="form-control" placeholder="Last name"
-                        aria-label="Currency Sign">       
-                    </div>     
+                            aria-label="Currency Sign">
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col">
@@ -107,10 +107,11 @@
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">General description on the
                             city</label>
-                        <textarea class="form-control" id="generalDescription"
-                            rows="3">___ es un centro urabno localizado en ____. Entre sus características principales está____</textarea>
+                        <div class="form-control" id="generalDescription" rows="3">___ es un centro urabno localizado en
+                            ____. Entre sus características principales está____</div>
                     </div>
                 </div>
+                <div class="top"></div>
                 <div class="row">
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Why you should visit (100 - 150
@@ -122,18 +123,19 @@
                 <h4>Wheather</h4>
                 <div class="row">
                     <div class="mb-3">
-                        <label for="">Wheather (how and when) 100 words <a href="https://weather-and-climate.com/average-monthly-Rainfall-Temperature-Sunshine,Amsterdam,Netherlands" target="_blank">Ref 🌐</a></label>
-                       <div id="weather">
+                        <label for="">Wheather (how and when) 100 words <a
+                                href="https://weather-and-climate.com/average-monthly-Rainfall-Temperature-Sunshine,Amsterdam,Netherlands"
+                                target="_blank">Ref 🌐</a></label>
+                        <div id="weather">
 
-                       </div> 
+                        </div>
                     </div>
                     <div class="top"></div>
                 </div>
                 <div class="row">
                     <div class="mb-3">
                         <label for="">Weather tips</label>
-                        <textarea class="form-control" id="weatherTips"
-                            rows="3"> </textarea>
+                        <textarea class="form-control" id="weatherTips" rows="3"> </textarea>
                     </div>
                 </div>
 
@@ -315,7 +317,7 @@
                                 <p><br></p>
                             </div>
                         </div>
-                    
+
                         <div class="mb-3 top">
                             <label for="exampleFormControlTextarea1" class="form-label">General description of
                                 entertainment (100)</label>
@@ -342,7 +344,8 @@
                     <h3>Comments</h3>
                     <div class="row">
                         <div class="mb-3">
-                            <label for="exampleFormControlTextarea1" class="form-label">Comments: Add * to separate a new comment</label>
+                            <label for="exampleFormControlTextarea1" class="form-label">Comments: Add * to separate a
+                                new comment</label>
                             <textarea class="form-control" id="comments"
                                 rows="3">___ es un destino que ofrece gran cantidad de atractivos tanto para </textarea>
                         </div>
@@ -363,7 +366,10 @@
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
 
+    <script src="/js/currency.js"></script>
+
     <script>
+        const allCurrencies = []
         const articleNode = []
         const generateCity = document.getElementById('generateCity');
         const citiesList = document.getElementById('cities');
@@ -371,6 +377,10 @@
         const cities = []
         let currentCity = {}
         const quill = new Quill('#editor', {
+            theme: 'snow'
+        });
+
+        const generalDescription = new Quill('#generalDescription', {
             theme: 'snow'
         });
 
@@ -396,7 +406,7 @@
         const populationInput = document.getElementById('population')
         const airportsInput = document.getElementById('airports')
         const highSeasonInput = document.getElementById('highSeason')
-        const generalDescriptionInput = document.getElementById('generalDescription')
+        //const generalDescriptionInput = document.getElementById('generalDescription')
         const reasonsToVisitInput = document.getElementById('reasonsToVisit')
         const wheatherInput = document.getElementById('wheather')
         const wheateherTipsInput = document.getElementById('wheateherTips')
@@ -432,6 +442,8 @@
         const transportAirportsInput = document.getElementById('transportAirports')
 
 
+        getCurrency()
+
 
         const getAllCities = async () => {
             const response = await fetch('http://localhost:5500/data/price-city.json')
@@ -462,7 +474,6 @@
         }
 
         function updateCityInfo() {
-            console.log(currentCity.regular_meal)
             cityInput.value = currentCity.city;
             countryInput.value = currentCity.country;
 
@@ -473,7 +484,8 @@
             timezoneInput.value = currentCity.timezones
             continentInput.value = currentCity.continent
             mcdonaldsInput.value = currentCity.mcdonalds
-            generalMainInput.value = currentCity.prices.general.main
+            generalMainInput.value = currentCity.prices.general.main.replace('$', '')
+            generalMainWeekInput.value = generalMainInput.value * 6
             mcdonaldsInput.value = currentCity.mcdonalds
             regularMealInput.value = currentCity.regular_meal
             domesticBeerInput.value = currentCity.domestic_beer
@@ -488,6 +500,7 @@
             gymInput.value = currentCity.gym
             cinemaInput.value = currentCity.cinema
             internetInput.value = currentCity.internet_domestic
+            budgetMainInput.value = currentCity.prices.budget?.main.replace('$', '')
 
 
             const generalInput = document.getElementById('generalInput');
@@ -552,7 +565,6 @@
             return entretaiment;
         }
 
-
         generate.onclick = (e) => {
             e.preventDefault();
             console.log('click')
@@ -566,6 +578,7 @@
             const continent = continentInput.value;
             const tourist = touristInput.value;
             const generalMain = generalMainInput.value;
+            const generalMainWeek = generalMainWeekInput.value;
             const generalAllPrices = currentCity.prices.general.all;
             const regularMeal = regularMealInput.value;
             const mcdonalds = mcdonaldsInput.value;
@@ -583,6 +596,8 @@
             const internet = internetInput.value;
             const hotelsDescription = hotelsDescriptionInput.value;
 
+            const budgetMain = budgetMainInput.value;
+
             const transport = document.querySelectorAll('.transport-input-group')
             const food = document.querySelectorAll('.food-input-group')
 
@@ -596,43 +611,122 @@
 
             code.innerText = "<h2>Code</h2>"
             const codeContent = `
-                <div class="row">
-                    <div class="col">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title
-                                ">${city}</h5>
-                                <p class="card-text">${country}</p>
-                                <p class="card-text">${currency}</p>
-                                <p class="card-text">${currencyKey}</p>
-                                <p class="card-text">${currencySign}</p>
-                                <p class="card-text">${languages}</p>
-                                <p class="card-text">${timezone}</p>
-                                <p class="card-text">${continent}</p>
-                                <p class="card-text">${tourist}</p>
-                                <p class="card-text">${generalMain}</p>
-                                ${quill.root.innerHTML}
-
-                                ${generalAllPrices.map(card => {
-                return `<p class="card-text">${card.title} -  ${card.price}</p>`
-            })
-                }
-
-                                ${transportArray.map(card => {
-                    return card
-                })
-                }
-                                <p class="card-text">${hotelsDescription}</p>
-
-                                <p class="card-text">${regularMeal}</p>
-                                <p class="card-text">${mcdonalds}</p>
-                            </div>
+                <h2>Introducción</h2>
+                ${generalDescription.root.innerHTML}
+                <div id="priceSection">
+                    <h2>Precios para un viaje a ${city}</h2>
+                    <p>A continuación te traemos una lista de precios para ${city} de acuerdo a distintos tipos de viaje</p>
+                    <div class="price-list__wrapper">
+                        <div class="price-list">
+                            <h4 class="price-list__title">Promedio</h4>
+                            <ul class="price-list__list">
+                                <li class="price-list__card">
+                                    <div class="price-list__img-container">
+                                        <img src="assets/img/icons/price/i_ave.svg" alt="precio promedio">
+                                    </div>
+                                    <p class="price-list__card-info">
+                                        <span class="price-list__card-title">Presupuesto diario</span>
+                                        <span class="price-list__card-price">${convertPrice(generalMain,'usd', '$')}</span>
+                                        <span class="price-list__card-target">${convertPrice(generalMain, currencyKey, currencySign )} </span>
+                                    </p>
+                                </li>
+                                <li class="price-list__card">
+                                    <div class="price-list__img-container">
+                                        <img src="assets/img/icons/price/i_ave.svg" alt="precio promedio">
+                                    </div>
+                                    <p class="price-list__card-info">
+                                        <span class="price-list__card-title">Presupuesto viaje de 7 días </span>
+                                        <span class="price-list__card-price">${convertPrice(generalMainWeek, 'usd')}</span>
+                                        <span class="price-list__card-target">3098€ </span>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="price-list">
+                            <h4 class="price-list__title">Económico</h4>
+                            <ul class="price-list__list">
+                                <li class="price-list__card">
+                                    <div class="price-list__img-container">
+                                        <img src="assets/img/icons/price/i_budget.svg" alt="Precio económico">
+                                    </div>
+                                    <p class="price-list__card-info">
+                                        <span class="price-list__card-title">Presupuesto diario</span>
+                                        <span class="price-list__card-price">"$4900 USD</span>
+                                        <span class="price-list__card-target">3098€ </span>
+                                    </p>
+                                </li>
+                                <li class="price-list__card">
+                                    <div class="price-list__img-container">
+                                        <img src="assets/img/icons/price/i_budget.svg" alt="Precio económico">
+                                    </div>
+                                    <p class="price-list__card-info">
+                                        <span class="price-list__card-title">Presupuesto viaje de 7 días </span>
+                                        <span class="price-list__card-price">"$4900 USD</span>
+                                        <span class="price-list__card-target">3098€ </span>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="price-list">
+                            <h4 class="price-list__title">Lujo</h4>
+                            <ul class="price-list__list">
+                                <li class="price-list__card">
+                                    <div class="price-list__img-container">
+                                        <img src="assets/img/icons/price/i_lux.svg" alt="Precio de lujo">
+                                    </div>
+                                    <p class="price-list__card-info">
+                                        <span class="price-list__card-title">Presupuesto diario</span>
+                                        <span class="price-list__card-price">"$4900 USD</span>
+                                        <span class="price-list__card-target">3098€ </span>
+                                    </p>
+                                </li>
+                                <li class="price-list__card">
+                                    <div class="price-list__img-container">
+                                        <img src="assets/img/icons/price/i_lux.svg" alt="Precio de lujo">
+                                    </div>
+                                    <p class="price-list__card-info">
+                                        <span class="price-list__card-title">Presupuesto viaje de 7 días </span>
+                                        <span class="price-list__card-price">"$4900 USD</span>
+                                        <span class="price-list__card-target">3098€ </span>
+                                    </p>
+                                </li>
+                            </ul>
                         </div>
                     </div>
-                </div>
+                </div>    
+
             `
             code.textContent = codeContent
 
+        }
+
+        async function getCurrency() {
+            const currenciesMap = await getCurrencies()
+            currenciesMap.forEach(item => 
+                allCurrencies.push(item)
+            )
+        }
+
+        function convertPrice(price, curr, sign) {
+            if(curr == 'usd'){
+                return `$${price} USD`
+            } 
+
+            const currency = curr.toLowerCase()
+            const currencyForex = allCurrencies.find(item => item.code === currency)
+
+            if(currencyForex == undefined || currencyForex == null) {
+                return `$${price} USD`
+            } 
+
+            const rate = Math.floor(price * currencyForex.rate)
+
+            if(currency === 'eur') {
+                return `${rate}€`
+            }
+            else {
+                return `${sign}${price} ${currency.toUpperCase()}`
+            }
         }
 
     </script>

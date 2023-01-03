@@ -543,6 +543,17 @@ hr {
   }
 }
 
+  .relative-content__wide {
+    position: relative;
+    background-color: beige;
+    @media screen and (min-width: 1080px) {
+      width: 100vw;
+      left: calc((-100vw + 950px) / 2);
+      
+    }
+  }
+
+
 .relative-content__container {
   margin: 0 auto;
   padding: 1rem;
