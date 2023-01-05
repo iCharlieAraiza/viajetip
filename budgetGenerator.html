@@ -442,6 +442,8 @@
         const transportAirportsInput = document.getElementById('transportAirports')
 
 
+
+
         getCurrency()
 
 
@@ -501,6 +503,9 @@
             cinemaInput.value = currentCity.cinema
             internetInput.value = currentCity.internet_domestic
             budgetMainInput.value = currentCity.prices.budget?.main.replace('$', '')
+            budgetMainWeekInput.value = budgetMainInput.value != undefined && budgetMainInput.value * 6
+            luxuryMainInput.value = currentCity.prices.luxury?.main.replace('$', '')
+            luxuryMainWeekInput.value = luxuryMainInput.value != undefined && luxuryMainInput.value * 6
 
 
             const generalInput = document.getElementById('generalInput');
@@ -597,6 +602,9 @@
             const hotelsDescription = hotelsDescriptionInput.value;
 
             const budgetMain = budgetMainInput.value;
+            const budgetMainWeek = budgetMainWeekInput.value;
+            const luxuryMain = luxuryMainInput.value;
+            const luxuryMainWeek = luxuryMainWeekInput.value;
 
             const transport = document.querySelectorAll('.transport-input-group')
             const food = document.querySelectorAll('.food-input-group')
@@ -651,8 +659,8 @@
                                     </div>
                                     <p class="price-list__card-info">
                                         <span class="price-list__card-title">Presupuesto diario</span>
-                                        <span class="price-list__card-price">"$4900 USD</span>
-                                        <span class="price-list__card-target">3098€ </span>
+                                        <span class="price-list__card-price">>${convertPrice(budgetMain, 'usd')}</span>
+                                        <span class="price-list__card-target">${convertPrice(budgetMain, currencyKey, currencySign )}</span>
                                     </p>
                                 </li>
                                 <li class="price-list__card">
@@ -661,8 +669,8 @@
                                     </div>
                                     <p class="price-list__card-info">
                                         <span class="price-list__card-title">Presupuesto viaje de 7 días </span>
-                                        <span class="price-list__card-price">"$4900 USD</span>
-                                        <span class="price-list__card-target">3098€ </span>
+                                        <span class="price-list__card-price">${convertPrice(budgetMainWeek, 'usd')}</span>
+                                        <span class="price-list__card-target">${convertPrice(budgetMainWeek, currencyKey, currencySign )}</span>
                                     </p>
                                 </li>
                             </ul>
@@ -676,8 +684,8 @@
                                     </div>
                                     <p class="price-list__card-info">
                                         <span class="price-list__card-title">Presupuesto diario</span>
-                                        <span class="price-list__card-price">"$4900 USD</span>
-                                        <span class="price-list__card-target">3098€ </span>
+                                        <span class="price-list__card-price">${convertPrice(luxuryMain, 'usd')}</span>
+                                        <span class="price-list__card-target">${convertPrice(luxuryMain, currencyKey, currencySign )}</span>
                                     </p>
                                 </li>
                                 <li class="price-list__card">
@@ -686,8 +694,8 @@
                                     </div>
                                     <p class="price-list__card-info">
                                         <span class="price-list__card-title">Presupuesto viaje de 7 días </span>
-                                        <span class="price-list__card-price">"$4900 USD</span>
-                                        <span class="price-list__card-target">3098€ </span>
+                                        <span class="price-list__card-price">${convertPrice(luxuryMainWeek, 'usd')}</span>
+                                        <span class="price-list__card-target">${convertPrice(luxuryMainWeek, currencyKey, currencySign )}</span>
                                     </p>
                                 </li>
                             </ul>

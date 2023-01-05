@@ -601,6 +601,7 @@ hr::after {
 .relative-content {
   position: relative;
   background-color: beige;
+  margin: 2rem 0;
 }
 
 @media screen and (min-width: 880px) {
@@ -613,6 +614,7 @@ hr::after {
 .relative-content__wide {
   position: relative;
   background-color: beige;
+  margin: 2rem 0;
 }
 
 @media screen and (min-width: 1080px) {

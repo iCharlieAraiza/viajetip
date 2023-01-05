@@ -537,6 +537,7 @@ hr {
 .relative-content {
   position: relative;
   background-color: beige;
+  margin: 2rem 0;
   @media screen and (min-width: 880px) {
     width: 100vw;
     left: calc((-100vw + 880px) / 2);
@@ -546,6 +547,7 @@ hr {
   .relative-content__wide {
     position: relative;
     background-color: beige;
+    margin: 2rem 0;
     @media screen and (min-width: 1080px) {
       width: 100vw;
       left: calc((-100vw + 950px) / 2);
