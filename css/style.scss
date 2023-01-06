@@ -32,6 +32,19 @@ p {
     justify-content: space-between;
 }
 
+
+@media only screen and (min-width: 720px) {
+    .ml-6 {
+        width: 55%;
+    }
+    
+    .ml-4 {
+        width: 38%;
+    }
+}
+
+
+
 .bg-transparent {
     background-color: transparent!important;
 }
@@ -291,6 +304,13 @@ p {
     }
 
 }
+
+.dynamic-nav {
+    position: fixed;
+    top: -100px;
+    transition: 0.5s;
+}
+
 
 .hero{
     position: relative;
