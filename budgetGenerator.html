@@ -365,6 +365,10 @@
                     <button id="generate" type="submit" class="btn btn-primary">Submit</button>
             </form>
 
+            <button id="copyCode">
+                Copy code
+            </button>
+
             <pre id="code">
 
             </pre>
@@ -505,8 +509,14 @@
         const acommodationTipsInput = document.getElementById('acommodationTips')
         const transportAirportsInput = document.getElementById('transportAirports')
 
+        const copyCodePre = document.getElementById('copyCode')
 
+        copyCodePre.onclick = () => {
+            const code = document.getElementById('code')
+            navigator.clipboard.writeText(code.textContent);
 
+            document.execCommand("copy");
+        }
 
         getCurrency()
 
