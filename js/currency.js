@@ -11,7 +11,6 @@ async function getCurrencies() {
 
         })
     }
-    //console.log(currenciesList)
     return currenciesList;
 }
 
