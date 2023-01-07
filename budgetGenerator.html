@@ -385,27 +385,27 @@
         const allTransportIcons = [
             {
                 name: 'drink',
-                url: ''
+                url: 'assets/img/icons/price/drink.svg'
             },
             {
                 name: 'meal',
-                url: ''
+                url: 'assets/img/icons/price/dinner.svg'
             },
             {
                 name:'train',
-                url:''
+                url:'assets/img/icons/price/train.svg'
             },
             {
                 name: 'bus',
-                url: ''
+                url: 'assets/img/icons/price/bus.svg'
             },
             {
                 name: 'taxi',
-                url: ''
+                url: 'assets/img/icons/price/taxi.svg'
             },
             {
                 name: 'subway',
-                url: ''
+                url: 'assets/img/icons/price/subway.svg'
             },
             {
                 name: '1 start',
@@ -619,7 +619,7 @@
             
             allTransportIcons.forEach(el => {
                 const option = document.createElement('option');
-                option.value = el.name;
+                option.value = el.url;
                 option.innerText = el.name;
                 select.appendChild(option);
             })
@@ -695,16 +695,31 @@
             const foodArray = []
 
             transport.forEach(item => {
+                const iconUrl = item.querySelector('#select-transport-input').value;
                 const input = item.querySelector('.transport-input');
                 const inputTitle = item.querySelector('.transport-input-title');
-                const el = `<p class="card-text">${inputTitle.value} - ${input.value}</p>`
+                const el = `<p class="card-text">${inputTitle.value} - ${input.value} - ${iconUrl}</p>`
                 transportArray.push(el)
             })
 
             food.forEach(item => {
-                const input = item.querySelector('.food-input');
-                const inputTitle = item.querySelector('.food-input-title');
-                const el = `<p class="card-text">${inputTitle.value} - ${input.value}</p>`
+                const iconUrl = item.querySelector('#select-food-input').value;
+                const price = item.querySelector('#food-input').value;
+                const title = item.querySelector('.food-input-title').value;
+                const el = `                
+                    <div class="price-content__item">
+                        <div class="price-content__icon-wrapper">
+                            <img class="price-content__icon" src="${iconUrl}" alt="${title}">
+                        </div>
+                        <div class="price-content__info">
+                            <p class="price-content__title">
+                                ${title}
+                            </p>
+                            <p class="price-content__price">
+                                ${convertPrice(price, 'usd')}
+                            </p>
+                        </div>
+                    </div>`
                 foodArray.push(el)
             })
 
@@ -875,7 +890,7 @@
                             ${convertPrice(cappuccino, 'usd')}
                         </p>
                     </div>
-
+                </div>
 
                 <div class="price-content__item">
                     <div class="price-content__icon-wrapper">

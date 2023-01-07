@@ -470,6 +470,13 @@ hr {
     font-size: 16px;
     margin: 0;
   }
+  @media (min-width: 420px) {
+    flex-wrap: nowrap;
+    .price-content__icon {
+      margin-right: 4px;
+    }
+  }
+
   @media (min-width: 720px) {
     width: 32%;
   }
@@ -496,7 +503,7 @@ hr {
   margin: 0 auto;
   display: block;
   height: 45px;
-  margin-right: 4px;
+  //margin-right: 4px;
 }
 
 .hotel-info__container {

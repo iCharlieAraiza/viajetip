@@ -525,6 +525,16 @@ hr::after {
   margin: 0;
 }
 
+@media (min-width: 420px) {
+  .price-content__item {
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+  }
+  .price-content__item .price-content__icon {
+    margin-right: 4px;
+  }
+}
+
 @media (min-width: 720px) {
   .price-content__item {
     width: 32%;
@@ -551,7 +561,6 @@ hr::after {
   margin: 0 auto;
   display: block;
   height: 45px;
-  margin-right: 4px;
 }
 
 .hotel-info__container {
