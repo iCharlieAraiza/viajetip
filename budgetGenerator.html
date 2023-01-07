@@ -691,6 +691,8 @@
             const transport = document.querySelectorAll('.transport-input-group')
             const food = document.querySelectorAll('.food-input-group')
 
+            const foodTips = foodTipsInput.value;
+
             const transportArray = []
             const foodArray = []
 
@@ -765,7 +767,7 @@
                                     </div>
                                     <p class="price-list__card-info">
                                         <span class="price-list__card-title">Presupuesto diario</span>
-                                        <span class="price-list__card-price">>${convertPrice(budgetMain, 'usd')}</span>
+                                        <span class="price-list__card-price">${convertPrice(budgetMain, 'usd')}</span>
                                         <span class="price-list__card-target">${convertPrice(budgetMain, currencyKey, currencySign)}</span>
                                     </p>
                                 </li>
@@ -961,6 +963,16 @@
                             ${convertPrice(mcdonalds, 'usd')}
                         </p>
                     </div>
+                </div>
+            </div>
+
+            <div class="tip-box">
+                <div class="tip-box__logo">
+                    <img src="assets/img/icons/idea.svg" alt="" srcset="">
+                </div>
+                <div class="tip-box__description">
+                    <h3 class="tip_box__title">Consejos para ahorrar en comida: Ir al supermercado</h3>
+                    ${foodTips}
                 </div>
             </div>
 
