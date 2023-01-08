@@ -1,158 +1,320 @@
 [
-    {
-        "city":"Berlin",
-        "country":"Germany",
-        "regular_meal": "12.70 $",
-        "mcdonalds": "9.53 $",
-        "domestic_beer": "1.13 $",
-        "cappuccino": "3.43 $",
-        "coke_pepsi": "2.54 $",
-        "water": "2.03 $",
-        "milk": "1.21 $",
-        "eggs": "2.98 $",
-        "apples": "2.74 $",
-        "wine": "5.93 $",
-        "cigarettes": "8.47 $",
-        "taxi_1km": "2.28 $",
-        "internet_domestic": "40.00 $",
-        "gym": "43.19 $",
-        "cinema": "12.70 $",
-        "aparment_sm_center": "1,331.85 $",
-        "transportation": [
-            {
-                "title": "Short Trip Metro Ticket",
-                "price": "$1.48"
-            },
-            {
-                "title": "Bahn Ticket",
-                "price": "$3.18"
-            },
-            {
-                "title": "Short Taxi Ride",
-                "price": "$21"
-            }
-        ],
-        "food":[
-            {
-                "title": "Sandwich and Coffee To Go",
-                "price": "$5.30"
-            },
-            {
-                "title": "Turkish Sandwich",
-                "price": "$2.12"
-            },
-            {
-                "title": "Currywurst",
-                "price": "$2.12"
-            },
-            {
-                "title": "2 Pho Noodles",
-                "price": "$9.54"
-            },
-            {
-                "title": "Restaurant Dinner and Beers (for 2)",
-                "price": "$64"
-            },
-            {
-                "title": "Mauer Park (2)",
-                "price": "$12"
-            },
-            {
-                "title": "Coffees at Impala",
-                "price": "$8.27"
-            }
-        ],
-        "food_description":
-        [
-            {
-                "title": "Desayuno económico",
-                "description": "Casi todos los hoteles incluyen el desayuno por lo que muy pocos restaurantes sirven por la mañana. Algunas opciones baratas están disponibles si miras a tu alrededor.",
-                "price": "$4.79 - $9.57"
-            },
-            {
-                "title": "Almuerzo económico",
-                "description": "Se pueden encontrar falafels u otra comida rápida por menos de 5 €, y las opciones para sentarse comienzan a partir de 5 €.",
-                "price": "$6.38 - $11.70"
-            },
-            {
-                "title": "Cena económica",
-                "description": "Las pizzas personales comienzan alrededor de € 5 y muchas otras opciones por solo un poco más.",
-                "price": "$10,11 - $17,02"
-            },
-            {
-                "title": ".5 litros de cerveza",
-                "description": "Los lugareños siempre ordenan en tamaño de .25L y esos son la mitad del precio. Se pueden encontrar ofertas de happy hour por menos si miras a tu alrededor.",
-                "price": "$4.79 - $7.45"
-            },
-            {
-                "title": "Taza de café)",
-                "description": "Café, espresso, capuchino en una \"cafetería\" o cafetería",
-                "price": "$2.66 - $3.72"
-            }
+  {
+    "city": "Berlin",
+    "country": "Germany",
+    "regular_meal": "12.70 $",
+    "mcdonalds": "9.53 $",
+    "domestic_beer": "1.13 $",
+    "cappuccino": "3.43 $",
+    "coke_pepsi": "2.54 $",
+    "water": "2.03 $",
+    "milk": "1.21 $",
+    "eggs": "2.98 $",
+    "apples": "2.74 $",
+    "wine": "5.93 $",
+    "cigarettes": "8.47 $",
+    "taxi_1km": "2.28 $",
+    "internet_domestic": "40.00 $",
+    "gym": "43.19 $",
+    "cinema": "12.70 $",
+    "aparment_sm_center": "1,331.85 $",
+    "transportation": [
+      {
+        "title": "Short Trip Metro Ticket",
+        "price": "$1.48"
+      },
+      {
+        "title": "Bahn Ticket",
+        "price": "$3.18"
+      },
+      {
+        "title": "Short Taxi Ride",
+        "price": "$21"
+      }
+    ],
+    "food": [
+      {
+        "title": "Sandwich and Coffee To Go",
+        "price": "$5.30"
+      },
+      {
+        "title": "Turkish Sandwich",
+        "price": "$2.12"
+      },
+      {
+        "title": "Currywurst",
+        "price": "$2.12"
+      },
+      {
+        "title": "2 Pho Noodles",
+        "price": "$9.54"
+      },
+      {
+        "title": "Restaurant Dinner and Beers (for 2)",
+        "price": "$64"
+      },
+      {
+        "title": "Mauer Park (2)",
+        "price": "$12"
+      },
+      {
+        "title": "Coffees at Impala",
+        "price": "$8.27"
+      }
+    ],
+    "food_description": [
+      {
+        "title": "Desayuno económico",
+        "description": "Casi todos los hoteles incluyen el desayuno por lo que muy pocos restaurantes sirven por la mañana. Algunas opciones baratas están disponibles si miras a tu alrededor.",
+        "price": "$4.79 - $9.57"
+      },
+      {
+        "title": "Almuerzo económico",
+        "description": "Se pueden encontrar falafels u otra comida rápida por menos de 5 €, y las opciones para sentarse comienzan a partir de 5 €.",
+        "price": "$6.38 - $11.70"
+      },
+      {
+        "title": "Cena económica",
+        "description": "Las pizzas personales comienzan alrededor de € 5 y muchas otras opciones por solo un poco más.",
+        "price": "$10,11 - $17,02"
+      },
+      {
+        "title": ".5 litros de cerveza",
+        "description": "Los lugareños siempre ordenan en tamaño de .25L y esos son la mitad del precio. Se pueden encontrar ofertas de happy hour por menos si miras a tu alrededor.",
+        "price": "$4.79 - $7.45"
+      },
+      {
+        "title": "Taza de café)",
+        "description": "Café, espresso, capuchino en una \"cafetería\" o cafetería",
+        "price": "$2.66 - $3.72"
+      }
+    ],
+    "hotel": [
+      {
+        "title": "star-0",
+        "price": "RATING\tPRICE(USD)"
+      },
+      {
+        "title": "star-1",
+        "price": "29.79 - 53.19"
+      },
+      {
+        "title": "star-2",
+        "price": "48.94 - 170.21"
+      },
+      {
+        "title": "star-3",
+        "price": "53.19 - 137.23"
+      },
+      {
+        "title": "star-4",
+        "price": "75.53 - 204.26"
+      },
+      {
+        "title": "star-5",
+        "price": "140.43 - 393.62"
+      }
+    ],
+    "prices": {
+      "general": {
+        "main": "$117",
+        "all": [
+          {
+            "title": "One Week\nPer person",
+            "price": "$814"
+          },
+          {
+            "title": "2 Weeks\nPer person",
+            "price": "$1,628"
+          },
+          {
+            "title": "One Month\nPer person",
+            "price": "$3,489"
+          },
+          {
+            "title": "One Week\nFor a couple",
+            "price": "$1,628"
+          },
+          {
+            "title": "2 Weeks\nFor a couple",
+            "price": "$3,256"
+          },
+          {
+            "title": "One Month\nFor a couple",
+            "price": "$6,978"
+          }
         ]
-        ,"hotel":[
-            {
-                "title": "star-0",
-                "price": "RATING\tPRICE(USD)"
-            },
-            {
-                "title": "star-1",
-                "price": "29.79 - 53.19"
-            },
-            {
-                "title": "star-2",
-                "price": "48.94 - 170.21"
-            },
-            {
-                "title": "star-3",
-                "price": "53.19 - 137.23"
-            },
-            {
-                "title": "star-4",
-                "price": "75.53 - 204.26"
-            },
-            {
-                "title": "star-5",
-                "price": "140.43 - 393.62"
-            }
-        ],
-        "prices":{
-            "general":{
-                "main": "$117",
-                "all": [
-                    {
-                        "title": "One Week\nPer person",
-                        "price": "$814"
-                    },
-                    {
-                        "title": "2 Weeks\nPer person",
-                        "price": "$1,628"
-                    },
-                    {
-                        "title": "One Month\nPer person",
-                        "price": "$3,489"
-                    },
-                    {
-                        "title": "One Week\nFor a couple",
-                        "price": "$1,628"
-                    },
-                    {
-                        "title": "2 Weeks\nFor a couple",
-                        "price": "$3,256"
-                    },
-                    {
-                        "title": "One Month\nFor a couple",
-                        "price": "$6,978"
-                    }
-                ]
-            },
-            "budget": {
-                "main":"$45"
-            },
-            "luxury": {
-                "main":"$310"
-            }
-        }
-
+      },
+      "budget": {
+        "main": "$45"
+      },
+      "luxury": {
+        "main": "$310"
+      }
     }
+  },
+  {
+    "city": "París",
+    "country": "France",
+    "regular_meal": "16.00 $",
+    "mcdonalds": "10.66 $",
+    "domestic_beer": "2.15 $",
+    "cappuccino": "3.91 $",
+    "coke_pepsi": "3.00 $",
+    "water": "2.53 $",
+    "milk": "1.27 $",
+    "eggs": "3.77 $",
+    "apples": "3.31 $",
+    "wine": "9.60 $",
+    "cigarettes": "11.20 $",
+    "taxi_1km": "1.76 $",
+    "internet_domestic": "31.87 $",
+    "gym": "38.32 $",
+    "cinema": "13.86 $",
+    "aparment_sm_center": "1,360.71 $",
+    "transportation": [
+      {
+        "title": "Metro",
+        "price": "$6.78"
+      },
+      {
+        "title": "Train from Airport",
+        "price": "$9.54"
+      },
+      {
+        "title": "Metro tickets",
+        "price": "$7.21"
+      },
+      {
+        "title": "Train",
+        "price": "$21"
+      }
+    ],
+    "food": [
+      {
+        "title": "Ice Cream",
+        "price": "$8.48"
+      },
+      {
+        "title": "Breakfast",
+        "price": "$7.42"
+      },
+      {
+        "title": "Breakfast for 2",
+        "price": "$32"
+      },
+      {
+        "title": "Dinner on River Cruise",
+        "price": "$91"
+      },
+      {
+        "title": "Dinner",
+        "price": "$60"
+      },
+      {
+        "title": "Cheese",
+        "price": "$14"
+      }
+    ],
+    "prices": {
+      "general": {
+        "main": "$195",
+        "all": [
+          {
+            "title": "One Week\nPer person",
+            "price": "$1,363"
+          },
+          {
+            "title": "2 Weeks\nPer person",
+            "price": "$2,726"
+          },
+          {
+            "title": "One Month\nPer person",
+            "price": "$5,842"
+          },
+          {
+            "title": "One Week\nFor a couple",
+            "price": "$2,726"
+          },
+          {
+            "title": "2 Weeks\nFor a couple",
+            "price": "$5,452"
+          },
+          {
+            "title": "One Month\nFor a couple",
+            "price": "$11,685"
+          }
+        ]
+      },
+      "budget": {
+        "main": "$72"
+      },
+      "luxury": {
+        "main": "$400"
+      }
+    },
+    "food_description":[
+        {
+            "title": "Desayuno económico",
+            "description": "Muchos hoteles de París incluyen un desayuno gratis, pero no espere mucho, ya que la comida clásica de la mañana aquí es un panecillo recién hecho y café.",
+            "price": "$3.94 - $6.38"
+        },
+        {
+            "title": "Almuerzo económico",
+            "description": "Si busca lugares de barrio sencillos, la buena comida puede ser barata en París.",
+            "price": "$7.45 - $11.70"
+        },
+        {
+            "title": "Cena económica",
+            "description": "Nuevamente, el plat du jour en los bistrós modestos generalmente ofrece una excelente comida a un precio justo.",
+            "price": "$11,17 - $19,15"
+        },
+        {
+            "title": "Vino de la casa (.375L)",
+            "description": "El vino de la casa en los restaurantes suele ser una gran ganga en Francia.",
+            "price": "$4.79 - $9.57"
+        },
+        {
+            "title": "Vino barato (botella)",
+            "description": "Obviamente, el precio del vino no tiene límite superior, pero en las tiendas locales puedes conseguir una calidad sorprendentemente buena en este rango de precios.",
+            "price": "$2.66 - $10.64"
+        },
+        {
+            "title": "Cerveza (botella de .33L)",
+            "description": "Mientras que el vino es barato en París, la cerveza suele ser escandalosamente cara y las horas felices son raras.",
+            "price": "$5.85 - $9.57"
+        },
+        {
+            "title": "Taza de café)",
+            "description": "Las pequeñas tazas de café son baratas en las panaderías y caras en los cafés al aire libre.",
+            "price": "$1.33 - $4.26"
+        }
+    ],
+    "hotel":[
+        {
+            "title": "star-0",
+            "price": "CLASIFICACIÓN\tPRECIO (DÓLARES AMERICANOS)"
+        },
+        {
+            "title": "star-1",
+            "price": "25.53 - 84.04"
+        },
+        {
+            "title": "star-2",
+            "price": "56,38 - 170,21"
+        },
+        {
+            "title": "star-3",
+            "price": "72,34 - 274,47"
+        },
+        {
+            "title": "star-4",
+            "price": "80,85 - 319,15"
+        },
+        {
+            "title": "star-5",
+            "price": "206,38 - 493,62"
+        }
+    ]
+  }
 ]
