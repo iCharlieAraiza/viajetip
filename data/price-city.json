@@ -62,7 +62,35 @@
                 "price": "$8.27"
             }
         ],
-        "hotel":[
+        "food_description":
+        [
+            {
+                "title": "Desayuno económico",
+                "description": "Casi todos los hoteles incluyen el desayuno por lo que muy pocos restaurantes sirven por la mañana. Algunas opciones baratas están disponibles si miras a tu alrededor.",
+                "price": "$4.79 - $9.57"
+            },
+            {
+                "title": "Almuerzo económico",
+                "description": "Se pueden encontrar falafels u otra comida rápida por menos de 5 €, y las opciones para sentarse comienzan a partir de 5 €.",
+                "price": "$6.38 - $11.70"
+            },
+            {
+                "title": "Cena económica",
+                "description": "Las pizzas personales comienzan alrededor de € 5 y muchas otras opciones por solo un poco más.",
+                "price": "$10,11 - $17,02"
+            },
+            {
+                "title": ".5 litros de cerveza",
+                "description": "Los lugareños siempre ordenan en tamaño de .25L y esos son la mitad del precio. Se pueden encontrar ofertas de happy hour por menos si miras a tu alrededor.",
+                "price": "$4.79 - $7.45"
+            },
+            {
+                "title": "Taza de café)",
+                "description": "Café, espresso, capuchino en una \"cafetería\" o cafetería",
+                "price": "$2.66 - $3.72"
+            }
+        ]
+        ,"hotel":[
             {
                 "title": "star-0",
                 "price": "RATING\tPRICE(USD)"

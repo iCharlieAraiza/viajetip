@@ -107,8 +107,12 @@
                     <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">General description on the
                             city</label>
-                        <div class="form-control" id="generalDescription" rows="3">___ es un centro urabno localizado en
-                            ____. Entre sus características principales está____</div>
+                        <div class="form-control" id="generalDescription" rows="3">
+                            <p>¿Quién no quiere visitar ___? Sin duda uno de los lugares preferidos para viajeros de todo tipo</p>
+                            <p>____. Entre sus características principales está____</p>
+                            <p>Si bien/aunque/pese a que ___ puede ser una ciudad/destino costoso para muchos bolsillos / presupuestos, en realidad / la verdad puede ser más económica de lo que muchos imaginarían, en especial si se viaja de forma correcta </p>
+                            <p>A continuación encontratás una lista detallada de precios para un viaje a ___</p>
+                        </div>
                     </div>
                 </div>
                 <div class="top"></div>
@@ -186,7 +190,9 @@
                             href="https://www.priceoftravel.com/amsterdam-travel-guide"
                             target="_blank">Ref 🌐</a></label>
                         <div id="whenToVisit">
-                            
+                            <p>Los precios de ___ durante el año (varían / no varian / se mantinene), por lo que es ideal viajar (durante / en / para)</p>
+                            <p>Los meses de temporada alta</p>
+                            <p>Mientras tanto, la temporada alta</p>
                         </div>
                     </div>
                     <div class="top"></div>
@@ -269,6 +275,18 @@
                             <input type="text" name="" class="form-control" id="americano"
                                 placeholder="Americano Coffee">
                         </div>
+                    </div>
+                    <div class="row">
+                        <div class="mb-3">
+                            <label for="">Description prices of Food <a
+                                href="https://www.priceoftravel.com/amsterdam-travel-guide"
+                                target="_blank">Ref 🌐</a></label>
+                            <div id="priceFoodDescription">
+                                <p>En ___ el precio de la comida puede variar / varia poco</p>
+                                <p>Las opciones gastronómicas que ofrece ___ / ___ en una ciudad con muchas alternativas</p>
+                            </div>
+                        </div>
+                        <div class="top"></div>
                     </div>
                     <div class="row">
                         <div class="mb-3">
@@ -444,6 +462,10 @@
             theme: 'snow'
         });
 
+        const foodDescription = new Quill('#priceFoodDescription', {
+            theme: 'snow'
+        });
+
         const whenToVisit = new Quill('#whenToVisit', {
             theme: 'snow'
         });
@@ -588,6 +610,7 @@
             generateInput(currentCity.transportation, 'transport-input')
             generateInput(currentCity.food, 'food-input')
             generateInput(currentCity.hotel, 'hotels-input')
+            generateInput(currentCity.food_description, 'foodDescription-input', true)
 
         }
 
@@ -637,6 +660,26 @@
         }
 
         function generateInput(array, name = "") {
+            const generalInput = document.getElementById('generalInput');
+            const title = document.createElement('h3');
+            title.innerText = name;
+            generalInput.appendChild(title);
+            const row = document.createElement('div');
+            row.className = 'row';
+            array.forEach(item => {
+                const input = createInput(name, item.price);
+                const inputTitle = createInput(name + "-title", item.title);
+                const div = document.createElement('div');
+                div.className = 'form-group-input col' + ' ' + name + '-group'
+                div.appendChild(createSelectInput(name));
+                div.appendChild(inputTitle);
+                div.appendChild(input);
+                row.appendChild(div);
+            })
+            generalInput.appendChild(row);
+        }
+
+        function generateInput(array, name = "", table) {
             const generalInput = document.getElementById('generalInput');
             const title = document.createElement('h3');
             title.innerText = name;
@@ -741,7 +784,7 @@
                 ${generalDescription.root.innerHTML}
                 <div id="priceSection">
                     <h2>Precios para un viaje a ${city}</h2>
-                    <p>A continuación te traemos una lista de precios para ${city} de acuerdo a distintos tipos de viaje</p>
+                    <p>A continuación te traemos una lista de precios para ${city} de acuerdo a distintos tipos de viaje.</p>
                     <div class="price-list__wrapper">
                         <div class="price-list">
                             <h4 class="price-list__title">Promedio</h4>
@@ -833,7 +876,7 @@
                             </tr>
                             <tr>
                                 <td class="title_td">Conversión por USD</td>
-                                <td>${convertPrice(1, currencyKey, currencySign)} x 1 USD}</td>
+                                <td>${convertPrice(1, currencyKey, currencySign)} x 1 USD</td>
                             </tr>
                             <tr>
                                 <td class="title_td">Temporada baja</td>
@@ -845,7 +888,7 @@
             </div> 
 
             <h3>Precio de alimentos de ${city}</h3>
-            <p>Precios promedio en alimentos básicos y bebidas. Aclaración: los costos pueden variar de acuerdo al establecimiento.</p>
+            <p>Precios promedio en alimentos básicos y bebidas. Aclaración: los costos pueden cambiar de acuerdo al establecimiento y a la zona.</p>
 
             <div class="price-content">
                 <div class="price-content__item">
@@ -976,16 +1019,7 @@
                 </div>
             </div>
 
-            <div class="tip-box">
-                <div class="tip-box__logo">
-                    <img src="assets/img/icons/idea.svg" alt="" srcset="">
-                </div>
-                <div class="tip-box__description">
-                    <h3 class="tip_box__title">Consejos para ahorrar en comida: Ir al supermercado</h3>
-                    ${foodTips}
-                </div>
-            </div>
-
+            ${foodDescription.root.innerHTML}
 
             <h4>Precio de alcohol y cigarrillos</h4>
 
@@ -1045,6 +1079,48 @@
                     }).join('')
                 }
             </div>
+
+
+            <p> </p>
+
+            <div class="table-wrap">
+                <table class="table-styled">
+                    <tbody>
+                        <tr>
+                            <td class="title_td">Desayuno</td>
+                            <td>Great and cheap meals can be found at the many hawker centers around the clock.</td>
+                            <td class="price_td">$30</td>
+                        </tr>
+                        <tr>
+                            <td class="title_td">Comida</td>
+                            <td>Great and cheap meals centers can be found at the many cheap hawker centers around the
+                                clock.</td>
+                            <td class="price_td">$30</td>
+                        </tr>
+                        <tr>
+                            <td class="title_td">Cena</td>
+                            <td>Code at the many hawker centers around the clock.</td>
+                            <td class="price_td">$30</td>
+                        </tr>
+                        <tr>
+                            <td class="title_td">Final</td>
+                            <td>Code at the many hawker centers around the clock.</td>
+                            <td class="price_td">$30</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="tip-box">
+                <div class="tip-box__logo">
+                    <img src="assets/img/icons/idea.svg" alt="" srcset="">
+                </div>
+                <div class="tip-box__description">
+                    <h3 class="tip_box__title">Consejos para ahorrar en comida: Ir al supermercado</h3>
+                    ${foodTips}
+                </div>
+            </div>
+
 
             `
             code.textContent = codeContent
