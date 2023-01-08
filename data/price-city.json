@@ -91,10 +91,6 @@
     ],
     "hotel": [
       {
-        "title": "star-0",
-        "price": "RATING\tPRICE(USD)"
-      },
-      {
         "title": "star-1",
         "price": "29.79 - 53.19"
       },
@@ -291,10 +287,6 @@
         }
     ],
     "hotel":[
-        {
-            "title": "star-0",
-            "price": "CLASIFICACIÓN\tPRECIO (DÓLARES AMERICANOS)"
-        },
         {
             "title": "star-1",
             "price": "25.53 - 84.04"

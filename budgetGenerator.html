@@ -108,9 +108,12 @@
                         <label for="exampleFormControlTextarea1" class="form-label">General description on the
                             city</label>
                         <div class="form-control" id="generalDescription" rows="3">
-                            <p>¿Quién no quiere visitar ___? Sin duda uno de los lugares preferidos para viajeros de todo tipo</p>
+                            <p>¿Quién no quiere visitar ___? Sin duda uno de los lugares preferidos para viajeros de
+                                todo tipo</p>
                             <p>____. Entre sus características principales está____</p>
-                            <p>Si bien/aunque/pese a que ___ puede ser una ciudad/destino costoso para muchos bolsillos / presupuestos, en realidad / la verdad puede ser más económica de lo que muchos imaginarían, en especial si se viaja de forma correcta </p>
+                            <p>Si bien/aunque/pese a que ___ puede ser una ciudad/destino costoso para muchos bolsillos
+                                / presupuestos, en realidad / la verdad puede ser más económica de lo que muchos
+                                imaginarían, en especial si se viaja de forma correcta </p>
                             <p>A continuación encontratás una lista detallada de precios para un viaje a ___</p>
                         </div>
                     </div>
@@ -187,10 +190,11 @@
                 <div class="row">
                     <div class="mb-3">
                         <label for="">When is the best time to visit <a
-                            href="https://www.priceoftravel.com/amsterdam-travel-guide"
-                            target="_blank">Ref 🌐</a></label>
+                                href="https://www.priceoftravel.com/amsterdam-travel-guide" target="_blank">Ref
+                                🌐</a></label>
                         <div id="whenToVisit">
-                            <p>Los precios de ___ durante el año (varían / no varian / se mantinene), por lo que es ideal viajar (durante / en / para)</p>
+                            <p>Los precios de ___ durante el año (varían / no varian / se mantinene), por lo que es
+                                ideal viajar (durante / en / para)</p>
                             <p>Los meses de temporada alta</p>
                             <p>Mientras tanto, la temporada alta</p>
                         </div>
@@ -279,11 +283,12 @@
                     <div class="row">
                         <div class="mb-3">
                             <label for="">Description prices of Food <a
-                                href="https://www.priceoftravel.com/amsterdam-travel-guide"
-                                target="_blank">Ref 🌐</a></label>
+                                    href="https://www.priceoftravel.com/amsterdam-travel-guide" target="_blank">Ref
+                                    🌐</a></label>
                             <div id="priceFoodDescription">
                                 <p>En ___ el precio de la comida puede variar / varia poco</p>
-                                <p>Las opciones gastronómicas que ofrece ___ / ___ en una ciudad con muchas alternativas</p>
+                                <p>Las opciones gastronómicas que ofrece ___ / ___ en una ciudad con muchas alternativas
+                                </p>
                             </div>
                         </div>
                         <div class="top"></div>
@@ -301,9 +306,13 @@
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">General description price of
                                 hotels</label>
-                            <textarea class="form-control" id="hotelsDescription"
-                                rows="3">En ____ el precio de los hoteles ronda los  ____ dependeiendo de  </textarea>
+                            <div class="form-control" id="hotelsDescription"
+                                rows="3"> 
+                                <p>En ____ el precio de los hoteles ronda los  ____ dependeiendo de </p> 
+                                <p>Las opciones más económicas se pueden encontrar en temporada baja, es decir, en los meses de </p>
+                            </div>
                         </div>
+                        <div class="top"></div>
                     </div>
                     <div class="row">
                         <div class="mb-3">
@@ -402,8 +411,8 @@
 
     <script>
         const allCurrencies = []
-        const articleNode = []  
-        
+        const articleNode = []
+
         const allTransportIcons = [
             {
                 name: 'drink',
@@ -414,8 +423,8 @@
                 url: 'assets/img/icons/price/dinner.svg'
             },
             {
-                name:'train',
-                url:'assets/img/icons/price/train.svg'
+                name: 'train',
+                url: 'assets/img/icons/price/train.svg'
             },
             {
                 name: 'bus',
@@ -431,23 +440,23 @@
             },
             {
                 name: '1 start',
-                url: ''
+                url: '/assets/img/icons/1-star.svg'
             },
             {
                 name: '2 start',
-                url: ''
+                url: '/assets/img/icons/2-star.svg'
             },
             {
                 name: '3 start',
-                url: ''
+                url: '/assets/img/icons/3-star.svg'
             },
             {
                 name: '4 start',
-                url: ''
+                url: '/assets/img/icons/4-star.svg'
             },
             {
                 name: '5 start',
-                url: ''
+                url: '/assets/img/icons/5-star.svg'
             }
         ]
 
@@ -479,6 +488,10 @@
         });
 
         const conclusion = new Quill('#conclusion', {
+            theme: 'snow'
+        });
+
+        const hotelsDescriptionInput = new Quill('#hotelsDescription', {
             theme: 'snow'
         });
 
@@ -524,7 +537,6 @@
         const cinemaInput = document.getElementById('cinema')
         const internetInput = document.getElementById('internet')
         const mobileInput = document.getElementById('mobile')
-        const hotelsDescriptionInput = document.getElementById('hotelsDescription')
 
         const transportDescriptionInput = document.getElementById('transportDescription')
         const foodTipsInput = document.getElementById('foodTips')
@@ -610,7 +622,7 @@
             generateInput(currentCity.transportation, 'transport-input')
             generateInput(currentCity.food, 'food-input')
             generateInput(currentCity.hotel, 'hotels-input')
-            generateInput(currentCity.food_description, 'foodDescription-input', true)
+            generateInpuByTable(currentCity.food_description, 'foodDescription-input', true)
 
         }
 
@@ -649,7 +661,7 @@
             select.name = name;
             select.className = 'form-control' + ' ' + name;
             select.id = 'select-' + name;
-            
+
             allTransportIcons.forEach(el => {
                 const option = document.createElement('option');
                 option.value = el.url;
@@ -657,6 +669,15 @@
                 select.appendChild(option);
             })
             return select;
+        }
+
+        function createTextarea(name, value) {
+            const textarea = document.createElement('textarea');
+            textarea.name = name;
+            textarea.className = 'form-control' + ' ' + name;
+            textarea.id = name;
+            textarea.textContent = value;
+            return textarea;
         }
 
         function generateInput(array, name = "") {
@@ -679,7 +700,7 @@
             generalInput.appendChild(row);
         }
 
-        function generateInput(array, name = "", table) {
+        function generateInpuByTable(array, name = "", table) {
             const generalInput = document.getElementById('generalInput');
             const title = document.createElement('h3');
             title.innerText = name;
@@ -690,9 +711,11 @@
                 const input = createInput(name, item.price);
                 const inputTitle = createInput(name + "-title", item.title);
                 const div = document.createElement('div');
+                const description = createTextarea(name + "-description", item.description)
                 div.className = 'form-group-input col' + ' ' + name + '-group'
-                div.appendChild(createSelectInput(name));
+                //div.appendChild(createSelectInput(name));
                 div.appendChild(inputTitle);
+                div.appendChild(description);
                 div.appendChild(input);
                 row.appendChild(div);
             })
@@ -733,7 +756,7 @@
             const gym = gymInput.value;
             const cinema = cinemaInput.value;
             const internet = internetInput.value;
-            const hotelsDescription = hotelsDescriptionInput.value;
+            const hotelsDescription = hotelsDescriptionInput.root.innerHTML;
             const americano = americanoInput.value;
 
             const budgetMain = budgetMainInput.value;
@@ -743,11 +766,18 @@
 
             const transport = document.querySelectorAll('.transport-input-group')
             const food = document.querySelectorAll('.food-input-group')
+            const meals = document.querySelectorAll('.foodDescription-input-group')
+            const hotels = document.querySelectorAll('.hotels-input-group')
+
+            const acommodationTips = acommodationTipsInput.value;
+
 
             const foodTips = foodTipsInput.value;
 
             const transportArray = []
             const foodArray = []
+            const mealOfTheDay = []
+            const hotelStars = []
 
             transport.forEach(item => {
                 const iconUrl = item.querySelector('#select-transport-input').value;
@@ -777,6 +807,35 @@
                     </div>`
                 foodArray.push(el)
             })
+
+            meals.forEach(item => {
+                const title = item.querySelector('.foodDescription-input-title').value;
+                const description = item.querySelector('.foodDescription-input-description').value;
+                const price = item.querySelector('.foodDescription-input').value;
+                const el = `
+                    <tr>
+                        <td class="title_td">${title}</td>
+                        <td>${description}</td>
+                        <td class="price_td">${price}</td>
+                    </tr>
+                            `
+                mealOfTheDay.push(el)
+            })
+
+            hotels.forEach(item => {
+                const iconUrl = item.querySelector('#select-hotels-input').value;
+                const title = item.querySelector('.hotels-input-title').value;
+                const price = item.querySelector('#hotels-input').value;
+                const el = `
+                    <tr>
+                        <td><img src="${iconUrl}" class="star-img" /></td>
+                        <td>${title}</td>
+                        <td class="bold">${convertPrice(price, 'usd', '$')}</td>
+                    </tr>
+                `
+                hotelStars.push(el)
+            })
+
 
             code.innerText = "<h2>Code</h2>"
             const codeContent = `
@@ -1073,10 +1132,9 @@
             <p>Comodas, platillos y bebidas típicas de ${city}</p>
 
             <div class="price-content">
-                ${
-                    foodArray.map(item => {
-                        return item
-                    }).join('')
+                ${foodArray.map(item => {
+                return item
+            }).join('')
                 }
             </div>
 
@@ -1086,27 +1144,10 @@
             <div class="table-wrap">
                 <table class="table-styled">
                     <tbody>
-                        <tr>
-                            <td class="title_td">Desayuno</td>
-                            <td>Great and cheap meals can be found at the many hawker centers around the clock.</td>
-                            <td class="price_td">$30</td>
-                        </tr>
-                        <tr>
-                            <td class="title_td">Comida</td>
-                            <td>Great and cheap meals centers can be found at the many cheap hawker centers around the
-                                clock.</td>
-                            <td class="price_td">$30</td>
-                        </tr>
-                        <tr>
-                            <td class="title_td">Cena</td>
-                            <td>Code at the many hawker centers around the clock.</td>
-                            <td class="price_td">$30</td>
-                        </tr>
-                        <tr>
-                            <td class="title_td">Final</td>
-                            <td>Code at the many hawker centers around the clock.</td>
-                            <td class="price_td">$30</td>
-                        </tr>
+                        ${mealOfTheDay.map(item => {
+                    return item
+                }).join('')
+                }
                     </tbody>
                 </table>
             </div>
@@ -1116,11 +1157,102 @@
                     <img src="assets/img/icons/idea.svg" alt="" srcset="">
                 </div>
                 <div class="tip-box__description">
-                    <h3 class="tip_box__title">Consejos para ahorrar en comida: Ir al supermercado</h3>
+                    <h3 class="tip_box__title">Consejos para ahorrar en comida</h3>
                     ${foodTips}
                 </div>
             </div>
 
+            <h4 class="price-title-tag">GASTO DIARIO POR ALIMENTOS</h4>
+            <div class="price-list__wrapper">
+                <div class="price-list">
+                    <h4 class="price-list__title">Promedio</h4>
+                    <ul class="price-list__list">
+                        <li class="price-list__card">
+                            <div class="price-list__img-container">
+                                <img src="assets/img/icons/price/i_ave.svg" alt="precio promedio">
+                            </div>
+                            <p class="price-list__card-info">
+                                <span class="price-list__card-title">Presupuesto diario</span>
+                                <span class="price-list__card-price">${convertPrice(Math.round(generalMain / 3) + '', 'usd', '$')}</span>
+                                <span class="price-list__card-target">${convertPrice(Math.round(generalMain / 3) + '', currencyKey, currencySign)} </span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="price-list">
+                    <h4 class="price-list__title">Económico</h4>
+                    <ul class="price-list__list">
+                        <li class="price-list__card">
+                            <div class="price-list__img-container">
+                                <img src="assets/img/icons/price/i_budget.svg" alt="Precio económico">
+                            </div>
+                            <p class="price-list__card-info">
+                                <span class="price-list__card-title">Presupuesto diario</span>
+                                <span class="price-list__card-price">${convertPrice(Math.round(budgetMain / 3) + '', 'usd')}</span>
+                                        <span class="price-list__card-target">${convertPrice(Math.round(budgetMain / 3) + '', currencyKey, currencySign)}</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="price-list">
+                    <h4 class="price-list__title">Lujo</h4>
+                    <ul class="price-list__list">
+                        <li class="price-list__card">
+                            <div class="price-list__img-container">
+                                <img src="assets/img/icons/price/i_lux.svg" alt="Precio de lujo">
+                            </div>
+                            <p class="price-list__card-info">
+                                <span class="price-list__card-title">Presupuesto diario</span>
+                                <span class="price-list__card-price">${convertPrice(Math.round(luxuryMain / 3) + '', 'usd')}</span>
+                                        <span class="price-list__card-target">${convertPrice(Math.round(luxuryMain / 3) + '', currencyKey, currencySign)}</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Presupuesto de hospedaje en ${city}</h3>
+
+            <div class="hotel-info__container">
+
+                <div class="hotel-info__left-container">
+
+                    <div class="circle-img">
+                        <img src="https://lp-cms-production.imgix.net/2021-03/GettyImages-564651171.jpg?auto=format&fit=crop&q=40&w=520&h=785&dpr=2"
+                            alt="">
+                    </div>
+                </div>
+
+                <div class="stars-container">
+                    <h3 class="price-hotels__title">
+                        Precio de hoteles en ${city}
+                    </h3>
+                    <p>Precio promedio de alojamiento por noche de acuerdo a la categoría del hotel</p>
+                    <div class="table-wrap small">
+                        <table class="table-styled">
+                            <tbody>
+                                ${
+                                    hotelStars.map(item => {
+                                        return item
+                                    }).join('')
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            ${hotelsDescription}
+
+            <div class="tip-box">
+                <div class="tip-box__logo">
+                    <img src="assets/img/icons/idea.svg" alt="" srcset="">
+                </div>
+                <div class="tip-box__description">
+                    <h3 class="tip_box__title">Consejos para ahorrar en hospedaje</h3>
+                    ${acommodationTips}
+                </div>
+            </div>
 
             `
             code.textContent = codeContent
@@ -1136,7 +1268,7 @@
 
         function convertPrice(price, curr, sign) {
             if (curr == 'usd') {
-                return `$${price.replace('$','').trim()} USD`
+                return `$${price.replace('$', '').trim()} USD`
             }
 
             const currency = curr.toLowerCase()

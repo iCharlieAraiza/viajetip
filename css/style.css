@@ -401,6 +401,7 @@ hr::after {
 
 .table-wrap.small td {
   padding: 2px;
+  padding-right: 12px;
 }
 
 .table-styled {
@@ -978,6 +979,14 @@ hr::after {
   .tabs-content li a {
     font-size: 14px;
   }
+}
+
+.price-title-tag {
+  margin-bottom: 0;
+  font-weight: bold;
+  font-size: 19px;
+  color: #979797;
+  margin-top: 4rem;
 }
 
 footer {
