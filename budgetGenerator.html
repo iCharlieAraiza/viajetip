@@ -769,6 +769,8 @@
             const meals = document.querySelectorAll('.foodDescription-input-group')
             const hotels = document.querySelectorAll('.hotels-input-group')
 
+
+            const transportDescription = document.getElementById('transportDescription').value;
             const acommodationTips = acommodationTipsInput.value;
 
 
@@ -781,9 +783,23 @@
 
             transport.forEach(item => {
                 const iconUrl = item.querySelector('#select-transport-input').value;
-                const input = item.querySelector('.transport-input');
-                const inputTitle = item.querySelector('.transport-input-title');
-                const el = `<p class="card-text">${inputTitle.value} - ${input.value} - ${iconUrl}</p>`
+                const price = item.querySelector('#transport-input').value;
+                const title = item.querySelector('.transport-input-title').value;
+                //const el = `<p class="card-text">${inputTitle.value} - ${input.value} - ${iconUrl}</p>`
+                const el = `                
+                    <div class="price-content__item">
+                        <div class="price-content__icon-wrapper">
+                            <img class="price-content__icon" src="${iconUrl}" alt="${title}">
+                        </div>
+                        <div class="price-content__info">
+                            <p class="price-content__title">
+                                ${title}
+                            </p>
+                            <p class="price-content__price">
+                                ${convertPrice(price, 'usd')}
+                            </p>
+                        </div>
+                    </div>`
                 transportArray.push(el)
             })
 
@@ -1080,7 +1096,7 @@
 
             ${foodDescription.root.innerHTML}
 
-            <h4>Precio de alcohol y cigarrillos</h4>
+            <h4 class="bold">Precio de alcohol y cigarrillos</h4>
 
             <p>Precio promedio de bebidas alcoholicas y tabaco en ${city}</p>
 
@@ -1128,13 +1144,14 @@
                 </div>
             </div>
 
-            <h4>Alimentos típicos</h4>
+            <h4 class="bold">Alimentos típicos</h4>
             <p>Comodas, platillos y bebidas típicas de ${city}</p>
 
             <div class="price-content">
-                ${foodArray.map(item => {
-                return item
-            }).join('')
+                ${
+                    foodArray.map(item => {
+                        return item
+                    }).join('')
                 }
             </div>
 
@@ -1165,21 +1182,6 @@
             <h4 class="price-title-tag">GASTO DIARIO POR ALIMENTOS</h4>
             <div class="price-list__wrapper">
                 <div class="price-list">
-                    <h4 class="price-list__title">Promedio</h4>
-                    <ul class="price-list__list">
-                        <li class="price-list__card">
-                            <div class="price-list__img-container">
-                                <img src="assets/img/icons/price/i_ave.svg" alt="precio promedio">
-                            </div>
-                            <p class="price-list__card-info">
-                                <span class="price-list__card-title">Presupuesto diario</span>
-                                <span class="price-list__card-price">${convertPrice(Math.round(generalMain / 3) + '', 'usd', '$')}</span>
-                                <span class="price-list__card-target">${convertPrice(Math.round(generalMain / 3) + '', currencyKey, currencySign)} </span>
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="price-list">
                     <h4 class="price-list__title">Económico</h4>
                     <ul class="price-list__list">
                         <li class="price-list__card">
@@ -1190,6 +1192,21 @@
                                 <span class="price-list__card-title">Presupuesto diario</span>
                                 <span class="price-list__card-price">${convertPrice(Math.round(budgetMain / 3) + '', 'usd')}</span>
                                         <span class="price-list__card-target">${convertPrice(Math.round(budgetMain / 3) + '', currencyKey, currencySign)}</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="price-list">
+                    <h4 class="price-list__title">Promedio</h4>
+                    <ul class="price-list__list">
+                        <li class="price-list__card">
+                            <div class="price-list__img-container">
+                                <img src="assets/img/icons/price/i_ave.svg" alt="precio promedio">
+                            </div>
+                            <p class="price-list__card-info">
+                                <span class="price-list__card-title">Presupuesto diario</span>
+                                <span class="price-list__card-price">${convertPrice(Math.round(generalMain / 3) + '', 'usd', '$')}</span>
+                                <span class="price-list__card-target">${convertPrice(Math.round(generalMain / 3) + '', currencyKey, currencySign)} </span>
                             </p>
                         </li>
                     </ul>
@@ -1253,6 +1270,119 @@
                     ${acommodationTips}
                 </div>
             </div>
+
+            <h4 class="price-title-tag">GASTO DIARIO de Hospedaje por tipo de viaje</h4>
+            <div class="price-list__wrapper">
+                <div class="price-list">
+                    <h4 class="price-list__title">Económico</h4>
+                    <ul class="price-list__list">
+                        <li class="price-list__card">
+                            <div class="price-list__img-container">
+                                <img src="assets/img/icons/price/i_budget.svg" alt="Precio económico">
+                            </div>
+                            <p class="price-list__card-info">
+                                <span class="price-list__card-title">Presupuesto diario</span>
+                                <span class="price-list__card-price">${convertPrice(Math.round(budgetMain / 2) + '', 'usd')}</span>
+                                        <span class="price-list__card-target">${convertPrice(Math.round(budgetMain / 2) + '', currencyKey, currencySign)}</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="price-list">
+                    <h4 class="price-list__title">Promedio</h4>
+                    <ul class="price-list__list">
+                        <li class="price-list__card">
+                            <div class="price-list__img-container">
+                                <img src="assets/img/icons/price/i_ave.svg" alt="precio promedio">
+                            </div>
+                            <p class="price-list__card-info">
+                                <span class="price-list__card-title">Presupuesto diario</span>
+                                <span class="price-list__card-price">${convertPrice(Math.round(generalMain / 2) + '', 'usd', '$')}</span>
+                                <span class="price-list__card-target">${convertPrice(Math.round(generalMain / 2) + '', currencyKey, currencySign)} </span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="price-list">
+                    <h4 class="price-list__title">Lujo</h4>
+                    <ul class="price-list__list">
+                        <li class="price-list__card">
+                            <div class="price-list__img-container">
+                                <img src="assets/img/icons/price/i_lux.svg" alt="Precio de lujo">
+                            </div>
+                            <p class="price-list__card-info">
+                                <span class="price-list__card-title">Presupuesto diario</span>
+                                <span class="price-list__card-price">${convertPrice(Math.round(luxuryMain / 2) + '', 'usd')}</span>
+                                        <span class="price-list__card-target">${convertPrice(Math.round(luxuryMain / 2) + '', currencyKey, currencySign)}</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <h3>Presupuesto de transporte</h3>
+            <p>Gasto promedio en transporte en ${city}</p>
+
+            <p></p>
+
+            <div class="price-content">
+                ${
+                transportArray.map(item => {
+                        return item
+                    }).join('')
+                }
+            </div>
+            ${transportDescription}
+
+            <h4 class="price-title-tag">Gasto diario en transporte</h4>
+            <div class="price-list__wrapper">
+                <div class="price-list">
+                    <h4 class="price-list__title">Económico</h4>
+                    <ul class="price-list__list">
+                        <li class="price-list__card">
+                            <div class="price-list__img-container">
+                                <img src="assets/img/icons/price/i_budget.svg" alt="Precio económico">
+                            </div>
+                            <p class="price-list__card-info">
+                                <span class="price-list__card-title">Presupuesto diario</span>
+                                <span class="price-list__card-price">${convertPrice(Math.round(budgetMain / 3.5) + '', 'usd')}</span>
+                                        <span class="price-list__card-target">${convertPrice(Math.round(budgetMain / 3.5) + '', currencyKey, currencySign)}</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="price-list">
+                    <h4 class="price-list__title">Promedio</h4>
+                    <ul class="price-list__list">
+                        <li class="price-list__card">
+                            <div class="price-list__img-container">
+                                <img src="assets/img/icons/price/i_ave.svg" alt="precio promedio">
+                            </div>
+                            <p class="price-list__card-info">
+                                <span class="price-list__card-title">Presupuesto diario</span>
+                                <span class="price-list__card-price">${convertPrice(Math.round(generalMain / 4) + '', 'usd', '$')}</span>
+                                <span class="price-list__card-target">${convertPrice(Math.round(generalMain / 4) + '', currencyKey, currencySign)} </span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="price-list">
+                    <h4 class="price-list__title">Lujo</h4>
+                    <ul class="price-list__list">
+                        <li class="price-list__card">
+                            <div class="price-list__img-container">
+                                <img src="assets/img/icons/price/i_lux.svg" alt="Precio de lujo">
+                            </div>
+                            <p class="price-list__card-info">
+                                <span class="price-list__card-title">Presupuesto diario</span>
+                                <span class="price-list__card-price">${convertPrice(Math.round(luxuryMain / 5) + '', 'usd')}</span>
+                                        <span class="price-list__card-target">${convertPrice(Math.round(luxuryMain / 5) + '', currencyKey, currencySign)}</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
 
             `
             code.textContent = codeContent

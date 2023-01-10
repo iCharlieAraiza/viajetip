@@ -114,6 +114,7 @@ li.forEach((li) => {
     Add spcific information about city
     IMPORTANT:
     - Add '.specific_[name]' class to div
+    budgetyourtrip.com
 */ 
 
 const food = document.querySelector('.traditional_food')
@@ -138,10 +139,27 @@ const daily = {}
 daily.main = main.querySelector('.cost-tile-value').innerText
 type['general'] = daily
 
+/*
+    Price of breakfast-dinner dinner - Table
+    priceoftravel.com
+    'food_description'
+*/
+
+const priceOfFood = document.querySelectorAll('.food tr')
+const foodPrices = []
+
+priceOfFood.forEach( (food, index) => {
+    const el = {}
+    el.title = food.children[0].innerText
+    el.description = food.children[1].innerText
+    el.price = food.children[2].innerText
+    foodPrices.push(el)    
+})
 
 /*
     Price of hotels
     priceoftravel.com
+    'hotel'
 */
 
 const hotels = document.querySelectorAll('.hotels tr')
