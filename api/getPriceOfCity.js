@@ -131,6 +131,26 @@ li_food.forEach((li) => {
 })
 
 /*
+    Add entertainment information about city
+    IMPORTANT:
+    - Add 'entertainment' class to table
+*/ 
+
+const entertainment = document.querySelector('.entertainment')
+const liEntertainment = entertainment.querySelectorAll('li')
+const entertainmentData = []
+
+liEntertainment.forEach((li) => {
+    const title = li.querySelector('.cost-tile-label').innerText
+    const price = li.querySelector('.cost-tile-value').innerText
+    const data = {}
+    data['title'] = title
+    data['price'] = price
+    entertainmentData.push(data)
+})
+
+
+/*
     Daily price of city
 */
 const main = document.querySelector('.main')

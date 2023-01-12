@@ -111,6 +111,17 @@
         "price": "140.43 - 393.62"
       }
     ],
+    "entertainment":[
+      {
+      "title": "Zoológico",
+      "price": "20"
+      },
+      {
+        "title": "Tour privado",
+        "price": "10"
+        }
+    ]
+    ,
     "prices": {
       "general": {
         "main": "$117",
@@ -307,6 +318,20 @@
             "title": "star-5",
             "price": "206,38 - 493,62"
         }
+    ],
+    "entertainment" : [
+      {
+          "title": "Louvre Entry for Two",
+          "price": "15"
+      },
+      {
+          "title": "Admission to Pantheon",
+          "price": "4.50"
+      },
+      {
+          "title": "Catacombs (2)",
+          "price": "23"
+      }
     ]
   }
 ]

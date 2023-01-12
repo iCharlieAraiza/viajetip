@@ -329,8 +329,8 @@
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">General description of transport
                                 (100)</label>
-                            <textarea class="form-control" id="transportDescription"
-                                rows="3">Al ser ___ un destino ____, los locales suelen moverse  </textarea>
+                            <div class="form-control" id="transportDescription"
+                                rows="3"><p>Al ser ___ un destino ____, los locales suelen moverse </p></div>
                         </div>
                     </div>
                     <div class="row">
@@ -351,7 +351,6 @@
                             <div id="editor">
                                 <p>Hello World!</p>
                                 <p>Some initial <strong>bold</strong> text</p>
-                                <p><br></p>
                             </div>
                         </div>
 
@@ -495,6 +494,10 @@
             theme: 'snow'
         });
 
+        const transportDescriptionInput = new Quill('#transportDescription', {
+            theme: 'snow'
+        });
+
         const generate = document.getElementById('generate');
         const code = document.getElementById('code')
         const cityInput = document.getElementById('city');
@@ -537,8 +540,9 @@
         const cinemaInput = document.getElementById('cinema')
         const internetInput = document.getElementById('internet')
         const mobileInput = document.getElementById('mobile')
+        const thingsToDo = quill.root.innerHTML
 
-        const transportDescriptionInput = document.getElementById('transportDescription')
+        //const transportDescriptionInput = document.getElementById('transportDescription')
         const foodTipsInput = document.getElementById('foodTips')
         const acommodationTipsInput = document.getElementById('acommodationTips')
         const transportAirportsInput = document.getElementById('transportAirports')
@@ -621,6 +625,7 @@
 
             generateInput(currentCity.transportation, 'transport-input')
             generateInput(currentCity.food, 'food-input')
+            generateInput(currentCity.entertainment, 'entertainment-input')
             generateInput(currentCity.hotel, 'hotels-input')
             generateInpuByTable(currentCity.food_description, 'foodDescription-input', true)
 
@@ -768,9 +773,9 @@
             const food = document.querySelectorAll('.food-input-group')
             const meals = document.querySelectorAll('.foodDescription-input-group')
             const hotels = document.querySelectorAll('.hotels-input-group')
+            const entertainment = document.querySelectorAll('.entertainment-input-group')
 
-
-            const transportDescription = document.getElementById('transportDescription').value;
+            const transportDescription = transportDescriptionInput.root.innerHTML;
             const acommodationTips = acommodationTipsInput.value;
 
 
@@ -780,6 +785,7 @@
             const foodArray = []
             const mealOfTheDay = []
             const hotelStars = []
+            const entertainmentArray = []
 
             transport.forEach(item => {
                 const iconUrl = item.querySelector('#select-transport-input').value;
@@ -837,6 +843,28 @@
                             `
                 mealOfTheDay.push(el)
             })
+
+            entertainment.forEach(item => {
+                const iconUrl = item.querySelector('#select-entertainment-input')?.value;
+                const price = item.querySelector('#entertainment-input').value;
+                const title = item.querySelector('.entertainment-input-title').value;
+                const el = `                
+                    <div class="price-content__item">
+                        <div class="price-content__icon-wrapper">
+                            <img class="price-content__icon" src="${iconUrl}" alt="${title}">
+                        </div>
+                        <div class="price-content__info">
+                            <p class="price-content__title">
+                                ${title}
+                            </p>
+                            <p class="price-content__price">
+                                ${convertPrice(price, 'usd')}
+                            </p>
+                        </div>
+                    </div>`
+                entertainmentArray.push(el)
+            })
+
 
             hotels.forEach(item => {
                 const iconUrl = item.querySelector('#select-hotels-input').value;
@@ -1332,6 +1360,7 @@
                     }).join('')
                 }
             </div>
+            
             ${transportDescription}
 
             <h4 class="price-title-tag">Gasto diario en transporte</h4>
@@ -1383,9 +1412,72 @@
                 </div>
             </div>
 
+            <h3>Precio de actividades y entretenimiento</h3>
+
+            <div class="price-content">
+                ${
+                    entertainmentArray.map(item => {
+                        return item
+                    }).join('')
+                }
+            </div>
+
+            ${thingsToDo}
+
+            <h4 class="price-title-tag">Gasto diario en atracciones y entretenimiento</h4>
+            <div class="price-list__wrapper">
+                <div class="price-list">
+                    <h4 class="price-list__title">Económico</h4>
+                    <ul class="price-list__list">
+                        <li class="price-list__card">
+                            <div class="price-list__img-container">
+                                <img src="assets/img/icons/price/i_budget.svg" alt="Precio económico">
+                            </div>
+                            <p class="price-list__card-info">
+                                <span class="price-list__card-title">Presupuesto diario</span>
+                                <span class="price-list__card-price">${convertPrice(Math.round(budgetMain / 4) + '', 'usd')}</span>
+                                        <span class="price-list__card-target">${convertPrice(Math.round(budgetMain / 4) + '', currencyKey, currencySign)}</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="price-list">
+                    <h4 class="price-list__title">Promedio</h4>
+                    <ul class="price-list__list">
+                        <li class="price-list__card">
+                            <div class="price-list__img-container">
+                                <img src="assets/img/icons/price/i_ave.svg" alt="precio promedio">
+                            </div>
+                            <p class="price-list__card-info">
+                                <span class="price-list__card-title">Presupuesto diario</span>
+                                <span class="price-list__card-price">${convertPrice(Math.round(generalMain / 3) + '', 'usd', '$')}</span>
+                                <span class="price-list__card-target">${convertPrice(Math.round(generalMain / 3) + '', currencyKey, currencySign)} </span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="price-list">
+                    <h4 class="price-list__title">Lujo</h4>
+                    <ul class="price-list__list">
+                        <li class="price-list__card">
+                            <div class="price-list__img-container">
+                                <img src="assets/img/icons/price/i_lux.svg" alt="Precio de lujo">
+                            </div>
+                            <p class="price-list__card-info">
+                                <span class="price-list__card-title">Presupuesto diario</span>
+                                <span class="price-list__card-price">${convertPrice(Math.round(luxuryMain / 5) + '', 'usd')}</span>
+                                        <span class="price-list__card-target">${convertPrice(Math.round(luxuryMain / 5) + '', currencyKey, currencySign)}</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>Descripción general de los precios</h2>
+            ${conclusion.root.innerHTML}
 
             `
-            code.textContent = codeContent
+            code.textContent = codeContent.replace('<p></p>', '')
 
         }
 
