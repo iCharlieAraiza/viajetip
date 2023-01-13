@@ -868,3 +868,25 @@ hr {
   margin-top: 4rem;
   text-transform: uppercase;
 }
+
+.small-img-title {
+  width: 1.8rem;
+  margin-right: 10px;
+}
+
+.inline-price-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 0;
+  @media (min-width: 600px) {
+    .price-list__card {
+      width: 25%;
+    }
+  }
+  @media (min-width: 850px) {
+    .price-list__card {
+      width: 27%;
+    }
+  }
+}

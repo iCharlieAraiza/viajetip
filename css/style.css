@@ -990,6 +990,33 @@ hr::after {
   text-transform: uppercase;
 }
 
+.small-img-title {
+  width: 1.8rem;
+  margin-right: 10px;
+}
+
+.inline-price-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  padding: 0;
+}
+
+@media (min-width: 600px) {
+  .inline-price-list .price-list__card {
+    width: 25%;
+  }
+}
+
+@media (min-width: 850px) {
+  .inline-price-list .price-list__card {
+    width: 27%;
+  }
+}
+
 footer {
   background-color: #f6f6f6;
   padding: 3rem 0;
@@ -1111,6 +1138,12 @@ p {
   display: flex;
 }
 
+.align-center {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .wrap {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
@@ -1120,6 +1153,10 @@ p {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+.full {
+  width: 100%;
 }
 
 .bold {

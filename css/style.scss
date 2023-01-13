@@ -24,12 +24,20 @@ p {
     display: flex;
 }
 
+.align-center {
+    align-items: center;
+}
+
 .wrap {
     flex-wrap: wrap;
 }
 
 .space-between {
     justify-content: space-between;
+}
+
+.full {
+    width: 100%;
 }
 
 .bold {

@@ -371,6 +371,7 @@
                         <div class="mb-3">
                             <label>Is it expensive (200)</label>
                             <div id="conclusion">
+                                <p>___ es una ciudad/destinto con unos precios variables</p>
                             </div>
                         </div>
                         <div class="top"></div>
@@ -845,13 +846,13 @@
             })
 
             entertainment.forEach(item => {
-                const iconUrl = item.querySelector('#select-entertainment-input')?.value;
+                const iconUrl = 'assets/img/icons/price/tickets.svg'
                 const price = item.querySelector('#entertainment-input').value;
                 const title = item.querySelector('.entertainment-input-title').value;
                 const el = `                
                     <div class="price-content__item">
                         <div class="price-content__icon-wrapper">
-                            <img class="price-content__icon" src="${iconUrl}" alt="${title}">
+                            <img class="price-content__icon" src="${iconUrl}" style="margin-right: 10px;" alt="${title}">
                         </div>
                         <div class="price-content__info">
                             <p class="price-content__title">
@@ -872,7 +873,7 @@
                 const price = item.querySelector('#hotels-input').value;
                 const el = `
                     <tr>
-                        <td><img src="${iconUrl}" class="star-img" /></td>
+                        <td><img src="${ getStars(title) }" class="star-img" /></td>
                         <td>${title}</td>
                         <td class="bold">${convertPrice(price, 'usd', '$')}</td>
                     </tr>
@@ -1479,6 +1480,18 @@
             `
             code.textContent = codeContent.replace('<p></p>', '')
 
+        }
+
+        function getStars(stars) {
+            let starsData = {
+                'star-1': '/assets/img/icons/1-star.svg',
+                'star-2': '/assets/img/icons/2-star.svg',
+                'star-3': '/assets/img/icons/3-star.svg',
+                'star-4': '/assets/img/icons/4-star.svg',
+                'star-5': '/assets/img/icons/5-star.svg',
+            }
+            //srarsData["star-1"] = '/assets/img/icons/1-star.svg',
+            return starsData[stars]
         }
 
         async function getCurrency() {
