@@ -24,10 +24,12 @@ const words = {
     'impedimento': ['impedimento', 'obstáculo', 'problema'],
     'este tipo': ['este tipo', 'esta clase', 'esta categoría'],
     'un tope máximo': ['un tope máximo', 'un límite máximo', 'un máximo', 'una cantidad máxima'],
-    'tener en cuente': ['tener en cuente', 'tener en consideración'],
+    'tener en cuenta': ['tener en cuenta', 'tener en consideración'],
     'la época en la que que se viaje': ['la época en la que se viaje', 'la temporada', 'la época del año', 'la época del año en la que se viaje', 'la temporada en la que se haga el viaje'],
     'semanales':['semanales', 'a la semana', 'por semana'],
     'En cuanto a viajes de lujo': ['En cuanto a viajes de lujo','Para los viajes de lujo', 'En el caso de los viajes de lujo', 'Respecto alos viajes de lujo', 'Mientras tanto, para viajes de prespuesto alto o de lujo', "Para el tema de viajes de lujo"],
+    'por lo general': ['por lo general', 'en general', 'generalmente', 'en la mayoría de los casos', 'normalmente'],
+    'Por lo general': ['Por lo general', 'En general', 'Generalmente', 'En la mayoría de los casos', 'Normalmente'],
 }
 
 function wordSpinner(word) {
@@ -45,22 +47,29 @@ function wordSpinner(word) {
 
 }
 
+const randomWord = (wordList) => {
+    const random = Math.floor(Math.random() * wordList.length)
+    return wordList[random]
+}
+
+
 
 const phraseGenerator = ({section, position, body}) => {
 
     const dataPhrase = {
         "luxury":{
             "last":[
-                `${wordSpinner('En cuanto a viajes de lujo')}, se consideran aquellos que inician desde los <b>${body?.day} ${wordSpinner('al día')}</b>, o unos ${body?.week} ${body?.week} ${wordSpinner('semanales')}. Dentro de este presupuesto están incluidos todos los gastos básicos, no los extras.`,
-                `${wordSpinner('En cuanto a viajes de lujo')}, el presupuesto base parte desde los  <b>${body?.day} ${wordSpinner('al día')}</b>, ${wordSpinner('es decir')}, o unos ${body?.week} ${body?.week} ${wordSpinner('semanales')}. En el precio estimado ya se incluyen conceptos como el ${wordSpinner('hospedaje')} y el transporte`,
-                `${wordSpinner('En cuanto a viajes de lujo')}, se puede decir que son todos aquellos que inician desde los  ${body?.day} ${wordSpinner('al día')}, ${wordSpinner('es decir')}, o unos ${body?.week} ${wordSpinner('semanales')}.`,
-                `${wordSpinner('En cuanto a viajes de lujo')}, el presupuesto base parte desde los ${body?.day} ${wordSpinner('al día')}, ${wordSpinner('es decir')}, unos ${body?.week} ${body?.week} ${wordSpinner('semanales')}. En el precio estimado mencionado ya se tienen contemplados conceptos como el ${wordSpinner('hospedaje')}, entretenimiento y transporte`
+                `${wordSpinner('En cuanto a viajes de lujo')}, se consideran aquellos que inician desde los <b>${body?.day} ${wordSpinner('al día')}</b>, o unos  <b>${body?.week}</b> ${wordSpinner('semanales')}. Dentro de este presupuesto están incluidos todos los gastos básicos, no los extras.`,
+                `${wordSpinner('En cuanto a viajes de lujo')}, el presupuesto base parte desde los  <b>${body?.day} ${wordSpinner('al día')}</b>, ${wordSpinner('es decir')}, o unos  <b>${body?.week}</b> ${wordSpinner('semanales')}. En el precio estimado ya se incluyen conceptos como el ${wordSpinner('hospedaje')} y el transporte`,
+                `${wordSpinner('En cuanto a viajes de lujo')}, se puede decir que son todos aquellos que inician desde los <b>${body?.day}</b> ${wordSpinner('al día')}, ${wordSpinner('es decir')}, o unos  <b>${body?.week}</b> ${wordSpinner('semanales')}.`,
+                `${wordSpinner('En cuanto a viajes de lujo')}, el presupuesto base parte desde los <b>${body?.day}</b> ${wordSpinner('al día')}, ${wordSpinner('es decir')}, unos <b>${body?.week}</b> ${wordSpinner('semanales')}. En el precio estimado mencionado ya se tienen contemplados conceptos como el ${wordSpinner('hospedaje')}, entretenimiento y transporte`
             ],
             "finish":[
-                `Por lo general cuando se realizan viajes de ${wordSpinner('este tipo')}, los precios no suelen ser ningún ${wordSpinner('impedimento')} , así que el tope máximo dependerá del viajero.`,
-                `Aclaración: en las cifras dadas no se incluyen gastos extras, solo conceptos básicos como ${wordSpinner('hospedaje')} y entretenimiento, no imprevistos.`,
+                `${wordSpinner('Por lo general')} cuando se realizan viajes de ${wordSpinner('este tipo')}, los precios no suelen ser ningún ${wordSpinner('impedimento')} , así que el tope máximo dependerá del viajero.`,
+                `Aclaración: ${randomWord(['en la cifras dadas', 'dentro de los precios dados', 'para la cifra de precios dada'])} no se incluyen gastos extras e imprevistos, solo conceptos básicos como ${wordSpinner('hospedaje')} y entretenimiento.`,
                 "Asimismo, los viajes de presupuesto alto pueden ser de distintas categorías, por ejemplo, los de «lujo» y «ultralujo». Aunque como referencia, vamos a tomar como base el precio mencionada anteriormente.",  
-                `Para ${wordSpinner('este tipo')} de viajes no hay ${wordSpinner('un tope máximo')} en el presupuesto, sin embargo hay que  ${wordSpinner('tener en cuente')} que los precios pueden variar según ${wordSpinner('la época en la que que se viaje')}.`
+                `Para ${wordSpinner('este tipo')} de viajes no hay ${wordSpinner('un tope máximo')} en el presupuesto, sin embargo hay que  ${wordSpinner('tener en cuenta')} que los precios pueden variar según ${wordSpinner('la época en la que que se viaje')}.`,
+                `Cuando ${randomWord(['son viajes de presupuesto alto', 'son viajes de lujo', 'son viajes sin un tope máximo en los gastos'])}, ${wordSpinner('por lo general')} no hay cambios en los precios de acuerdo a las fechas. Aun así, puede haber ligeras variaciones de acuerdo a la temporada en la que se viaje.`,
             ]
         }
     }
