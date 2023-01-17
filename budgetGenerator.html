@@ -371,6 +371,7 @@
                         <div class="mb-3">
                             <label>Is it expensive (200)</label>
                             <div id="conclusion">
+                                <p>Después de procesar toda la informaicón / Luego de analizar los datos, Como conclusión después de analizar la información</p>
                                 <p>___ es una ciudad/destinto con unos precios variables</p>
                                 <p>Para conocer más __ y no quedarte con las ganas de ver más atracciones y puntos de interés, lo ideal es estar por lo menos __ días.</p>
                                 <p>Por último / para finalizar, hay que recalcar que el precio final dependera mucho de la época del año en que se viaje y el tipo de hospedaje que se elija.</p> 
@@ -624,7 +625,6 @@
             luxuryMainInput.value = currentCity.prices.luxury?.main.replace('$', '')
             luxuryMainWeekInput.value = luxuryMainInput.value != undefined && luxuryMainInput.value * 6
 
-
             const generalInput = document.getElementById('generalInput');
             generalInput.innerHTML = '';
 
@@ -634,6 +634,11 @@
             generateInput(currentCity.hotel, 'hotels-input')
             generateInpuByTable(currentCity.food_description, 'foodDescription-input', true)
 
+            whenToVisit.root.innerHTML = `
+                <p>${phraseGenerator({section:'generaDescription',position:'first'})}</p>
+                <p>${phraseGenerator({section:'generaDescription',position:'second'})}</p>
+                <p>${phraseGenerator({section:'generaDescription',position:'third'})}</p>
+            `
         }
 
         async function getCountryInfo() {
