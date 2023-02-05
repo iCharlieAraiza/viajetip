@@ -297,7 +297,7 @@
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">Tips to save in food</label>
                             <textarea class="form-control" id="foodTips"
-                                rows="3">Si viajas a ____ una forma útil de ahorrar dinero en comido es ____ Con esto / Al hacerlo / Teniéndolo en cuenta, te permitir / tendrás / lograr la entrega </textarea>
+                                rows="3">Si viajas a ____ una forma útil de ahorrar dinero en comida es ____ Con esto / Al hacerlo / Teniéndolo en cuenta, te permitir / tendrás / lograr la entrega </textarea>
                         </div>
                     </div>
 
@@ -309,7 +309,7 @@
                             <div class="form-control" id="hotelsDescription"
                                 rows="3"> 
                                 <p>En ____ el precio de los hoteles ronda los  ____ dependeiendo de </p> 
-                                <p>Las opciones más económicas se pueden encontrar en temporada baja, es decir, en los meses de </p>
+                                <p>**Tratar de cambiar** Las opciones más económicas se pueden encontrar en temporada baja hotelera, es decir, en los meses de </p>
                             </div>
                         </div>
                         <div class="top"></div>
@@ -320,7 +320,7 @@
                                 acommodation (100)
                                 words)</label>
                             <textarea class="form-control" id="acommodationTips"
-                                rows="3">___ ofrece gran cantidad de atractivos tanto para </textarea>
+                                rows="3">___ es un destino en el que se peuden encontrar opciones de hospedaje muy económicas </textarea>
                         </div>
                     </div>
 
@@ -330,7 +330,7 @@
                             <label for="exampleFormControlTextarea1" class="form-label">General description of transport
                                 (100)</label>
                             <div class="form-control" id="transportDescription"
-                                rows="3"><p>Al ser ___ un destino ____, los locales suelen moverse </p></div>
+                                rows="3"><p>Al ser ___ un destino ____, los locales suelen moverse en </p></div>
                         </div>
                     </div>
                     <div class="row">
@@ -371,7 +371,7 @@
                         <div class="mb-3">
                             <label>Is it expensive (200)</label>
                             <div id="conclusion">
-                                <p>Después de procesar toda la informaicón / Luego de analizar los datos, Como conclusión después de analizar la información</p>
+                                <p>Después de procesar toda la información / Luego de analizar los datos, Como conclusión después de analizar la información</p>
                                 <p>___ es una ciudad/destinto con unos precios variables</p>
                                 <p>Para conocer más __ y no quedarte con las ganas de ver más atracciones y puntos de interés, lo ideal es estar por lo menos __ días.</p>
                                 <p>Por último / para finalizar, hay que recalcar que el precio final dependera mucho de la época del año en que se viaje y el tipo de hospedaje que se elija.</p> 
@@ -634,10 +634,9 @@
             generateInput(currentCity.hotel, 'hotels-input')
             generateInpuByTable(currentCity.food_description, 'foodDescription-input', true)
 
-            whenToVisit.root.innerHTML = `
-                <p>${phraseGenerator({section:'generaDescription',position:'first'})}</p>
-                <p>${phraseGenerator({section:'generaDescription',position:'second'})}</p>
-                <p>${phraseGenerator({section:'generaDescription',position:'third'})}</p>
+            whenToVisit.root.innerHTML = `<p>${phraseGenerator({section:'generaDescription',position:'first'})}</p><p>${phraseGenerator({section:'generaDescription',position:'second'})}</p> <p>${phraseGenerator({section:'generaDescription',position:'third'})}</p>
+            `
+            generalDescription.root.innerHTML = `<p>${phraseGenerator({section:'intoduction',position:'first'})}</p> <p>Entre sus características principales está____ / De las cosas que más destacan</p> <p>${phraseGenerator({section:'intoduction',position:'last'})}</p>
             `
         }
 
@@ -897,7 +896,7 @@
                 ${generalDescription.root.innerHTML}
                 <div id="priceSection">
                     <h2>Precios para un viaje a ${city}</h2>
-                    <p>A continuación te traemos una lista de precios para ${city} de acuerdo a distintos tipos de viaje.</p>
+                    <p>${wordSpinner('Lista general de precios')} para ${city} de acuerdo a distintos tipos de viaje (económico, promedio/regular y de lujo). ${wordSpinner('Todos los precios dados')} son un estimado ${wordSpinner('basado en distintas fuentes')}.</p>
                     <div class="price-list__wrapper">
                         <div class="price-list">
                             <h4 class="price-list__title">Promedio</h4>
@@ -1000,8 +999,8 @@
                 </div>
             </div> 
 
-            <h3>Precio de alimentos de ${city}</h3>
-            <p>Precios promedio en alimentos básicos y bebidas. Aclaración: los costos pueden cambiar de acuerdo al establecimiento y a la zona.</p>
+            <h3>Precio de alimentos en ${city}</h3>
+            <p>${randomWord(['Precios promedio', 'Precios generales'])} en alimentos básicos y bebidas. ${randomWord(['Aclaración', 'Ten en cuenta'])}: los precios pueden ${randomWord(['cambiar','variar', 'cambiar de manera considerable'])} de acuerdo al establecimiento y a la zona${randomWord([' en la que se compren', ' en la que se adquieran',''])}.</p>
 
             <div class="price-content">
                 <div class="price-content__item">
@@ -1136,7 +1135,7 @@
 
             <h4 class="bold">Precio de alcohol y cigarrillos</h4>
 
-            <p>Precio promedio de bebidas alcoholicas y tabaco en ${city}</p>
+            <p>${randomWord(['Precio promedio en', 'Precios generales de', 'Lista de precios promedio para'])} bebidas alcoholicas y tabaco en ${city}.${ randomWord([' Incluye posibles impuestos.','',' Están incluidos los impuestos.', ' Ya están incluidos los impuestos.',''])}</p>
 
             <div class="price-content">
                 <div class="price-content__item">
@@ -1183,7 +1182,7 @@
             </div>
 
             <h4 class="bold">Alimentos típicos</h4>
-            <p>Comodas, platillos y bebidas típicas de ${city}</p>
+            <p>Comidas, platillos y bebidas típicas de ${city}${randomWord(['',', incluida comida rápida', ''])}.</p>
 
             <div class="price-content">
                 ${
@@ -1282,7 +1281,7 @@
                     <h3 class="price-hotels__title">
                         Precio de hoteles en ${city}
                     </h3>
-                    <p>Precio promedio de alojamiento por noche de acuerdo a la categoría del hotel</p>
+                    <p>Precio promedio ${randomWord(['en alojamiento','en hospedaje'])} por noche de acuerdo a la categoría del hotel</p>
                     <div class="table-wrap small">
                         <table class="table-styled">
                             <tbody>
@@ -1359,7 +1358,7 @@
             </div>
 
             <h3>Presupuesto de transporte</h3>
-            <p>Gasto promedio en transporte en ${city}</p>
+            <p>Gasto promedio ${randomWord(['en transporte', 'en transporte público', 'en transporte público y trayectos'])} en ${city}${randomWord(['.', '. No se incluyen boletos/tickets aéreos o transporte de larga distancia.', '. No están incluidos boletos/tickets aéreos o transporte de larga distancia.', '. Solo se incluye transporte local.','.'])}</p>
 
             <p></p>
 
@@ -1423,7 +1422,7 @@
             </div>
 
             <h3>Precio de actividades y entretenimiento</h3>
-
+            <p>${randomWord(['Costo','Precio'])} de entradas y otros cargos para actividades de entretenimiento${randomWord(['','',' durante el viaje'])}.</p>
             <div class="price-content">
                 ${
                     entertainmentArray.map(item => {
@@ -1495,9 +1494,9 @@
                         <img src="assets/img/icons/price/i_budget.svg" alt="precio promedio">
                     </div>
                     <p class="price-list__card-info">
-                        <span class="price-list__card-title">Presupuesto diario</span>
-                        <span class="price-list__card-price">$117 USD</span>
-                        <span class="price-list__card-target">111€ </span>
+                        <span class="price-list__card-title">Presupuesto para viaje de 3 días</span>
+                        <span class="price-list__card-price">${convertPrice(Math.round(budgetMain * 3) + '', 'usd')}</span>
+                        <span class="price-list__card-target">${convertPrice(Math.round(budgetMain * 3) + '', currencyKey, currencySign)}</span>
                     </p>
                 </li>
                 <li class="price-list__card">
@@ -1505,9 +1504,9 @@
                         <img src="assets/img/icons/price/i_budget.svg" alt="precio promedio">
                     </div>
                     <p class="price-list__card-info">
-                        <span class="price-list__card-title">Presupuesto diario</span>
-                        <span class="price-list__card-price">$117 USD</span>
-                        <span class="price-list__card-target">111€ </span>
+                        <span class="price-list__card-title">Presupuesto para viaje de 7 días</span>
+                        <span class="price-list__card-price">${convertPrice(Math.round(budgetMain * 7) + '', 'usd', '$')}</span>
+                        <span class="price-list__card-target">${convertPrice(Math.round(budgetMain * 7) + '', currencyKey, currencySign)} </span>
                     </p>
                 </li>
                 <li class="price-list__card">
@@ -1515,9 +1514,9 @@
                         <img src="assets/img/icons/price/i_budget.svg" alt="precio promedio">
                     </div>
                     <p class="price-list__card-info">
-                        <span class="price-list__card-title">Presupuesto diario</span>
-                        <span class="price-list__card-price">$117 USD</span>
-                        <span class="price-list__card-target">111€ </span>
+                        <span class="price-list__card-title">Presupuesto para viaje de 10 días</span>
+                        <span class="price-list__card-price">${convertPrice(Math.round(budgetMain * 9.5) + '', 'usd')}</span>
+                        <span class="price-list__card-target">${convertPrice(Math.round(budgetMain * 9.5) + '', currencyKey, currencySign)}</span>
                     </p>
                 </li>
             </ul>
@@ -1531,9 +1530,9 @@
                         <img src="assets/img/icons/price/i_ave.svg" alt="precio promedio">
                     </div>
                     <p class="price-list__card-info">
-                        <span class="price-list__card-title">Presupuesto diario</span>
-                        <span class="price-list__card-price">$117 USD</span>
-                        <span class="price-list__card-target">111€ </span>
+                        <span class="price-list__card-title">Presupuesto para viaje de 3 días</span>
+                        <span class="price-list__card-price">${convertPrice(Math.round(generalMain * 3) + '', 'usd', '$')}</span>
+                        <span class="price-list__card-target">${convertPrice(Math.round(generalMain * 3) + '', currencyKey, currencySign)} </span>
                     </p>
                 </li>
                 <li class="price-list__card">
@@ -1541,9 +1540,9 @@
                         <img src="assets/img/icons/price/i_ave.svg" alt="precio promedio">
                     </div>
                     <p class="price-list__card-info">
-                        <span class="price-list__card-title">Presupuesto diario</span>
-                        <span class="price-list__card-price">$117 USD</span>
-                        <span class="price-list__card-target">111€ </span>
+                        <span class="price-list__card-title">Presupuesto para viaje de 7 días</span>
+                        <span class="price-list__card-price">${convertPrice(Math.round(generalMain * 7) + '', 'usd', '$')}</span>
+                        <span class="price-list__card-target">${convertPrice(Math.round(generalMain * 7) + '', currencyKey, currencySign)} </span>
                     </p>
                 </li>
                 <li class="price-list__card">
@@ -1551,9 +1550,9 @@
                         <img src="assets/img/icons/price/i_ave.svg" alt="precio promedio">
                     </div>
                     <p class="price-list__card-info">
-                        <span class="price-list__card-title">Presupuesto diario</span>
-                        <span class="price-list__card-price">$117 USD</span>
-                        <span class="price-list__card-target">111€ </span>
+                        <span class="price-list__card-title">Presupuesto para viaje de 10 días</span>
+                        <span class="price-list__card-price">${convertPrice(Math.round(generalMain * 9.5) + '', 'usd', '$')}</span>
+                        <span class="price-list__card-target">${convertPrice(Math.round(generalMain * 9.5) + '', currencyKey, currencySign)} </span>
                     </p>
                 </li>
             </ul>
@@ -1568,9 +1567,9 @@
                         <img src="assets/img/icons/price/i_lux.svg" alt="precio promedio">
                     </div>
                     <p class="price-list__card-info">
-                        <span class="price-list__card-title">Presupuesto diario</span>
-                        <span class="price-list__card-price">$117 USD</span>
-                        <span class="price-list__card-target">111€ </span>
+                        <span class="price-list__card-title">Presupuesto para viaje de 3 días</span>
+                        <span class="price-list__card-price">${convertPrice(Math.round(luxuryMain * 3) + '', 'usd')}</span>
+                        <span class="price-list__card-target">${convertPrice(Math.round(luxuryMain * 3) + '', currencyKey, currencySign)}</span>
                     </p>
                 </li>
                 <li class="price-list__card">
@@ -1578,9 +1577,9 @@
                         <img src="assets/img/icons/price/i_lux.svg" alt="precio lujo">
                     </div>
                     <p class="price-list__card-info">
-                        <span class="price-list__card-title">Presupuesto diario</span>
-                        <span class="price-list__card-price">$117 USD</span>
-                        <span class="price-list__card-target">111€ </span>
+                        <span class="price-list__card-title">Presupuesto para viaje de 7 días</span>
+                        <span class="price-list__card-price">${convertPrice(Math.round(luxuryMain * 7) + '', 'usd')}</span>
+                        <span class="price-list__card-target">${convertPrice(Math.round(luxuryMain * 7) + '', currencyKey, currencySign)}</span>
                     </p>
                 </li>
                 <li class="price-list__card">
@@ -1588,9 +1587,9 @@
                         <img src="assets/img/icons/price/i_lux.svg" alt="precio lujo">
                     </div>
                     <p class="price-list__card-info">
-                        <span class="price-list__card-title">Presupuesto diario</span>
-                        <span class="price-list__card-price">$117 USD</span>
-                        <span class="price-list__card-target">111€ </span>
+                        <span class="price-list__card-title">Presupuesto para viaje de 10 días</span>
+                        <span class="price-list__card-price">${convertPrice(Math.round(luxuryMain * 10) + '', 'usd')}</span>
+                        <span class="price-list__card-target">${convertPrice(Math.round(luxuryMain * 10) + '', currencyKey, currencySign)}</span>
                     </p>
                 </li>
             </ul>

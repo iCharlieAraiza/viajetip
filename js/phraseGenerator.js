@@ -1,3 +1,9 @@
+const randomWord = (wordList) => {
+    const random = Math.floor(Math.random() * wordList.length)
+    return wordList[random]
+}
+
+
 const words = {
     'es decir': [ 'es decir', 'o sea', 'en otras palabras','esto es'],
     'una comparativa de precios': ['una comparativa de precios', 'una comparación de precios', 'una verificación completa de precios', 'una comparación de tarifas', 'una comparación completa de las tarifas'],
@@ -14,7 +20,7 @@ const words = {
     'aproximadamente': ['aproximadamente', 'en promedio', 'aprox'],
     'estimado': ['estimado', 'pesupuestado', 'calculado', 'planificado', 'proyectado'],
     'durante el viaje': ['durante el viaje', 'en el viaje', '', 'durante las vacaciones', 'cuando viajas'],
-    'trampas de turistas': ['«trampas de turistas»', '«trampas para turistas»' , `«trampas de turistas» o sitios / atracciones hechas para sacarle dinero a los viajeros (pseudotours, restaurantes, falsos sitios de interés, etc)`],
+    'trampas de turistas': ['«trampas de turistas»', '«trampas para turistas»' , `«trampas de turistas» o sitios / atracciones hechas para sacarle dinero a los viajeros (por ejemplo, pseudotours, restaurantes, falsos sitios de interés, etc)`],
     'sacarle dinero': ['sacarle dinero', 'quitarle dinero', 'estafar'],
     'suelen ser': ['suelen ser', 'son', 'generalmente son', 'pueden ser', 'llegan a ser'],
     'razones': ['razones', 'causas', 'causas principales', 'causas más comunes'], 
@@ -31,6 +37,9 @@ const words = {
     'por lo general': ['por lo general', 'en general', 'generalmente', 'en la mayoría de los casos', 'normalmente'],
     'Por lo general': ['Por lo general', 'En general', 'Generalmente', 'En la mayoría de los casos', 'Normalmente'],
     'están en el lugar adecuado':['están en el lugar adecuado', 'estás en el sitio correcto', 'estás en el sitio perfecto', '‘estás en el lugar correcto’', 'este es tu sitio'], 
+    'Lista general de precios':['Lista general de precios', 'Lista de precios', 'Presupuesto de un viaje', 'Presupuesto de viaje'],
+    'Todos los precios dados':['Todos los precios dados', 'Todos los precios mostrados', 'Todos las cifras mencionadas', 'Todos las cifras dadas'],
+    'basado en distintas fuentes': [`basado en distintas fuentes${randomWord(['',' (se irán actualizando)'])}`, `basado en diferentes fuentes${randomWord(['',' (se irán actualizando)'])}`],
 }
 
 function wordSpinner(word) {
@@ -48,17 +57,13 @@ function wordSpinner(word) {
 
 }
 
-const randomWord = (wordList) => {
-    const random = Math.floor(Math.random() * wordList.length)
-    return wordList[random]
-}
 
 
 //${randomWord([])}
 
 const phraseGenerator = ({section, position, body}) => {
     const dataPhrase = {
-        "intro":{
+        "intoduction":{
             "first":[
                 "Fácilmente ___ es de las ciudades más sorprendentes que hay en el mundo. Por eso no es de extrañar que ____ esté en la lista de esos destinos imperdibles que todos deberían visitar.",
                 "¿Quién no quiere visitar ___? Sin duda uno de los lugares preferidos para viajeros de todo tipo. Y no es para menos, nos ofrece una gran cantidad de cosas como",
@@ -98,7 +103,7 @@ const phraseGenerator = ({section, position, body}) => {
                 `En el caso de los viajes de turismo (vacaciones y placer), ${randomWord(['la temporada alta','la época de mayor demanda'])} es ..., mientras que la temporada baja está / es ...`,
             ],
             "third":[
-                `Si quieres ${randomWord(['más información', 'más informaicón detallada', 'más detalles'])} ${randomWord(['de los precios', 'con respecto a los precios', 'sobre los precios'])}, revisa las siguientes secciones`,
+                `Si quieres ${randomWord(['más información', 'más información detallada', 'más detalles'])} ${randomWord(['de los precios', 'con respecto a los precios', 'sobre los precios'])}, revisa las siguientes secciones`,
                 `Para ${randomWord(['más información', 'más información detallada', 'más detalles'])}, te explicaremos todos los conceptos de los precios a continuación`,
                 `Para ${randomWord(['entender mejor', 'conocer mejor', 'entender'])} los precios de **Destionation**, ${randomWord(['te compartimos','te daremos','te explicamos'])} los conceptos ${randomWord(['y los gastos a detalle','y las estimaciones', 'y las estimaciones a detalle'])} a continuación`,
             ]
