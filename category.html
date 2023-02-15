@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Roboto:wght@300;400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>ViajeTip</title>
+
+    <style>
+        @font-face {
+            font-family: 'icomoon';
+            src: url(https://entryadvice.com/wp-content/themes/ead/assets/icons/fonts/icomoon.woff) format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        i {
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .icon-type-c:before {
+            content: "\e966";
+        }
+    </style>
+
+</head>
+
+<body id="blog">
+    <nav class="navbar">
+        <div class="elastic-container">
+            <div class="navbar-header">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/img/logo.svg" alt="ViajeTip">
+                    </a>
+                </div>
+
+                <div class="menu">
+                    <ul>
+                        <a href="index.html">
+                            <li>Planifica</li>
+                        </a>
+                        <a href="nosotros.html">
+                            <li>Destinos</li>
+                        </a>
+                        <a href="nosotros.html">
+                            <li>¿Cuánto vale?</li>
+                        </a>
+                        <div class="search-nav">
+                            <input type="text" placeholder="Search">
+                            <img src="assets/img/search-icon.svg" alt="Search">
+                        </div>
+                        <ul>
+                            <a href="index.html">
+                                <li>Consejos</li>
+                            </a>
+                            <a href="nosotros.html">
+                                <li>Recursos</li>
+                            </a>
+                            <a href="nosotros.html">
+                                <li>Videos</li>
+                            </a>
+                        </ul>
+                </div>
+                <div class="rigth-section">
+                    <picture class="user-icon">
+                        <img src="assets/img/user-icon.svg" alt="User">
+                    </picture>
+                    <div class="login">
+                        <a href="login.html">Iniciar sesión</a>
+                    </div>
+                    <div class="search-menu-btn">
+                        <button>
+                            <img src="assets/img/search-icon.svg" alt="search">
+                        </button>
+                    </div>
+                    <div class="menu-mobile-btn">
+                        <button>
+                            <img src="assets/img/menu-icon.svg" alt="menu">
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="section-hero">
+        <picture>
+            <img src="assets/img/hero-section.jpg" class="section-hero__img" alt="hero">
+        </picture>
+        <div class="section-hero__content">
+            <div class="container">
+                <p class="section-label">Categoría</p>
+                <h1 class="section-hero__title">Consejos para viajar</h1>
+            </div>
+        </div>
+    </section>
+
+
+    <main class="container">
+        <div class="line-separator">
+            <div class="recent-label">
+                <p class="recent-label__tag">ÚLTIMOS POSTS</p>
+            </div>
+        </div>
+        <div class="category-grid">
+            <li class="card-category">
+                <a href="/" class="content">
+                    <picture>
+                        <img src="https://www.22places.com/wp-content/uploads/2022/09/st-peters-square-vatican-rome.webp"
+                            alt="">
+                    </picture>
+                    <h3>This is a test</h3>
+                </a>
+            </li>
+            <li class="card-category">
+                <a href="/" class="content">
+                    <picture>
+                        <img src="https://www.22places.com/wp-content/uploads/2021/09/barcelona-where-to-stay-700x467.webp"
+                            alt="">
+                    </picture>
+                    <h3>This is a test</h3>
+                </a>
+            </li>
+            <li class="card-category">
+                <a href="/" class="content">
+                    <picture>
+                        <img src="https://www.22places.com/wp-content/uploads/2021/09/palace-of-westminster-london-700x467.webp"
+                            alt="">
+                    </picture>
+                    <h3>This is a test</h3>
+                </a>
+            </li>
+            <li class="card-category">
+                <a href="/" class="content">
+                    <picture>
+                        <img src="https://www.22places.com/wp-content/uploads/2017/06/prague-hotels-700x467.webp"
+                            alt="">
+                    </picture>
+                    <h3>This is a test</h3>
+                </a>
+            </li>
+            <li class="card-category">
+                <a href="/" class="content">
+                    <picture>
+                        <img src="https://www.22places.com/wp-content/uploads/2020/01/brooklyn-bridge-700x467.webp"
+                            alt="">
+                    </picture>
+                    <h3>This is a test</h3>
+                </a>
+            </li>
+
+            <li class="card-category">
+                <a href="/" class="content">
+                    <picture>
+                    </picture>
+                    <h3>This is a test</h3>
+                </a>
+            </li>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer__logo">
+                <picture>
+                    <img src="assets/img/logo-negative.svg" alt="logo">
+                </picture>
+                <p><b>Viaje Tip</b> es un sitio web de viajes que proporciona recursos gratuitos y de pago de calidad
+                </p>
+            </div>
+            <div class="footer__menu">
+                <div class="footer__menu-block">
+                    <h4>Acerca de</h4>
+                    <ul>
+                        <li><a href="">Nosotros</a></li>
+                        <li><a href="">Términos y condiciones</a></li>
+                        <li><a href="">Roadmap</a></li>
+                    </ul>
+                </div>
+                <div class="footer__menu-block">
+                    <h4>Contacto</h4>
+                    <div class="footer__socialmedia">
+                        <a href="" class="socialmedia__icon">
+                            <picture>
+                                <img src="assets/img/icons/facebook.svg" alt="facebook">
+                            </picture>
+                        </a>
+                        <a href="" class="socialmedia__icon">
+                            <picture>
+                                <img src="assets/img/icons/twitter.svg" alt="facebook">
+                            </picture>
+                        </a>
+                        <a href="" class="socialmedia__icon">
+                            <picture>
+                                <img src="assets/img/icons/youtube.svg" alt="facebook">
+                            </picture>
+                        </a>
+                    </div>
+                    <ul>
+                        <li><a href="">Contacto</a></li>
+                        <li><a href="">Anúnciate con nosotros</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const article = document.querySelector('article')
+
+        const listContent = []
+    </script>
+</body>
+
+</html>
